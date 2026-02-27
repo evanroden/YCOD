@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     description:
       'Organizations fighting alongside us to save lives through organ donation reform.',
   },
+  alternates: {
+    canonical: '/partners',
+  },
 };
 
 export default function PartnersLayout({ children }: { children: React.ReactNode }) {

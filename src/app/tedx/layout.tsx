@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     description:
       'Youth political engagement and the fight for opt-out organ donation.',
   },
+  alternates: {
+    canonical: '/tedx',
+  },
 };
 
 const videoJsonLd = {

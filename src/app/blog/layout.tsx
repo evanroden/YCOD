@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     description:
       'Stories, breakthroughs, and policy updates shaping the future of organ donation.',
   },
+  alternates: {
+    canonical: '/blog',
+  },
 };
 
 export default function BlogLayout({ children }: { children: React.ReactNode }) {

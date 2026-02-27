@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     description:
       'Five pillars driving change in organ donation policy and awareness across New York State and beyond.',
   },
+  alternates: {
+    canonical: '/initiatives',
+  },
 };
 
 export default function InitiativesLayout({ children }: { children: React.ReactNode }) {

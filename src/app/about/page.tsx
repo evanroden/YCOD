@@ -6,6 +6,7 @@ import TeamMember from '@/components/team/TeamMember';
 import SectionDivider from '@/components/ui/SectionDivider';
 import RetroButton from '@/components/ui/RetroButton';
 import InteractiveTimeline from '@/components/ui/InteractiveTimeline';
+import ImpactMetrics from '@/components/ui/ImpactMetrics';
 import { TEAM } from '@/lib/constants';
 import { fadeInUp } from '@/lib/animations';
 import { useI18n } from '@/lib/i18n';
@@ -116,6 +117,11 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <SectionDivider color="#00C9A7" />
+
+      {/* Impact Metrics */}
+      <ImpactMetrics />
 
       <SectionDivider color="#F07070" />
 

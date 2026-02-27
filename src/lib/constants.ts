@@ -195,6 +195,62 @@ export const FACTS = [
     icon: '🎂',
     color: 'bg-ycod-coral',
   },
+  {
+    stat: '3-5 yrs',
+    title: 'Average Kidney Wait Time',
+    description: 'The median wait time for a kidney transplant is 3 to 5 years, but it varies dramatically by geography and blood type. Some patients wait 7 to 10 years — or longer — before receiving the call that saves their life.',
+    icon: '⌛',
+    color: 'bg-ycod-yellow',
+  },
+  {
+    stat: '46.3',
+    title: 'Spain\'s Donation Rate',
+    description: 'Spain leads the world in organ donation at 46.3 donors per million people. The United States sits at roughly 17 per million. Spain\'s opt-out system, combined with dedicated transplant coordinators in every hospital, is the gold standard.',
+    icon: '🇪🇸',
+    color: 'bg-ycod-green',
+  },
+  {
+    stat: '6,900+',
+    title: 'Living Donors in 2023',
+    description: '2023 was a record-breaking year for living organ donation in the United States, with over 6,900 living donors giving the gift of life — proof that more people than ever are stepping up when it matters most.',
+    icon: '🌟',
+    color: 'bg-ycod-pink',
+  },
+  {
+    stat: '$500B+',
+    title: 'Annual Cost of Kidney Disease',
+    description: 'Kidney disease costs the US healthcare system over $500 billion annually, including dialysis treatments that can run $90,000 or more per patient per year. Transplants are not just life-saving — they are far more cost-effective than a lifetime of dialysis.',
+    icon: '💰',
+    color: 'bg-ycod-coral',
+  },
+  {
+    stat: '58%',
+    title: 'Registered But Not Enough',
+    description: 'About 58% of Americans are registered organ donors — a number that has grown steadily. But that still leaves tens of millions of eligible adults unregistered, and every missing registration is a potential life left unsaved.',
+    icon: '📝',
+    color: 'bg-ycod-blue',
+  },
+  {
+    stat: '1M+',
+    title: 'One Millionth Transplant',
+    description: 'In September 2023, the United States reached an extraordinary milestone: one million organ transplants performed since record-keeping began in 1988. A testament to donors, families, surgeons, and the power of saying yes.',
+    icon: '🏆',
+    color: 'bg-ycod-yellow',
+  },
+  {
+    stat: '36 hrs',
+    title: 'Window for Organ Recovery',
+    description: 'Time is everything in organ transplantation. Most organs must be transplanted within 4 to 36 hours of recovery. Hearts and lungs last only 4 to 6 hours outside the body, while kidneys can survive up to 36 hours. Every minute counts.',
+    icon: '⏱️',
+    color: 'bg-ycod-green',
+  },
+  {
+    stat: '2x',
+    title: 'Minority Communities Hit Harder',
+    description: 'Black, Hispanic, and Native American communities are disproportionately affected by kidney disease and face longer wait times for transplants. Black Americans are nearly twice as likely to develop kidney failure but less likely to receive a transplant. Equity in donation and access is a civil rights issue.',
+    icon: '⚖️',
+    color: 'bg-ycod-coral',
+  },
 ] as const;
 
 export const QUIZ_QUESTIONS = [
@@ -228,6 +284,36 @@ export const QUIZ_QUESTIONS = [
     correctIndex: 2,
     explanation: '17 people die every single day waiting for a transplant — one person every 85 minutes. Registration saves lives.',
   },
+  {
+    question: 'What is the most commonly transplanted organ?',
+    options: ['Heart', 'Liver', 'Kidney', 'Lung'],
+    correctIndex: 2,
+    explanation: 'Kidneys are by far the most commonly transplanted organ — they make up about 85% of the national transplant waitlist. The demand for kidneys far outpaces every other organ combined.',
+  },
+  {
+    question: 'Which country has the highest organ donation rate?',
+    options: ['United States', 'Spain', 'United Kingdom', 'France'],
+    correctIndex: 1,
+    explanation: 'Spain leads the world with 46.3 donors per million people, thanks to its opt-out system and dedicated transplant coordinators in every hospital. The US rate is roughly 17 per million.',
+  },
+  {
+    question: 'What is the youngest age requirement to be an organ donor?',
+    options: ['Must be 18+', 'Must be 16+', 'Must be 12+', 'There is no minimum age'],
+    correctIndex: 3,
+    explanation: 'There is no minimum age to be an organ donor. People of all ages can donate, and for minors, parental or guardian consent is required. Even newborns have been organ donors.',
+  },
+  {
+    question: 'How long can a donated kidney survive outside the body?',
+    options: ['About 4 hours', 'Up to 24 hours', 'Up to 36 hours', 'Up to 72 hours'],
+    correctIndex: 2,
+    explanation: 'A donated kidney can survive up to 36 hours outside the body through cold ischemia time — the period when the organ is preserved on ice. Hearts and lungs, by contrast, last only 4 to 6 hours.',
+  },
+  {
+    question: 'What percentage of living organ donors are family members?',
+    options: ['25%', '50%', '66%', '90%'],
+    correctIndex: 2,
+    explanation: 'About 66% of living organ donors give to a family member. Organ donation is deeply personal — most people are motivated to donate by a direct connection to someone they love.',
+  },
 ] as const;
 
 export const TIMELINE_EVENTS = [
@@ -251,6 +337,10 @@ export const NAV_LINKS = [
   { href: '/coverage', label: 'Press' },
   { href: '/tedx', label: 'TEDx' },
   { href: '/partners', label: 'Partners' },
+  { href: '/faq', label: 'FAQ' },
+  { href: '/resources', label: 'Resources' },
+  { href: '/stories', label: 'Stories' },
+  { href: '/glossary', label: 'Glossary' },
   { href: '/contact', label: 'Contact' },
 ] as const;
 

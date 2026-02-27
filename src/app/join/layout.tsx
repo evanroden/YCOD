@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     description:
       'If you\'re a young person (or young at heart), join us in working towards organ donation policy awareness.',
   },
+  alternates: {
+    canonical: '/join',
+  },
 };
 
 export default function JoinLayout({ children }: { children: React.ReactNode }) {

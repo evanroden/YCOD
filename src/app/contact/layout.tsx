@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     description:
       'Reach out to the YCOD team — we\'re New Yorkers helping New Yorkers save lives.',
   },
+  alternates: {
+    canonical: '/contact',
+  },
 };
 
 export default function ContactLayout({ children }: { children: React.ReactNode }) {

@@ -5,6 +5,7 @@ import SectionDivider from '@/components/ui/SectionDivider';
 import RetroButton from '@/components/ui/RetroButton';
 import NinetyCard from '@/components/ui/NinetyCard';
 import BillImpactViz from '@/components/ui/BillImpactViz';
+import ComparisonTable from '@/components/ui/ComparisonTable';
 import LetterGenerator from '@/components/ui/LetterGenerator';
 import { BILL_TEXT } from '@/lib/constants';
 import { fadeInUp } from '@/lib/animations';
@@ -115,6 +116,15 @@ export default function BillPage() {
       <section className="py-16 md:py-24 bg-ycod-blue/5">
         <div className="max-w-4xl mx-auto px-4">
           <BillImpactViz />
+        </div>
+      </section>
+
+      <SectionDivider color="#F5A0B8" />
+
+      {/* Opt-In vs Opt-Out Comparison */}
+      <section className="py-16 md:py-24 bg-white dark:bg-ycod-black transition-colors duration-300">
+        <div className="max-w-4xl mx-auto px-4">
+          <ComparisonTable />
         </div>
       </section>
 

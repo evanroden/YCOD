@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     description:
       'Our story across local, national, and international media outlets.',
   },
+  alternates: {
+    canonical: '/coverage',
+  },
 };
 
 export default function CoverageLayout({ children }: { children: React.ReactNode }) {

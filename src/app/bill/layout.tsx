@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     description:
       'Our proposed legislation changes the default at the DMV from opt-in to opt-out. Read the bill, understand the safeguards, and write your representative.',
   },
+  alternates: {
+    canonical: '/bill',
+  },
 };
 
 export default function BillLayout({ children }: { children: React.ReactNode }) {

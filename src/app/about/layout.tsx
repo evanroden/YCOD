@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     description:
       'Four high school students decided saving lives shouldn\'t be optional. Learn how YCOD grew into a national movement.',
   },
+  alternates: {
+    canonical: '/about',
+  },
 };
 
 const organizationJsonLd = {

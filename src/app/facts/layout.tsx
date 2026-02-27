@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     description:
       'The numbers that drive our mission. Share these — they save lives.',
   },
+  alternates: {
+    canonical: '/facts',
+  },
 };
 
 const faqJsonLd = {
