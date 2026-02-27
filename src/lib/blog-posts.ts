@@ -1007,7 +1007,7 @@ export const blogPosts: BlogPost[] = [
       <blockquote>"Adults created this broken system. Young people are going to fix it." — YCOD member</blockquote>
 
       <h3>Join Us</h3>
-      <p>YCOD is always growing. Whether you\'re a student who wants to start a chapter at your school, a community member who wants to volunteer, or simply someone who believes that no one should die waiting for an organ, <a href="/join" target="_blank">we want you on our team</a>. Together, we can build a future where the organ transplant waiting list is a thing of the past — starting with opt-out legislation in New York.</p>
+      <p>YCOD is always growing, and I want you to be part of it. Whether you\'re a student who wants to start a chapter at your school, a community member who wants to volunteer, or simply someone who believes that no one should die waiting for an organ — <a href="/join" target="_blank">join us</a>. I couldn\'t stay on the sidelines, and I don\'t think you should either. Together, we\'re building a future where the organ transplant waiting list is a thing of the past — starting with <a href="/bill" target="_blank">Bill A07954</a> and opt-out legislation in New York. Changing the default saves lives. Let\'s change it.</p>
     `,
     sources: [
       { label: 'YCOD — About us', url: 'https://www.ycod.org/about' },
