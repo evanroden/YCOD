@@ -3,14 +3,12 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import RetroButton from '@/components/ui/RetroButton';
-import FloatingShapes from '@/components/ui/FloatingShapes';
 import MemphisBackground from '@/components/ui/MemphisBackground';
 
 export default function HeroSection() {
   return (
     <MemphisBackground variant="blue" className="min-h-[90vh] flex items-center" overlay={false}>
-      <div className="absolute inset-0 bg-ycod-bg-blue/70" />
-      <FloatingShapes />
+      <div className="absolute inset-0 bg-ycod-bg-blue/50" />
       <div className="relative z-10 max-w-5xl mx-auto px-4 py-16 md:py-24 text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.3 }}

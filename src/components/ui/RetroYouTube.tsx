@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 
 interface RetroYouTubeProps {
   videoId: string;
@@ -10,11 +9,11 @@ interface RetroYouTubeProps {
 
 export default function RetroYouTube({ videoId, title }: RetroYouTubeProps) {
   const [playing, setPlaying] = useState(false);
-  const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+  const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
 
   if (playing) {
     return (
-      <div className="aspect-video relative rounded overflow-hidden">
+      <div className="aspect-video relative rounded-md overflow-hidden">
         <iframe
           src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`}
           title={title}
@@ -29,38 +28,36 @@ export default function RetroYouTube({ videoId, title }: RetroYouTubeProps) {
   return (
     <button
       onClick={() => setPlaying(true)}
-      className="aspect-video relative rounded overflow-hidden w-full group cursor-pointer block"
+      className="aspect-video relative rounded-md overflow-hidden w-full group cursor-pointer block bg-gradient-to-br from-ycod-black via-ycod-dark-blue to-ycod-black"
       aria-label={`Play: ${title}`}
     >
-      {/* Thumbnail */}
-      <Image
+      {/* Thumbnail via plain img to avoid Next.js external domain issues */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
         src={thumbnailUrl}
-        alt={title}
-        fill
-        className="object-cover"
-        sizes="(max-width: 768px) 100vw, 800px"
-        unoptimized
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover"
+        loading="lazy"
       />
 
-      {/* Tinted overlay in brand color */}
-      <div className="absolute inset-0 bg-ycod-black/30 group-hover:bg-ycod-black/20 transition-colors duration-200" />
+      {/* Tinted overlay */}
+      <div className="absolute inset-0 bg-ycod-black/40 group-hover:bg-ycod-black/25 transition-colors duration-200" />
 
-      {/* Decorative border overlay */}
-      <div className="absolute inset-2 md:inset-3 border-[3px] border-dashed border-white/30 rounded pointer-events-none" />
+      {/* Dashed inner frame */}
+      <div className="absolute inset-3 md:inset-4 border-[3px] border-dashed border-white/25 rounded-md pointer-events-none" />
 
       {/* Retro play button */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="relative">
-          {/* Shadow */}
-          <div className="absolute top-1 left-1 w-20 h-20 md:w-24 md:h-24 rounded-md bg-ycod-black/60" />
-          {/* Button */}
-          <div className="relative w-20 h-20 md:w-24 md:h-24 bg-ycod-coral border-[3px] border-ycod-black rounded-md flex items-center justify-center group-hover:bg-ycod-pink group-hover:-translate-y-0.5 group-hover:-translate-x-0.5 transition-all duration-150">
-            {/* Play triangle */}
+          {/* Drop shadow */}
+          <div className="absolute top-1.5 left-1.5 w-20 h-20 md:w-24 md:h-24 rounded-lg bg-ycod-black/50" />
+          {/* Button face */}
+          <div className="relative w-20 h-20 md:w-24 md:h-24 bg-ycod-coral border-[3px] border-ycod-black rounded-lg flex items-center justify-center group-hover:bg-ycod-pink group-hover:-translate-y-1 group-hover:-translate-x-1 transition-all duration-150">
             <svg
               width="36"
               height="40"
               viewBox="0 0 36 40"
-              className="ml-1 md:w-[40px] md:h-[44px]"
+              className="ml-1.5 md:w-[42px] md:h-[46px]"
             >
               <polygon
                 points="4,2 34,20 4,38"
@@ -75,11 +72,13 @@ export default function RetroYouTube({ videoId, title }: RetroYouTubeProps) {
       </div>
 
       {/* Bottom label bar */}
-      <div className="absolute bottom-0 left-0 right-0 bg-ycod-black/80 px-3 py-2 md:px-4 md:py-3">
-        <div className="flex items-center gap-2">
-          <svg width="16" height="16" viewBox="0 0 24 24" className="flex-shrink-0">
-            <polygon points="5,3 19,12 5,21" fill="#F07070" stroke="#1A1A2E" strokeWidth="1.5" />
-          </svg>
+      <div className="absolute bottom-0 left-0 right-0 bg-ycod-black/85 border-t-[3px] border-ycod-black px-3 py-2.5 md:px-5 md:py-3">
+        <div className="flex items-center gap-2.5">
+          <div className="w-5 h-5 md:w-6 md:h-6 bg-ycod-coral rounded border-2 border-ycod-black flex items-center justify-center flex-shrink-0">
+            <svg width="10" height="12" viewBox="0 0 10 12">
+              <polygon points="1,0 10,6 1,12" fill="white" />
+            </svg>
+          </div>
           <span className="font-display text-xs md:text-sm font-bold text-white truncate">
             {title}
           </span>
