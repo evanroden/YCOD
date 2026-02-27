@@ -25,7 +25,7 @@ export const TEAM = [
     name: 'Henry McLaughlin',
     role: 'Co-Founder',
     bio: '"I think New Yorkers can put their differences aside and realize saving someone\'s life is really the most important thing you can do."',
-    image: null,
+    image: '/images/henry-portrait.png',
     color: 'bg-ycod-blue',
   },
   {

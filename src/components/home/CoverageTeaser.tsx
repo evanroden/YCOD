@@ -1,16 +1,9 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import RetroButton from '@/components/ui/RetroButton';
-import { staggerContainer, fadeInUp } from '@/lib/animations';
-
-const coverage = [
-  { name: 'PR Newswire', color: 'bg-ycod-pink' },
-  { name: 'Spectrum News', color: 'bg-ycod-blue' },
-  { name: 'Local TV', color: 'bg-ycod-yellow' },
-  { name: 'TEDx', color: 'bg-ycod-coral' },
-  { name: 'Red Cross', color: 'bg-ycod-green' },
-];
+import { fadeInUp } from '@/lib/animations';
 
 export default function CoverageTeaser() {
   return (
@@ -30,23 +23,23 @@ export default function CoverageTeaser() {
           </p>
         </motion.div>
 
+        {/* Media logos */}
         <motion.div
-          className="flex flex-wrap justify-center gap-4 md:gap-6 mb-12"
-          variants={staggerContainer}
+          className="max-w-3xl mx-auto mb-14"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
+          variants={fadeInUp}
         >
-          {coverage.map((item, i) => (
-            <motion.div
-              key={item.name}
-              variants={fadeInUp}
-              className={`ninety-card ${item.color} px-6 py-3`}
-              style={{ transform: `rotate(${[1, -1.5, 2, -0.5, 1.5][i % 5]}deg)` }}
-            >
-              <span className="font-display font-bold text-ycod-black">{item.name}</span>
-            </motion.div>
-          ))}
+          <div className="ninety-card bg-white p-4 md:p-8" style={{ transform: 'rotate(-0.5deg)' }}>
+            <Image
+              src="/images/coverage-logos.png"
+              alt="Media coverage logos: Spectrum News, Radio One, MarketWatch, Yahoo, Business Insider, Yahoo Finance, Canadian Insider, MSN, Morningstar"
+              width={800}
+              height={250}
+              className="w-full h-auto"
+            />
+          </div>
         </motion.div>
 
         {/* TEDx Teaser */}

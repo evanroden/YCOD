@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import SectionDivider from '@/components/ui/SectionDivider';
 import NinetyCard from '@/components/ui/NinetyCard';
@@ -8,34 +9,49 @@ import { staggerContainer, fadeInUp } from '@/lib/animations';
 
 const coverageItems = [
   {
-    outlet: 'PR Newswire',
-    description: 'National press release coverage of YCOD\'s mission and legislative campaign.',
-    color: 'bg-ycod-pink',
-  },
-  {
     outlet: 'Spectrum News',
     description: 'Local broadcast coverage highlighting YCOD\'s advocacy for opt-out organ donation in New York.',
     color: 'bg-ycod-blue',
   },
   {
-    outlet: 'Local TV News',
-    description: 'Television coverage of YCOD\'s work with state legislators and community outreach.',
+    outlet: 'Radio One / CBC',
+    description: 'International radio coverage of YCOD\'s youth-driven movement for organ donation legislation.',
+    color: 'bg-ycod-pink',
+  },
+  {
+    outlet: 'MarketWatch',
+    description: 'Financial news coverage of YCOD\'s advocacy efforts and the economic impact of organ donation policy.',
+    color: 'bg-ycod-yellow',
+  },
+  {
+    outlet: 'Yahoo / Yahoo Finance',
+    description: 'National coverage across Yahoo\'s news platforms, reaching millions of readers with YCOD\'s mission.',
+    color: 'bg-ycod-coral',
+  },
+  {
+    outlet: 'Business Insider',
+    description: 'Feature coverage on YCOD\'s innovative approach to organ donation advocacy and youth political engagement.',
+    color: 'bg-ycod-green',
+  },
+  {
+    outlet: 'MSN',
+    description: 'Syndicated news coverage bringing YCOD\'s story to Microsoft\'s global news platform.',
+    color: 'bg-ycod-blue',
+  },
+  {
+    outlet: 'Morningstar',
+    description: 'Coverage of YCOD\'s policy-driven approach to improving organ donation outcomes in New York State.',
+    color: 'bg-ycod-pink',
+  },
+  {
+    outlet: 'Canadian Insider',
+    description: 'International media coverage extending YCOD\'s mission beyond US borders.',
     color: 'bg-ycod-yellow',
   },
   {
     outlet: 'TEDx',
     description: 'Evan Roden\'s TEDx talk on youth political engagement and organ donation reaching thousands of viewers.',
     color: 'bg-ycod-coral',
-  },
-  {
-    outlet: 'American Red Cross',
-    description: 'Nominated for the 2021 Real Heroes Education Award for outstanding contribution to organ donation awareness.',
-    color: 'bg-ycod-green',
-  },
-  {
-    outlet: 'Donate Life New York State',
-    description: 'Official public statement of support and endorsement of YCOD\'s mission.',
-    color: 'bg-ycod-pink',
   },
 ];
 
@@ -64,7 +80,30 @@ export default function CoveragePage() {
 
       <SectionDivider />
 
-      <section className="py-16 md:py-24 bg-white">
+      {/* Logos banner */}
+      <section className="py-12 bg-white">
+        <div className="max-w-4xl mx-auto px-4">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
+            <div className="ninety-card bg-white p-4 md:p-8" style={{ transform: 'rotate(-0.5deg)' }}>
+              <Image
+                src="/images/coverage-logos.png"
+                alt="Media coverage logos: Spectrum News, Radio One, MarketWatch, Yahoo, Business Insider, Yahoo Finance, Canadian Insider, MSN, Morningstar"
+                width={800}
+                height={250}
+                className="w-full h-auto"
+              />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Coverage cards */}
+      <section className="py-16 md:py-24 bg-ycod-green/5">
         <div className="max-w-6xl mx-auto px-4">
           <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"

@@ -22,11 +22,11 @@ export default function Footer() {
           {/* Logo & description */}
           <div className="md:col-span-1">
             <Image
-              src="/images/logo.png"
+              src="/images/favicon.webp"
               alt="YCOD"
-              width={100}
-              height={100}
-              className="h-16 w-auto mb-4 brightness-0 invert"
+              width={80}
+              height={80}
+              className="h-16 w-auto mb-4"
             />
             <p className="text-gray-400 font-body text-sm">
               Youth Coalition for Organ Donation. New Yorkers helping New Yorkers save lives.

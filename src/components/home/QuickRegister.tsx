@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import RetroButton from '@/components/ui/RetroButton';
 import { fadeInUp } from '@/lib/animations';
@@ -14,6 +15,13 @@ export default function QuickRegister() {
           viewport={{ once: true }}
           variants={fadeInUp}
         >
+          <Image
+            src="/images/favicon.webp"
+            alt="YCOD heart-hands icon"
+            width={80}
+            height={80}
+            className="mx-auto mb-4"
+          />
           <h2 className="font-display text-3xl md:text-5xl font-bold text-ycod-black mb-4">
             Become a Donor Today
           </h2>
