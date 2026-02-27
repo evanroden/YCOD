@@ -101,14 +101,14 @@ export default function ImpactCalculator() {
                 className="absolute top-5 text-xs font-body text-ycod-black/50"
                 style={{ left: `${((50 - 37) / 62) * 100}%`, transform: 'translateX(-50%)' }}
               >
-                Current (50%)
+                {t('calc.current_marker')}
               </div>
               {/* Marker for Spain ~90% */}
               <div
                 className="absolute top-5 text-xs font-body text-ycod-black/50"
                 style={{ left: `${((90 - 37) / 62) * 100}%`, transform: 'translateX(-50%)' }}
               >
-                Spain (90%)
+                {t('calc.spain_marker')}
               </div>
             </div>
           </div>
@@ -186,11 +186,14 @@ export default function ImpactCalculator() {
               animate={{ opacity: 1, height: 'auto' }}
               transition={{ duration: 0.3 }}
             >
-              <p className="font-body text-sm text-ycod-black/80">
-                That&apos;s <strong>{additionalRegistered.toLocaleString()}</strong> more registered donors —
-                enough to potentially save <strong>{livesSaved.toLocaleString()}</strong> lives through organ
-                transplants every year. An opt-out system could get us there.
-              </p>
+              <p className="font-body text-sm text-ycod-black/80"
+                dangerouslySetInnerHTML={{
+                  __html: t('calc.callout', {
+                    additional: `<strong>${additionalRegistered.toLocaleString()}</strong>`,
+                    lives: `<strong>${livesSaved.toLocaleString()}</strong>`,
+                  }),
+                }}
+              />
             </motion.div>
           )}
         </motion.div>

@@ -85,8 +85,7 @@ export default function BillPage() {
                 {t('bill.key_provision')}
               </h3>
               <blockquote className="font-body text-lg italic text-ycod-black/90 border-l-4 border-ycod-coral pl-4">
-                &ldquo;Unless an applicant responds that he or she wishes to skip this question,
-                the applicant will be deemed to have consented to organ and tissue donation.&rdquo;
+                &ldquo;{t('bill.key_quote')}&rdquo;
               </blockquote>
             </div>
 

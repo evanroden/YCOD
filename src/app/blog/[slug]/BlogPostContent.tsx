@@ -7,6 +7,15 @@ import { CATEGORY_LABELS, CATEGORY_COLORS } from '@/lib/blog-types';
 import SectionDivider from '@/components/ui/SectionDivider';
 import RetroButton from '@/components/ui/RetroButton';
 import { fadeInUp } from '@/lib/animations';
+import { useI18n } from '@/lib/i18n';
+import { blogTranslations } from '@/lib/blog-translations';
+
+const LOCALE_MAP: Record<string, string> = {
+  en: 'en-US',
+  zh: 'zh-CN',
+  es: 'es-ES',
+  fr: 'fr-FR',
+};
 
 interface BlogPostContentProps {
   post: BlogPost;
@@ -15,8 +24,12 @@ interface BlogPostContentProps {
 }
 
 export default function BlogPostContent({ post, prevPost, nextPost }: BlogPostContentProps) {
+  const { t, locale } = useI18n();
   const categoryColor = CATEGORY_COLORS[post.category];
-  const dateFormatted = new Date(post.date).toLocaleDateString('en-US', {
+  const translated = locale !== 'en' ? blogTranslations[locale]?.[post.slug] : null;
+  const title = translated?.title || post.title;
+  const contentNote = locale !== 'en' ? t('blog.content_note') : '';
+  const dateFormatted = new Date(post.date).toLocaleDateString(LOCALE_MAP[locale] || 'en-US', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
@@ -35,15 +48,15 @@ export default function BlogPostContent({ post, prevPost, nextPost }: BlogPostCo
             <span
               className={`inline-block ${categoryColor} text-xs font-display font-bold text-ycod-black px-4 py-1 rounded-full border-2 border-ycod-black mb-4`}
             >
-              {CATEGORY_LABELS[post.category]}
+              {t(`blog.cat.${post.category}`) || CATEGORY_LABELS[post.category]}
             </span>
 
             <h1 className="font-display text-3xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg leading-tight">
-              {post.title}
+              {title}
             </h1>
 
             <p className="font-body text-white/80 text-sm">
-              {dateFormatted} &middot; YCOD News &amp; Updates
+              {dateFormatted} &middot; {t('blog.title')}
             </p>
           </motion.div>
         </div>
@@ -71,6 +84,11 @@ export default function BlogPostContent({ post, prevPost, nextPost }: BlogPostCo
       {/* Content */}
       <section className="py-12 md:py-16 bg-white dark:bg-ycod-black transition-colors duration-300">
         <div className="max-w-3xl mx-auto px-4">
+          {contentNote && (
+            <div className="mb-6 p-3 bg-ycod-yellow/20 border-l-4 border-ycod-yellow rounded-r-md">
+              <p className="font-body text-sm text-ycod-black/70 dark:text-white/70 italic">{contentNote}</p>
+            </div>
+          )}
           <motion.div
             className="prose prose-lg dark:prose-invert max-w-none
               prose-headings:font-display prose-headings:text-ycod-black dark:prose-headings:text-white prose-headings:font-bold
@@ -95,7 +113,7 @@ export default function BlogPostContent({ post, prevPost, nextPost }: BlogPostCo
         <section className="py-8 bg-ycod-black/5 dark:bg-white/5 transition-colors duration-300">
           <div className="max-w-3xl mx-auto px-4">
             <h3 className="font-display text-lg font-bold text-ycod-black dark:text-white mb-4">
-              Sources &amp; Further Reading
+              {t('blog.sources')}
             </h3>
             <ul className="space-y-2">
               {post.sources.map((source, i) => (
@@ -127,7 +145,7 @@ export default function BlogPostContent({ post, prevPost, nextPost }: BlogPostCo
                 className="ninety-card bg-white dark:bg-ycod-black/80 flex-1 group"
                 style={{ transform: 'rotate(-0.5deg)' }}
               >
-                <p className="font-body text-xs text-ycod-black/50 dark:text-white/50 mb-1">&larr; Previous</p>
+                <p className="font-body text-xs text-ycod-black/50 dark:text-white/50 mb-1">&larr; {t('blog.previous')}</p>
                 <p className="font-display font-bold text-sm text-ycod-black dark:text-white group-hover:text-ycod-coral transition-colors">
                   {prevPost.title}
                 </p>
@@ -141,7 +159,7 @@ export default function BlogPostContent({ post, prevPost, nextPost }: BlogPostCo
                 className="ninety-card bg-white dark:bg-ycod-black/80 flex-1 text-right group"
                 style={{ transform: 'rotate(0.5deg)' }}
               >
-                <p className="font-body text-xs text-ycod-black/50 dark:text-white/50 mb-1">Next &rarr;</p>
+                <p className="font-body text-xs text-ycod-black/50 dark:text-white/50 mb-1">{t('blog.next')} &rarr;</p>
                 <p className="font-display font-bold text-sm text-ycod-black dark:text-white group-hover:text-ycod-coral transition-colors">
                   {nextPost.title}
                 </p>
@@ -156,7 +174,7 @@ export default function BlogPostContent({ post, prevPost, nextPost }: BlogPostCo
       {/* Back to blog */}
       <section className="bg-ycod-blue py-12 text-center">
         <RetroButton href="/blog" color="bg-ycod-yellow" className="text-ycod-black">
-          &larr; All Posts
+          &larr; {t('blog.all')}
         </RetroButton>
       </section>
     </>

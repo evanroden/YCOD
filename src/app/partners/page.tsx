@@ -8,6 +8,14 @@ import { PARTNERS } from '@/lib/constants';
 import { staggerContainer, fadeInUp } from '@/lib/animations';
 import { useI18n } from '@/lib/i18n';
 
+const PARTNER_I18N_KEYS: Record<string, string> = {
+  'WaitList Zero': 'partner.waitlist_zero',
+  'ONE8FIFTY': 'partner.one8fifty',
+  'Chris Klug Foundation': 'partner.chris_klug',
+  'American Red Cross, WNY Region': 'partner.red_cross',
+  'NY State Council of Churches': 'partner.council_churches',
+};
+
 export default function PartnersPage() {
   const { t } = useI18n();
 
@@ -62,7 +70,7 @@ export default function PartnersPage() {
                     {partner.name}
                   </h3>
                   <p className="font-body text-sm text-ycod-black/80 dark:text-white/80">
-                    {partner.description}
+                    {t(PARTNER_I18N_KEYS[partner.name] || partner.description)}
                   </p>
                 </NinetyCard>
               </motion.div>

@@ -33,12 +33,12 @@ export default function JoinPage() {
       });
       const result = await res.json();
       if (!res.ok) {
-        setError(result.error || 'Something went wrong.');
+        setError(result.error || t('join.error_generic'));
         return;
       }
       setSubmitted(true);
     } catch {
-      setError('Could not submit. Please try again or email us at Support@YCOD.org.');
+      setError(t('join.error_submit'));
     } finally {
       setSubmitting(false);
     }

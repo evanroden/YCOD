@@ -4,6 +4,15 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { BlogPost, CATEGORY_LABELS, CATEGORY_COLORS } from '@/lib/blog-types';
 import { fadeInUp } from '@/lib/animations';
+import { useI18n } from '@/lib/i18n';
+import { blogTranslations } from '@/lib/blog-translations';
+
+const LOCALE_MAP: Record<string, string> = {
+  en: 'en-US',
+  zh: 'zh-CN',
+  es: 'es-ES',
+  fr: 'fr-FR',
+};
 
 interface BlogCardProps {
   post: BlogPost;
@@ -11,8 +20,12 @@ interface BlogCardProps {
 }
 
 export default function BlogCard({ post, index }: BlogCardProps) {
+  const { t, locale } = useI18n();
   const rotation = index % 3 === 0 ? -1 : index % 3 === 1 ? 0.8 : -0.5;
   const categoryColor = CATEGORY_COLORS[post.category];
+  const translated = locale !== 'en' ? blogTranslations[locale]?.[post.slug] : null;
+  const title = translated?.title || post.title;
+  const excerpt = translated?.excerpt || post.excerpt;
 
   return (
     <motion.div variants={fadeInUp}>
@@ -32,17 +45,17 @@ export default function BlogCard({ post, index }: BlogCardProps) {
           <span
             className={`inline-block ${categoryColor} text-xs font-display font-bold text-ycod-black px-3 py-1 rounded-full border-2 border-ycod-black dark:border-white/30 mb-3 self-start`}
           >
-            {CATEGORY_LABELS[post.category]}
+            {t(`blog.cat.${post.category}`) || CATEGORY_LABELS[post.category]}
           </span>
 
           {/* Title */}
           <h3 className="font-display text-lg font-bold text-ycod-black dark:text-white mb-2 group-hover:text-ycod-coral transition-colors leading-tight">
-            {post.title}
+            {title}
           </h3>
 
           {/* Date */}
           <p className="font-body text-xs text-ycod-black/50 dark:text-white/50 mb-2">
-            {new Date(post.date).toLocaleDateString('en-US', {
+            {new Date(post.date).toLocaleDateString(LOCALE_MAP[locale] || 'en-US', {
               year: 'numeric',
               month: 'long',
               day: 'numeric',
@@ -51,12 +64,12 @@ export default function BlogCard({ post, index }: BlogCardProps) {
 
           {/* Excerpt */}
           <p className="font-body text-sm text-ycod-black/70 dark:text-white/70 flex-1">
-            {post.excerpt}
+            {excerpt}
           </p>
 
           {/* Read more */}
           <p className="font-display font-bold text-ycod-blue text-sm mt-4 group-hover:text-ycod-coral transition-colors">
-            Read More &rarr;
+            {t('blog.read_more')} &rarr;
           </p>
         </div>
       </Link>

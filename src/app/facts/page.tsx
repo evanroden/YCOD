@@ -78,7 +78,15 @@ export default function FactsPage() {
       <section className="py-16 md:py-24 bg-white dark:bg-ycod-black">
         <div className="max-w-3xl mx-auto px-4 space-y-8">
           {FACTS.map((fact, i) => (
-            <FactCard key={fact.title} {...fact} index={i} />
+            <FactCard
+              key={i}
+              stat={fact.stat}
+              title={t(`fact.${i}.title`)}
+              description={t(`fact.${i}.desc`)}
+              icon={fact.icon}
+              color={fact.color}
+              index={i}
+            />
           ))}
         </div>
       </section>
@@ -143,11 +151,12 @@ export default function FactsPage() {
                 </div>
 
                 <h3 className="font-display text-xl font-bold text-ycod-black dark:text-white mb-6">
-                  {currentQuestion.question}
+                  {t(`quiz.${quizState.currentQ}.q`)}
                 </h3>
 
                 <div className="space-y-3 mb-6">
-                  {currentQuestion.options.map((option, i) => {
+                  {['a', 'b', 'c', 'd'].map((letter, i) => {
+                    const option = t(`quiz.${quizState.currentQ}.${letter}`);
                     let optionClass = 'quiz-option bg-gray-50';
                     if (quizState.answered !== null) {
                       if (i === currentQuestion.correctIndex) {
@@ -179,7 +188,7 @@ export default function FactsPage() {
                     animate={{ opacity: 1, y: 0 }}
                   >
                     <p className="font-body text-sm text-ycod-black/80 mb-4 p-3 bg-ycod-green/20 rounded">
-                      {currentQuestion.explanation}
+                      {t(`quiz.${quizState.currentQ}.explain`)}
                     </p>
                     <RetroButton
                       color="bg-ycod-blue"

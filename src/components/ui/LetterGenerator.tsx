@@ -11,21 +11,11 @@ export default function LetterGenerator() {
   const [personalStory, setPersonalStory] = useState('');
   const [copied, setCopied] = useState(false);
 
-  const letterText = `Dear [Representative's Name],
-
-My name is ${name || '[Your Name]'}, and I am a constituent from ${zip || '[Your ZIP Code]'} writing to urge your support for opt-out organ donation legislation in New York State.
-
-Right now, over 8,000 New Yorkers are waiting for a life-saving organ transplant. Seventeen people die every single day in the United States waiting for an organ — that's one person every 85 minutes. Despite 90% of Americans supporting organ donation, only about 50% of New Yorkers are registered as donors.
-
-The solution is simple and proven: change the default at the DMV from opt-in to opt-out. Over 30 countries — including Spain, the UK, France, and Austria — already use this system, and they consistently achieve registration rates of 80-90%. No one is forced to donate; anyone can opt out at any time. The only thing that changes is the default.
-
-${personalStory ? personalStory + '\n\n' : ''}This is not a partisan issue. Saving lives transcends political divides. I ask you to support legislation that would implement an opt-out organ donation registration system at the DMV, similar to Bill A07954.
-
-Thank you for your time and your service to our community.
-
-Sincerely,
-${name || '[Your Name]'}
-${zip || '[Your ZIP Code]'}`;
+  const letterText = t('letter.body', {
+    name: name || '[Your Name]',
+    zip: zip || '[Your ZIP Code]',
+    story: personalStory ? personalStory + '\n\n' : '',
+  });
 
   const handleCopy = async () => {
     try {

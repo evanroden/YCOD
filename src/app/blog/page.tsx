@@ -77,7 +77,7 @@ export default function BlogPage() {
                       : 'bg-white dark:bg-ycod-black text-ycod-black dark:text-white hover:bg-gray-50 dark:hover:bg-white/5'
                   }`}
                 >
-                  {cat === 'all' ? t('blog.all') : CATEGORY_LABELS[cat as BlogCategory]}
+                  {cat === 'all' ? t('blog.all') : t(`blog.cat.${cat}`) || CATEGORY_LABELS[cat as BlogCategory]}
                 </button>
               ))}
             </div>

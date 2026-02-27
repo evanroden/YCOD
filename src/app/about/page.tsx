@@ -10,6 +10,13 @@ import { TEAM } from '@/lib/constants';
 import { fadeInUp } from '@/lib/animations';
 import { useI18n } from '@/lib/i18n';
 
+const TEAM_I18N_KEYS: Record<string, string> = {
+  'Evan Roden': 'evan',
+  'Henry McLaughlin': 'henry',
+  'Grace Tapani': 'grace',
+  'Sage Sellers': 'sage',
+};
+
 export default function AboutPage() {
   const { t } = useI18n();
 
@@ -92,9 +99,20 @@ export default function AboutPage() {
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {TEAM.map((member, i) => (
-              <TeamMember key={member.name} {...member} index={i} />
-            ))}
+            {TEAM.map((member, i) => {
+              const key = TEAM_I18N_KEYS[member.name];
+              return (
+                <TeamMember
+                  key={member.name}
+                  name={member.name}
+                  role={key ? t(`team.${key}.role`) : member.role}
+                  bio={key ? t(`team.${key}.bio`) : member.bio}
+                  image={member.image}
+                  color={member.color}
+                  index={i}
+                />
+              );
+            })}
           </div>
         </div>
       </section>

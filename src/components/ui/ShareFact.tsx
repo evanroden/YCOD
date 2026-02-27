@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useI18n } from '@/lib/i18n';
 
 interface ShareFactProps {
   text: string;
@@ -9,6 +10,7 @@ interface ShareFactProps {
 }
 
 export default function ShareFact({ text, stat }: ShareFactProps) {
+  const { t } = useI18n();
   const [copied, setCopied] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
@@ -40,12 +42,12 @@ export default function ShareFact({ text, stat }: ShareFactProps) {
       <button
         onClick={() => setShowMenu(!showMenu)}
         className="text-xs font-body text-ycod-black/40 hover:text-ycod-blue transition-colors flex items-center gap-1"
-        aria-label="Share this fact"
+        aria-label={t('share.share')}
       >
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
           <path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13" />
         </svg>
-        Share
+        {t('share.share')}
       </button>
 
       <AnimatePresence>
@@ -64,7 +66,7 @@ export default function ShareFact({ text, stat }: ShareFactProps) {
               className="flex items-center gap-2 px-3 py-2 rounded hover:bg-ycod-blue/10 text-sm font-body text-ycod-black transition-colors"
               onClick={() => setShowMenu(false)}
             >
-              𝕏 Twitter
+              𝕏 {t('share.twitter')}
             </a>
             <a
               href={facebookUrl}
@@ -73,7 +75,7 @@ export default function ShareFact({ text, stat }: ShareFactProps) {
               className="flex items-center gap-2 px-3 py-2 rounded hover:bg-ycod-blue/10 text-sm font-body text-ycod-black transition-colors"
               onClick={() => setShowMenu(false)}
             >
-              📘 Facebook
+              📘 {t('share.facebook')}
             </a>
             <button
               onClick={() => {
@@ -82,7 +84,7 @@ export default function ShareFact({ text, stat }: ShareFactProps) {
               }}
               className="flex items-center gap-2 px-3 py-2 rounded hover:bg-ycod-blue/10 text-sm font-body text-ycod-black transition-colors w-full text-left"
             >
-              {copied ? '✅ Copied!' : '📋 Copy Text'}
+              {copied ? `✅ ${t('share.copied')}` : `📋 ${t('share.copy')}`}
             </button>
           </motion.div>
         )}

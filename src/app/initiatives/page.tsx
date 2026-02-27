@@ -9,6 +9,8 @@ import { INITIATIVES } from '@/lib/constants';
 import { fadeInUp } from '@/lib/animations';
 import { useI18n } from '@/lib/i18n';
 
+const INITIATIVE_I18N_KEYS = ['optout', 'nonpartisan', 'education', 'health', 'info'];
+
 export default function InitiativesPage() {
   const { t } = useI18n();
 
@@ -41,9 +43,20 @@ export default function InitiativesPage() {
       <section className="py-16 md:py-24 bg-white dark:bg-ycod-black transition-colors duration-300">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {INITIATIVES.map((initiative, i) => (
-              <InitiativeCard key={initiative.title} {...initiative} index={i} />
-            ))}
+            {INITIATIVES.map((initiative, i) => {
+              const key = INITIATIVE_I18N_KEYS[i];
+              return (
+                <InitiativeCard
+                  key={i}
+                  title={key ? t(`initiative.${key}.title`) : initiative.title}
+                  icon={initiative.icon}
+                  color={initiative.color}
+                  summary={key ? t(`initiative.${key}.summary`) : initiative.summary}
+                  description={key ? t(`initiative.${key}.desc`) : initiative.description}
+                  index={i}
+                />
+              );
+            })}
           </div>
         </div>
       </section>
