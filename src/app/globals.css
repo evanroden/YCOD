@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ycod-pink: #F5A0B8;
+  --ycod-blue: #4A90D9;
+  --ycod-yellow: #F7DC6F;
+  --ycod-coral: #F07070;
+  --ycod-green: #00C9A7;
+  --ycod-dark-blue: #2E86AB;
+  --ycod-bg-blue: #2B7FB5;
+  --ycod-black: #1A1A2E;
+  --ycod-white: #FFFFFF;
+}
+
+/* Memphis pattern background animation */
+.memphis-bg-blue {
+  background-image: url('/images/pattern-blue.png');
+  background-repeat: repeat;
+  background-size: 400px;
+  animation: memphis-scroll 60s linear infinite;
+}
+
+.memphis-bg-green {
+  background-image: url('/images/pattern-green.png');
+  background-repeat: repeat;
+  background-size: 600px;
+  animation: memphis-scroll 80s linear infinite;
+}
+
+@keyframes memphis-scroll {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 400px 400px;
+  }
+}
+
+/* Retro button styles */
+.retro-btn {
+  @apply font-display font-bold px-6 py-3 border-[3px] border-ycod-black rounded-md
+    shadow-retro transition-all duration-150 ease-out cursor-pointer
+    text-ycod-black select-none;
+}
+
+.retro-btn:hover {
+  @apply shadow-retro-lg -translate-y-0.5 scale-[1.02];
+}
+
+.retro-btn:active {
+  @apply shadow-retro-sm translate-y-0.5 scale-[0.98];
+}
+
+/* Ninety card styles */
+.ninety-card {
+  @apply border-[3px] border-ycod-black rounded-md shadow-retro p-6
+    transition-all duration-200 ease-out;
+}
+
+.ninety-card:hover {
+  @apply shadow-retro-lg scale-[1.02];
+  transform: rotate(0deg) scale(1.02);
+}
+
+/* Squiggly underline for nav links */
+.squiggly-underline {
+  position: relative;
+  text-decoration: none;
+}
+
+.squiggly-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 4px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 8'%3E%3Cpath d='M0 4 Q 12.5 0, 25 4 T 50 4 T 75 4 T 100 4' stroke='%23F07070' fill='none' stroke-width='2'/%3E%3C/svg%3E") repeat-x;
+  background-size: 40px 4px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+
+.squiggly-underline:hover::after {
+  transform: scaleX(1);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ycod-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ycod-pink);
+  border: 2px solid var(--ycod-black);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ycod-coral);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .memphis-bg-blue,
+  .memphis-bg-green {
+    animation: none;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Quiz styles */
+.quiz-option {
+  @apply border-[3px] border-ycod-black rounded-md p-4 cursor-pointer
+    transition-all duration-150 font-body;
+}
+
+.quiz-option:hover {
+  @apply shadow-retro -translate-y-0.5;
+}
+
+.quiz-option.correct {
+  @apply bg-ycod-green text-ycod-black;
+}
+
+.quiz-option.incorrect {
+  @apply bg-ycod-coral text-white;
+}
+
+/* Visitor counter retro style */
+.visitor-counter {
+  font-family: 'Courier New', monospace;
+  background: #000;
+  color: #0f0;
+  padding: 2px 8px;
+  border: 2px inset #666;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+}
+
+/* Timeline */
+.timeline-line {
+  @apply absolute left-1/2 top-0 bottom-0 w-1 -translate-x-1/2;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--ycod-pink) 0px,
+    var(--ycod-pink) 8px,
+    var(--ycod-blue) 8px,
+    var(--ycod-blue) 16px,
+    var(--ycod-yellow) 16px,
+    var(--ycod-yellow) 24px,
+    var(--ycod-coral) 24px,
+    var(--ycod-coral) 32px
+  );
+}
+
+@media (max-width: 768px) {
+  .timeline-line {
+    @apply left-4;
+  }
+}
+
+/* Form focus styles */
+input:focus, textarea:focus, select:focus {
+  outline: 3px solid var(--ycod-blue);
+  outline-offset: 2px;
+}
+
+/* Heart cursor near register CTAs */
+.heart-cursor {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23F07070' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E") 12 12, pointer;
+}

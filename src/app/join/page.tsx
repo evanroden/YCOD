@@ -1,0 +1,255 @@
+'use client';
+
+import { useState } from 'react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import SectionDivider from '@/components/ui/SectionDivider';
+import RetroButton from '@/components/ui/RetroButton';
+import { fadeInUp } from '@/lib/animations';
+
+export default function JoinPage() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    zip: '',
+    address: '',
+  });
+  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitting(true);
+    try {
+      await fetch('/api/join', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      setSubmitted(true);
+    } catch {
+      alert('Something went wrong. Please try again.');
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  return (
+    <>
+      {/* Hero */}
+      <section className="bg-ycod-coral py-16 md:py-24">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <motion.h1
+            className="font-display text-4xl md:text-6xl font-bold text-white mb-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            Be Part of the Movement
+          </motion.h1>
+          <motion.p
+            className="font-body text-xl text-white/90 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            If you&apos;re a young person (or young at heart), you can join us in working
+            towards organ donation policy awareness.
+          </motion.p>
+        </div>
+      </section>
+
+      <SectionDivider />
+
+      {/* Group image + form */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4">
+          {/* Group portrait */}
+          <motion.div
+            className="max-w-2xl mx-auto mb-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
+            <div className="ninety-card bg-ycod-pink p-3" style={{ transform: 'rotate(-1deg)' }}>
+              <Image
+                src="/images/team-group.webp"
+                alt="The YCOD team - illustrated portrait"
+                width={800}
+                height={500}
+                className="w-full rounded"
+              />
+            </div>
+          </motion.div>
+
+          {/* Notice */}
+          <motion.div
+            className="ninety-card bg-ycod-yellow/30 max-w-2xl mx-auto mb-10"
+            style={{ transform: 'rotate(0.5deg)' }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
+            <p className="font-body text-ycod-black/80">
+              <strong>Note:</strong> We won&apos;t ever ask for donations, nor do we accept
+              individual donors at this time, instead relying on volunteer work from our team
+              and the generosity of academic institutions and foundations.
+            </p>
+          </motion.div>
+
+          {/* Form */}
+          {!submitted ? (
+            <motion.form
+              onSubmit={handleSubmit}
+              className="ninety-card bg-ycod-green/10 max-w-xl mx-auto"
+              style={{ transform: 'rotate(-0.5deg)' }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+            >
+              <h2 className="font-display text-2xl font-bold text-ycod-black mb-6">
+                Join YCOD
+              </h2>
+              <div className="space-y-4">
+                <div>
+                  <label htmlFor="name" className="block font-body font-semibold text-ycod-black mb-1">
+                    Name *
+                  </label>
+                  <input
+                    id="name"
+                    type="text"
+                    required
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="w-full px-4 py-3 border-3 border-ycod-black rounded-md font-body bg-white"
+                    style={{ borderWidth: '3px' }}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block font-body font-semibold text-ycod-black mb-1">
+                    Email *
+                  </label>
+                  <input
+                    id="email"
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full px-4 py-3 border-3 border-ycod-black rounded-md font-body bg-white"
+                    style={{ borderWidth: '3px' }}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="zip" className="block font-body font-semibold text-ycod-black mb-1">
+                    Zip Code *
+                  </label>
+                  <input
+                    id="zip"
+                    type="text"
+                    required
+                    pattern="[0-9]{5}"
+                    value={formData.zip}
+                    onChange={(e) => setFormData({ ...formData, zip: e.target.value })}
+                    className="w-full px-4 py-3 border-3 border-ycod-black rounded-md font-body bg-white"
+                    style={{ borderWidth: '3px' }}
+                    maxLength={5}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="address" className="block font-body font-semibold text-ycod-black mb-1">
+                    Mailing Address <span className="text-ycod-black/50">(optional — for a small thank-you gift)</span>
+                  </label>
+                  <input
+                    id="address"
+                    type="text"
+                    value={formData.address}
+                    onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+                    className="w-full px-4 py-3 border-3 border-ycod-black rounded-md font-body bg-white"
+                    style={{ borderWidth: '3px' }}
+                  />
+                </div>
+              </div>
+              <div className="mt-6">
+                <RetroButton
+                  type="submit"
+                  color="bg-ycod-coral"
+                  className="text-white w-full text-center"
+                >
+                  {submitting ? 'Joining...' : 'Join the Movement'}
+                </RetroButton>
+              </div>
+            </motion.form>
+          ) : (
+            <motion.div
+              className="ninety-card bg-ycod-green/20 max-w-xl mx-auto text-center"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+            >
+              <div className="text-6xl mb-4">🎉</div>
+              <h2 className="font-display text-2xl font-bold text-ycod-black mb-2">
+                Welcome to the Movement!
+              </h2>
+              <p className="font-body text-ycod-black/80">
+                Thank you for joining YCOD. Together, we&apos;re saving lives.
+              </p>
+            </motion.div>
+          )}
+        </div>
+      </section>
+
+      <SectionDivider color="#4A90D9" />
+
+      {/* Quick register + political action */}
+      <section className="py-16 md:py-20 bg-ycod-yellow border-y-4 border-ycod-black">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="font-display text-3xl font-bold text-ycod-black mb-4">
+            Register as a Donor
+          </h2>
+          <p className="font-body text-lg text-ycod-black/80 mb-6">
+            Text <strong>REGISTER</strong> to <strong>57838</strong> to join the organ donor
+            registry instantly.
+          </p>
+          <RetroButton
+            href="sms:57838?body=register"
+            color="bg-ycod-coral"
+            className="text-white text-lg heart-cursor"
+            external
+          >
+            Send Text Now
+          </RetroButton>
+        </div>
+      </section>
+
+      <section className="py-12 bg-white">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h3 className="font-display text-2xl font-bold text-ycod-black mb-4">
+            Contact Your Representatives
+          </h3>
+          <p className="font-body text-ycod-black/70 mb-6">
+            Let your elected officials know you support opt-out organ donation legislation.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <RetroButton
+              href="https://nyassembly.gov/mem/search/"
+              color="bg-ycod-blue"
+              className="text-white"
+              external
+            >
+              Find Your Assembly Member
+            </RetroButton>
+            <RetroButton
+              href="https://www.nysenate.gov/find-my-senator"
+              color="bg-ycod-green"
+              className="text-ycod-black"
+              external
+            >
+              Find Your Senator
+            </RetroButton>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
