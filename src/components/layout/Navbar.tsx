@@ -20,7 +20,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`sticky top-[4px] z-50 backdrop-blur-md border-b-4 border-ycod-coral transition-all duration-300 ${
+      <nav className={`sticky top-[4px] z-50 w-full backdrop-blur-md border-b-4 border-ycod-coral transition-all duration-300 ${
         scrolled ? 'bg-white/95 dark:bg-ycod-black/95 shadow-lg' : 'bg-white/90 dark:bg-ycod-black/90'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

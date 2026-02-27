@@ -48,6 +48,7 @@ export default function Footer() {
               <li><Link href="/tedx" className="text-gray-300 hover:text-ycod-pink transition-colors">{t('nav.tedx')}</Link></li>
               <li><Link href="/bill" className="text-gray-300 hover:text-ycod-pink transition-colors">The Bill</Link></li>
               <li><Link href="/blog" className="text-gray-300 hover:text-ycod-pink transition-colors">{t('nav.news')}</Link></li>
+              <li><Link href="/coverage" className="text-gray-300 hover:text-ycod-pink transition-colors">Press Coverage</Link></li>
             </ul>
           </div>
 

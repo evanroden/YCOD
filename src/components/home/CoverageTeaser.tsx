@@ -32,7 +32,7 @@ export default function CoverageTeaser() {
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          <div className="ninety-card bg-white dark:bg-ycod-black p-4 md:p-8" style={{ transform: 'rotate(-0.5deg)' }}>
+          <a href="/coverage" className="block ninety-card bg-white dark:bg-ycod-black p-4 md:p-8 group" style={{ transform: 'rotate(-0.5deg)' }}>
             <Image
               src="/images/coverage-logos.png"
               alt="Media coverage logos: Spectrum News, Radio One, MarketWatch, Yahoo, Business Insider, Yahoo Finance, Canadian Insider, MSN, Morningstar"
@@ -40,7 +40,10 @@ export default function CoverageTeaser() {
               height={250}
               className="w-full h-auto dark:brightness-90 dark:invert dark:hue-rotate-180"
             />
-          </div>
+            <p className="font-display text-sm font-bold text-ycod-blue dark:text-ycod-yellow mt-3 text-center group-hover:text-ycod-coral transition-colors">
+              View All Press Coverage &rarr;
+            </p>
+          </a>
         </motion.div>
 
         {/* TEDx Teaser */}

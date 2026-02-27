@@ -19,7 +19,7 @@ export default function MemphisBackground({
     : 'bg-sky-900/30';
 
   return (
-    <div className={`relative ${bgClass} ${className}`}>
+    <div className={`relative w-full ${bgClass} ${className}`}>
       {overlay && (
         <div className={`absolute inset-0 ${overlayColor}`} />
       )}
