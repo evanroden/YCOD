@@ -70,11 +70,6 @@ export const PARTNERS = [
     description: 'Comprised of 8 partner denominations, supporting organ donation advocacy through faith-based communities across New York State.',
     color: 'bg-ycod-green',
   },
-  {
-    name: 'Donate Life New York State',
-    description: 'The official state organization promoting organ and tissue donation. YCOD received their public statement of support and endorsement.',
-    color: 'bg-ycod-pink',
-  },
 ] as const;
 
 export const INITIATIVES = [

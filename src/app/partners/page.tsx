@@ -69,33 +69,6 @@ export default function PartnersPage() {
         </div>
       </section>
 
-      <SectionDivider color="#F07070" />
-
-      {/* Endorsement */}
-      <section className="py-16 md:py-24 bg-ycod-green/10">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-          >
-            <h2 className="font-display text-3xl font-bold text-ycod-black mb-6">
-              Official Endorsement
-            </h2>
-            <div className="ninety-card bg-white" style={{ transform: 'rotate(-0.5deg)' }}>
-              <p className="font-body text-lg text-ycod-black/80 mb-4">
-                Donate Life New York State has issued an official public statement of support
-                for YCOD&apos;s mission to increase organ donor registration rates in New York.
-              </p>
-              <p className="font-display font-bold text-ycod-blue">
-                — Donate Life New York State
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       <SectionDivider color="#F7DC6F" />
 
       {/* CTA */}

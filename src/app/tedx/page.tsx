@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import SectionDivider from '@/components/ui/SectionDivider';
 import RetroButton from '@/components/ui/RetroButton';
+import RetroYouTube from '@/components/ui/RetroYouTube';
 import { fadeInUp } from '@/lib/animations';
 
 export default function TEDxPage() {
@@ -40,15 +41,10 @@ export default function TEDxPage() {
             variants={fadeInUp}
           >
             <div className="ninety-card bg-ycod-black p-3 md:p-4 mb-12" style={{ transform: 'rotate(0.5deg)' }}>
-              <div className="aspect-video relative rounded overflow-hidden">
-                <iframe
-                  src="https://www.youtube-nocookie.com/embed/Bq3Swc8q0CY"
-                  title="TEDx Talk by Evan Roden - Youth Political Engagement and Organ Donation"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="absolute inset-0 w-full h-full"
-                />
-              </div>
+              <RetroYouTube
+                videoId="Bq3Swc8q0CY"
+                title="TEDx Talk — Evan Roden on Youth Activism & Organ Donation"
+              />
             </div>
           </motion.div>
 
