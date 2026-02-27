@@ -14,11 +14,14 @@ export default function MemphisBackground({
   overlay = true,
 }: MemphisBackgroundProps) {
   const bgClass = variant === 'green' ? 'memphis-bg-green' : 'memphis-bg-blue';
+  const overlayColor = variant === 'green'
+    ? 'bg-emerald-800/60'
+    : 'bg-sky-900/30';
 
   return (
     <div className={`relative ${bgClass} ${className}`}>
       {overlay && (
-        <div className="absolute inset-0 bg-black/10" />
+        <div className={`absolute inset-0 ${overlayColor}`} />
       )}
       <div className="relative z-10">
         {children}

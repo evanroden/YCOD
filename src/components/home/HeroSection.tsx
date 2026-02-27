@@ -8,7 +8,7 @@ import MemphisBackground from '@/components/ui/MemphisBackground';
 export default function HeroSection() {
   return (
     <MemphisBackground variant="blue" className="min-h-[90vh] flex items-center" overlay={false}>
-      <div className="absolute inset-0 bg-ycod-bg-blue/50" />
+      <div className="absolute inset-0 bg-gradient-to-b from-sky-900/40 via-sky-900/25 to-sky-900/45" />
       <div className="relative z-10 max-w-5xl mx-auto px-4 py-16 md:py-24 text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.3 }}

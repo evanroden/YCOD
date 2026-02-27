@@ -18,23 +18,32 @@
 .memphis-bg-blue {
   background-image: url('/images/pattern-blue.png');
   background-repeat: repeat;
-  background-size: 400px;
-  animation: memphis-scroll 60s linear infinite;
+  background-size: 540px 540px;
+  animation: memphis-scroll-blue 60s linear infinite;
 }
 
 .memphis-bg-green {
   background-image: url('/images/pattern-green.png');
   background-repeat: repeat;
-  background-size: 600px;
-  animation: memphis-scroll 80s linear infinite;
+  background-size: 810px 810px;
+  animation: memphis-scroll-green 80s linear infinite;
 }
 
-@keyframes memphis-scroll {
+@keyframes memphis-scroll-blue {
   0% {
     background-position: 0 0;
   }
   100% {
-    background-position: 400px 400px;
+    background-position: 540px 540px;
+  }
+}
+
+@keyframes memphis-scroll-green {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 810px 810px;
   }
 }
 
