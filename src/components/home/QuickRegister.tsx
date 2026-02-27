@@ -1,11 +1,29 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import RetroButton from '@/components/ui/RetroButton';
 import { fadeInUp } from '@/lib/animations';
 
 export default function QuickRegister() {
+  const [isMobile, setIsMobile] = useState(false);
+  const [showCopied, setShowCopied] = useState(false);
+
+  useEffect(() => {
+    const check = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(
+      navigator.userAgent
+    );
+    setIsMobile(check);
+  }, []);
+
+  const handleDesktopClick = () => {
+    navigator.clipboard.writeText('Send "REGISTER" to 57838').then(() => {
+      setShowCopied(true);
+      setTimeout(() => setShowCopied(false), 3000);
+    });
+  };
+
   return (
     <section className="bg-ycod-yellow py-16 md:py-20 border-y-4 border-ycod-black">
       <div className="max-w-4xl mx-auto px-4 text-center">
@@ -44,13 +62,41 @@ export default function QuickRegister() {
             </p>
           </div>
 
-          <RetroButton
-            href="sms:57838?body=register"
-            color="bg-ycod-coral"
-            className="text-white text-lg px-10 py-4"
-          >
-            Send Text Now
-          </RetroButton>
+          {isMobile ? (
+            <RetroButton
+              href="sms:57838?body=register"
+              color="bg-ycod-coral"
+              className="text-white text-lg px-10 py-4"
+            >
+              Send Text Now
+            </RetroButton>
+          ) : (
+            <div className="relative inline-block">
+              <RetroButton
+                onClick={handleDesktopClick}
+                color="bg-ycod-coral"
+                className="text-white text-lg px-10 py-4"
+              >
+                Copy Text Instructions
+              </RetroButton>
+              <AnimatePresence>
+                {showCopied && (
+                  <motion.p
+                    className="absolute -bottom-8 left-1/2 -translate-x-1/2 font-body text-sm font-bold text-ycod-black whitespace-nowrap"
+                    initial={{ opacity: 0, y: -5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0 }}
+                  >
+                    Copied! Send from your phone.
+                  </motion.p>
+                )}
+              </AnimatePresence>
+            </div>
+          )}
+
+          <p className="font-body text-xs text-ycod-black/50 mt-6">
+            Open your phone&apos;s messaging app and text &quot;REGISTER&quot; to 57838
+          </p>
         </motion.div>
       </div>
     </section>

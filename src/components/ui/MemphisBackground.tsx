@@ -23,7 +23,7 @@ export default function MemphisBackground({
       {overlay && (
         <div className={`absolute inset-0 ${overlayColor}`} />
       )}
-      <div className="relative z-10">
+      <div className="relative z-10 w-full">
         {children}
       </div>
     </div>
