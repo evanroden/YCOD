@@ -23,6 +23,17 @@ export default function RetroButton({
 }: RetroButtonProps) {
   const classes = `retro-btn ${color} ${className}`;
 
+  // Protocol links (sms:, tel:, mailto:) should open in same context, not a new tab
+  const isProtocolLink = href && /^(sms|tel|mailto):/.test(href);
+
+  if (href && isProtocolLink) {
+    return (
+      <a href={href} className={classes}>
+        {children}
+      </a>
+    );
+  }
+
   if (href && external) {
     return (
       <a href={href} target="_blank" rel="noopener noreferrer" className={classes}>

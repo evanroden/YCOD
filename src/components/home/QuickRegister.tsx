@@ -48,7 +48,6 @@ export default function QuickRegister() {
             href="sms:57838?body=register"
             color="bg-ycod-coral"
             className="text-white text-lg px-10 py-4"
-            external
           >
             Send Text Now
           </RetroButton>
