@@ -99,10 +99,10 @@ export default function ActionChecklist() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-ycod-black mb-3">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-ycod-black dark:text-white mb-3">
             How You Can Help
           </h2>
-          <p className="font-body text-lg text-ycod-black/70">
+          <p className="font-body text-lg text-ycod-black/70 dark:text-white/70">
             Every action makes a difference. Track your impact below.
           </p>
         </motion.div>
@@ -143,7 +143,7 @@ export default function ActionChecklist() {
               <p className="font-display font-bold text-ycod-black">
                 You&apos;re an organ donation champion!
               </p>
-              <p className="font-body text-sm text-ycod-black/70">
+              <p className="font-body text-sm text-ycod-black/70 dark:text-white/70">
                 Thank you for taking every step. You&apos;re helping save lives.
               </p>
             </motion.div>
@@ -205,7 +205,7 @@ export default function ActionChecklist() {
                       {action.label}
                     </span>
                   </div>
-                  <p className="font-body text-xs text-ycod-black/60 mt-1">{action.description}</p>
+                  <p className="font-body text-xs text-ycod-black/60 dark:text-white/60 mt-1">{action.description}</p>
                   {action.link && !isChecked && (
                     <a
                       href={action.link}

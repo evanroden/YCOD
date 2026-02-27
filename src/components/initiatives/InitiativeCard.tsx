@@ -31,9 +31,9 @@ export default function InitiativeCard({
     >
       <NinetyCard color={color} rotation={rotation} className="h-full">
         <div className="text-5xl mb-4" aria-hidden="true">{icon}</div>
-        <h3 className="font-display text-xl font-bold text-ycod-black mb-2">{title}</h3>
-        <p className="font-body font-semibold text-ycod-black/80 mb-4">{summary}</p>
-        <p className="font-body text-sm text-ycod-black/70">{description}</p>
+        <h3 className="font-display text-xl font-bold text-ycod-black dark:text-white mb-2">{title}</h3>
+        <p className="font-body font-semibold text-ycod-black/80 dark:text-white/80 mb-4">{summary}</p>
+        <p className="font-body text-sm text-ycod-black/70 dark:text-white/70">{description}</p>
       </NinetyCard>
     </motion.div>
   );

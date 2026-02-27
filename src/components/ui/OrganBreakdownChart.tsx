@@ -67,15 +67,15 @@ export default function OrganBreakdownChart() {
   return (
     <motion.div
       ref={ref}
-      className="ninety-card bg-white"
+      className="ninety-card bg-white dark:bg-ycod-black/80"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
     >
-      <h3 className="font-display text-xl md:text-2xl font-bold text-ycod-black mb-2 text-center">
+      <h3 className="font-display text-xl md:text-2xl font-bold text-ycod-black dark:text-white mb-2 text-center">
         What Organs Are People Waiting For?
       </h3>
-      <p className="font-body text-sm text-ycod-black/60 text-center mb-8">
+      <p className="font-body text-sm text-ycod-black/60 dark:text-white/60 text-center mb-8">
         Out of 103,000+ people on the national transplant waitlist
       </p>
 
@@ -104,7 +104,7 @@ export default function OrganBreakdownChart() {
             <span className="font-display text-2xl font-bold text-ycod-black">
               {hoveredIndex !== null ? ORGAN_DATA[hoveredIndex].percentage + '%' : '103K+'}
             </span>
-            <span className="font-body text-xs text-ycod-black/60">
+            <span className="font-body text-xs text-ycod-black/60 dark:text-white/60">
               {hoveredIndex !== null ? ORGAN_DATA[hoveredIndex].organ : 'waiting'}
             </span>
           </div>
@@ -143,7 +143,7 @@ export default function OrganBreakdownChart() {
 
       {/* Kidney callout */}
       <div className="mt-6 p-3 bg-ycod-coral/10 border-l-4 border-ycod-coral rounded-r-md">
-        <p className="font-body text-sm text-ycod-black/80">
+        <p className="font-body text-sm text-ycod-black/80 dark:text-white/80">
           <strong>The kidney crisis dominates the waitlist.</strong> 85% of people waiting need a kidney,
           and the average wait is 3–5 years. Living donation can help — you only need one kidney to live
           a full, healthy life.

@@ -26,10 +26,10 @@ export default function DMVSimulator() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-ycod-black mb-3">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-ycod-black dark:text-white mb-3">
             Experience the Difference
           </h2>
-          <p className="font-body text-lg text-ycod-black/70">
+          <p className="font-body text-lg text-ycod-black/70 dark:text-white/70">
             Walk through both systems yourself. See why defaults matter.
           </p>
         </motion.div>
@@ -51,10 +51,10 @@ export default function DMVSimulator() {
                 className="text-center py-6"
               >
                 <div className="text-5xl mb-4">🚗</div>
-                <h3 className="font-display text-xl font-bold text-ycod-black mb-3">
+                <h3 className="font-display text-xl font-bold text-ycod-black dark:text-white mb-3">
                   You&apos;re at the DMV, renewing your license.
                 </h3>
-                <p className="font-body text-ycod-black/70 mb-8 max-w-md mx-auto">
+                <p className="font-body text-ycod-black/70 dark:text-white/70 mb-8 max-w-md mx-auto">
                   You&apos;ll go through the organ donation question two ways: the current opt-in system
                   and the proposed opt-out system. Watch how the default changes your experience.
                 </p>
@@ -80,17 +80,17 @@ export default function DMVSimulator() {
                   <span className="inline-block px-3 py-1 bg-ycod-coral text-white font-display font-bold text-xs rounded-full border-2 border-ycod-black">
                     CURRENT SYSTEM
                   </span>
-                  <span className="font-body text-sm text-ycod-black/60">Opt-In</span>
+                  <span className="font-body text-sm text-ycod-black/60 dark:text-white/60">Opt-In</span>
                 </div>
 
                 <div className="p-5 bg-gray-50 rounded-md border-2 border-dashed border-gray-300 mb-6">
                   <div className="flex items-start gap-3 mb-4">
                     <span className="text-2xl">📋</span>
                     <div>
-                      <p className="font-display font-bold text-ycod-black mb-1">
+                      <p className="font-display font-bold text-ycod-black dark:text-white mb-1">
                         DMV License Application — Section 7
                       </p>
-                      <p className="font-body text-sm text-ycod-black/60 italic">
+                      <p className="font-body text-sm text-ycod-black/60 dark:text-white/60 italic">
                         (After 45 minutes of paperwork, eye tests, and photos...)
                       </p>
                     </div>
@@ -153,13 +153,13 @@ export default function DMVSimulator() {
                 <div className="text-4xl mb-3">
                   {optInChoice === 'yes' ? '✅' : '😐'}
                 </div>
-                <h3 className="font-display text-xl font-bold text-ycod-black mb-3">
+                <h3 className="font-display text-xl font-bold text-ycod-black dark:text-white mb-3">
                   {optInChoice === 'yes'
                     ? 'You registered! You\'re in the minority.'
                     : 'You skipped. So do most people.'}
                 </h3>
                 <div className="ninety-card bg-gray-50 mb-6 inline-block text-left" style={{ transform: 'rotate(-0.5deg)' }}>
-                  <p className="font-body text-sm text-ycod-black/70">
+                  <p className="font-body text-sm text-ycod-black/70 dark:text-white/70">
                     {optInChoice === 'yes' ? (
                       <>
                         Only about <strong>50% of New Yorkers</strong> check &quot;yes.&quot; The rest skip
@@ -199,17 +199,17 @@ export default function DMVSimulator() {
                   <span className="inline-block px-3 py-1 bg-ycod-green text-white font-display font-bold text-xs rounded-full border-2 border-ycod-black">
                     PROPOSED SYSTEM
                   </span>
-                  <span className="font-body text-sm text-ycod-black/60">Opt-Out</span>
+                  <span className="font-body text-sm text-ycod-black/60 dark:text-white/60">Opt-Out</span>
                 </div>
 
                 <div className="p-5 bg-gray-50 rounded-md border-2 border-dashed border-gray-300 mb-6">
                   <div className="flex items-start gap-3 mb-4">
                     <span className="text-2xl">📋</span>
                     <div>
-                      <p className="font-display font-bold text-ycod-black mb-1">
+                      <p className="font-display font-bold text-ycod-black dark:text-white mb-1">
                         DMV License Application — Section 7
                       </p>
-                      <p className="font-body text-sm text-ycod-black/60 italic">
+                      <p className="font-body text-sm text-ycod-black/60 dark:text-white/60 italic">
                         (Same DMV, same paperwork, same tired applicant...)
                       </p>
                     </div>
@@ -219,7 +219,7 @@ export default function DMVSimulator() {
                       <p className="font-body text-sm text-ycod-black">
                         ✅ <strong>You are registered as an organ and tissue donor.</strong>
                       </p>
-                      <p className="font-body text-xs text-ycod-black/60 mt-1">
+                      <p className="font-body text-xs text-ycod-black/60 dark:text-white/60 mt-1">
                         You will receive confirmation by mail. You may opt out at any time.
                       </p>
                     </div>
@@ -280,13 +280,13 @@ export default function DMVSimulator() {
                 <div className="text-4xl mb-3">
                   {optOutChoice === 'keep' ? '🎉' : '👍'}
                 </div>
-                <h3 className="font-display text-xl font-bold text-ycod-black mb-3">
+                <h3 className="font-display text-xl font-bold text-ycod-black dark:text-white mb-3">
                   {optOutChoice === 'keep'
                     ? 'You stayed registered. No extra effort required.'
                     : 'Your choice is respected. You opted out.'}
                 </h3>
                 <div className="ninety-card bg-gray-50 mb-6 inline-block text-left" style={{ transform: 'rotate(0.5deg)' }}>
-                  <p className="font-body text-sm text-ycod-black/70">
+                  <p className="font-body text-sm text-ycod-black/70 dark:text-white/70">
                     {optOutChoice === 'keep' ? (
                       <>
                         In opt-out countries, <strong>80–90% of people stay registered</strong> simply because
@@ -321,7 +321,7 @@ export default function DMVSimulator() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0 }}
               >
-                <h3 className="font-display text-xl font-bold text-ycod-black mb-6 text-center">
+                <h3 className="font-display text-xl font-bold text-ycod-black dark:text-white mb-6 text-center">
                   Same Person. Same DMV. Different Default.
                 </h3>
 
@@ -330,13 +330,13 @@ export default function DMVSimulator() {
                     <div className="text-3xl mb-2">😐</div>
                     <p className="font-display font-bold text-ycod-black text-sm mb-1">Current: Opt-In</p>
                     <div className="font-display text-4xl font-bold text-ycod-coral mb-1">~50%</div>
-                    <p className="font-body text-xs text-ycod-black/60">register in NY</p>
+                    <p className="font-body text-xs text-ycod-black/60 dark:text-white/60">register in NY</p>
                   </div>
                   <div className="ninety-card bg-ycod-green/10 text-center" style={{ transform: 'rotate(1deg)' }}>
                     <div className="text-3xl mb-2">🎉</div>
                     <p className="font-display font-bold text-ycod-black text-sm mb-1">Proposed: Opt-Out</p>
                     <div className="font-display text-4xl font-bold text-ycod-green mb-1">~85%+</div>
-                    <p className="font-body text-xs text-ycod-black/60">register in opt-out countries</p>
+                    <p className="font-body text-xs text-ycod-black/60 dark:text-white/60">register in opt-out countries</p>
                   </div>
                 </div>
 
@@ -344,7 +344,7 @@ export default function DMVSimulator() {
                   <p className="font-display font-bold text-ycod-black">
                     That&apos;s millions more potential donors — with zero extra effort from anyone.
                   </p>
-                  <p className="font-body text-sm text-ycod-black/60 mt-1">
+                  <p className="font-body text-sm text-ycod-black/60 dark:text-white/60 mt-1">
                     This is what YCOD&apos;s Bill A07954 would do for New York.
                   </p>
                 </div>

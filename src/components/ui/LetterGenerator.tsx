@@ -51,10 +51,10 @@ ${zip || '[Your ZIP Code]'}`;
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-ycod-black mb-3">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-ycod-black dark:text-white mb-3">
             Write Your Representative
           </h2>
-          <p className="font-body text-lg text-ycod-black/70">
+          <p className="font-body text-lg text-ycod-black/70 dark:text-white/70">
             We&apos;ll generate a letter for you. Just fill in your details, copy it, and send.
           </p>
         </motion.div>
@@ -62,13 +62,13 @@ ${zip || '[Your ZIP Code]'}`;
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Input side */}
           <motion.div
-            className="ninety-card bg-white"
+            className="ninety-card bg-white dark:bg-ycod-black/80"
             style={{ transform: 'rotate(-0.5deg)' }}
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="font-display text-lg font-bold text-ycod-black mb-4">
+            <h3 className="font-display text-lg font-bold text-ycod-black dark:text-white mb-4">
               Your Details
             </h3>
             <div className="space-y-4">
@@ -137,7 +137,7 @@ ${zip || '[Your ZIP Code]'}`;
                 {copied ? '✅ Copied!' : '📋 Copy Letter'}
               </button>
             </div>
-            <pre className="font-body text-xs text-ycod-black/80 whitespace-pre-wrap leading-relaxed max-h-[400px] overflow-y-auto bg-white/50 p-3 rounded border border-ycod-black/20">
+            <pre className="font-body text-xs text-ycod-black/80 dark:text-white/80 whitespace-pre-wrap leading-relaxed max-h-[400px] overflow-y-auto bg-white/50 p-3 rounded border border-ycod-black/20">
               {letterText}
             </pre>
           </motion.div>
@@ -150,7 +150,7 @@ ${zip || '[Your ZIP Code]'}`;
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <p className="font-body text-sm text-ycod-black/60 mb-4">
+          <p className="font-body text-sm text-ycod-black/60 dark:text-white/60 mb-4">
             After copying your letter, find your representative and send it:
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">

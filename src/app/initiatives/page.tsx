@@ -36,7 +36,7 @@ export default function InitiativesPage() {
       <SectionDivider />
 
       {/* Initiatives Grid */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-white dark:bg-ycod-black transition-colors duration-300">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {INITIATIVES.map((initiative, i) => (
@@ -63,7 +63,7 @@ export default function InitiativesPage() {
             Read the proposed legislation and join our movement.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <RetroButton href="/bill" color="bg-white" className="text-ycod-black">
+            <RetroButton href="/bill" color="bg-white dark:bg-ycod-black transition-colors duration-300" className="text-ycod-black">
               Read the Bill
             </RetroButton>
             <RetroButton href="/join" color="bg-ycod-yellow" className="text-ycod-black">

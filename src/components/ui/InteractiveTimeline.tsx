@@ -59,7 +59,7 @@ export default function InteractiveTimeline() {
             <div className={`ml-12 md:ml-0 md:w-[calc(50%-2rem)] ${isLeft ? 'md:pr-4' : 'md:pl-4'} ${!isLeft ? 'md:ml-auto' : ''}`}>
               <motion.div
                 className={`ninety-card cursor-pointer transition-colors ${
-                  isExpanded ? 'bg-ycod-coral/10' : 'bg-white hover:bg-gray-50'
+                  isExpanded ? 'bg-ycod-coral/10' : 'bg-white dark:bg-ycod-black/80 hover:bg-gray-50 dark:hover:bg-white/5'
                 }`}
                 style={{ transform: `rotate(${isLeft ? -0.5 : 0.5}deg)` }}
                 onClick={() => setExpandedIndex(isExpanded ? null : index)}
@@ -68,10 +68,10 @@ export default function InteractiveTimeline() {
                 <span className="inline-block px-2 py-0.5 bg-ycod-blue text-white font-display font-bold text-xs rounded border-2 border-ycod-black mb-2">
                   {event.year}
                 </span>
-                <h3 className="font-display text-lg font-bold text-ycod-black mb-1">
+                <h3 className="font-display text-lg font-bold text-ycod-black dark:text-white mb-1">
                   {event.title}
                 </h3>
-                <p className="font-body text-sm text-ycod-black/70">{event.description}</p>
+                <p className="font-body text-sm text-ycod-black/70 dark:text-white/70">{event.description}</p>
 
                 <AnimatePresence>
                   {isExpanded && EXTENDED_DETAILS[event.title] && (
@@ -83,7 +83,7 @@ export default function InteractiveTimeline() {
                       className="overflow-hidden"
                     >
                       <div className="mt-3 pt-3 border-t-2 border-dashed border-ycod-coral/30">
-                        <p className="font-body text-sm text-ycod-black/80 italic">
+                        <p className="font-body text-sm text-ycod-black/80 dark:text-white/80 italic">
                           {EXTENDED_DETAILS[event.title]}
                         </p>
                       </div>

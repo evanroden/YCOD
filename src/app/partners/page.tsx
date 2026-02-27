@@ -14,14 +14,14 @@ export default function PartnersPage() {
       <section className="bg-ycod-pink py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.h1
-            className="font-display text-4xl md:text-6xl font-bold text-ycod-black mb-4"
+            className="font-display text-4xl md:text-6xl font-bold text-ycod-black dark:text-white mb-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
           >
             Our Partners
           </motion.h1>
           <motion.p
-            className="font-body text-xl text-ycod-black/80 max-w-2xl mx-auto"
+            className="font-body text-xl text-ycod-black/80 dark:text-white/80 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -35,7 +35,7 @@ export default function PartnersPage() {
       <SectionDivider />
 
       {/* Partners Grid */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-white dark:bg-ycod-black transition-colors duration-300">
         <div className="max-w-6xl mx-auto px-4">
           <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
@@ -56,10 +56,10 @@ export default function PartnersPage() {
                       {partner.name.charAt(0)}
                     </span>
                   </div>
-                  <h3 className="font-display text-xl font-bold text-ycod-black mb-3">
+                  <h3 className="font-display text-xl font-bold text-ycod-black dark:text-white mb-3">
                     {partner.name}
                   </h3>
-                  <p className="font-body text-sm text-ycod-black/80">
+                  <p className="font-body text-sm text-ycod-black/80 dark:text-white/80">
                     {partner.description}
                   </p>
                 </NinetyCard>

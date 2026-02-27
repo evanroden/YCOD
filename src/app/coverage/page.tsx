@@ -61,14 +61,14 @@ export default function CoveragePage() {
       <section className="bg-ycod-yellow py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.h1
-            className="font-display text-4xl md:text-6xl font-bold text-ycod-black mb-4"
+            className="font-display text-4xl md:text-6xl font-bold text-ycod-black dark:text-white mb-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
           >
             Media Coverage
           </motion.h1>
           <motion.p
-            className="font-body text-xl text-ycod-black/80 max-w-2xl mx-auto"
+            className="font-body text-xl text-ycod-black/80 dark:text-white/80 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -81,7 +81,7 @@ export default function CoveragePage() {
       <SectionDivider />
 
       {/* Logos banner */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-white dark:bg-ycod-black transition-colors duration-300">
         <div className="max-w-4xl mx-auto px-4">
           <motion.div
             initial="hidden"
@@ -115,10 +115,10 @@ export default function CoveragePage() {
             {coverageItems.map((item, i) => (
               <motion.div key={item.outlet} variants={fadeInUp}>
                 <NinetyCard color={item.color} rotation={i % 2 === 0 ? -1.5 : 1.5} className="h-full">
-                  <h3 className="font-display text-xl font-bold text-ycod-black mb-3">
+                  <h3 className="font-display text-xl font-bold text-ycod-black dark:text-white mb-3">
                     {item.outlet}
                   </h3>
-                  <p className="font-body text-sm text-ycod-black/80">
+                  <p className="font-body text-sm text-ycod-black/80 dark:text-white/80">
                     {item.description}
                   </p>
                 </NinetyCard>

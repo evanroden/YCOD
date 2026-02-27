@@ -17,10 +17,10 @@ export default function BlogPostPage() {
   if (!post) {
     return (
       <section className="py-32 text-center">
-        <h1 className="font-display text-4xl font-bold text-ycod-black mb-4">
+        <h1 className="font-display text-4xl font-bold text-ycod-black dark:text-white mb-4">
           Post Not Found
         </h1>
-        <p className="font-body text-lg text-ycod-black/60 mb-8">
+        <p className="font-body text-lg text-ycod-black/60 dark:text-white/60 mb-8">
           The blog post you&apos;re looking for doesn&apos;t exist.
         </p>
         <RetroButton href="/blog" color="bg-ycod-coral" className="text-white">
@@ -76,10 +76,10 @@ export default function BlogPostPage() {
       <SectionDivider />
 
       {/* SVG Illustration */}
-      <section className="py-8 bg-white">
+      <section className="py-8 bg-white dark:bg-ycod-black transition-colors duration-300">
         <div className="max-w-2xl mx-auto px-4">
           <motion.div
-            className="ninety-card bg-white p-6 flex justify-center"
+            className="ninety-card bg-white dark:bg-ycod-black/80 p-6 flex justify-center"
             style={{ transform: 'rotate(-0.5deg)' }}
             initial="hidden"
             whileInView="visible"
@@ -91,19 +91,19 @@ export default function BlogPostPage() {
       </section>
 
       {/* Content */}
-      <section className="py-12 md:py-16 bg-white">
+      <section className="py-12 md:py-16 bg-white dark:bg-ycod-black transition-colors duration-300">
         <div className="max-w-3xl mx-auto px-4">
           <motion.div
-            className="prose prose-lg max-w-none
-              prose-headings:font-display prose-headings:text-ycod-black prose-headings:font-bold
+            className="prose prose-lg dark:prose-invert max-w-none
+              prose-headings:font-display prose-headings:text-ycod-black dark:prose-headings:text-white prose-headings:font-bold
               prose-h2:text-2xl prose-h2:md:text-3xl prose-h2:mt-10 prose-h2:mb-4
               prose-h3:text-xl prose-h3:md:text-2xl prose-h3:mt-8 prose-h3:mb-3
-              prose-p:font-body prose-p:text-ycod-black/80 prose-p:leading-relaxed prose-p:mb-4
-              prose-strong:text-ycod-black prose-strong:font-bold
-              prose-blockquote:border-l-4 prose-blockquote:border-ycod-coral prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-ycod-black/70 prose-blockquote:my-6 prose-blockquote:bg-ycod-coral/5 prose-blockquote:py-4 prose-blockquote:pr-4 prose-blockquote:rounded-r-md
+              prose-p:font-body prose-p:text-ycod-black/80 dark:prose-p:text-white/80 prose-p:leading-relaxed prose-p:mb-4
+              prose-strong:text-ycod-black dark:prose-strong:text-white prose-strong:font-bold
+              prose-blockquote:border-l-4 prose-blockquote:border-ycod-coral prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-ycod-black/70 dark:prose-blockquote:text-white/70 prose-blockquote:my-6 prose-blockquote:bg-ycod-coral/5 prose-blockquote:py-4 prose-blockquote:pr-4 prose-blockquote:rounded-r-md
               prose-a:text-ycod-blue prose-a:font-semibold prose-a:underline hover:prose-a:text-ycod-coral
               prose-ul:list-disc prose-ul:pl-6 prose-ol:list-decimal prose-ol:pl-6
-              prose-li:font-body prose-li:text-ycod-black/80"
+              prose-li:font-body prose-li:text-ycod-black/80 dark:prose-li:text-white/80"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -114,9 +114,9 @@ export default function BlogPostPage() {
 
       {/* Sources */}
       {post.sources.length > 0 && (
-        <section className="py-8 bg-ycod-black/5">
+        <section className="py-8 bg-ycod-black/5 dark:bg-white/5 transition-colors duration-300">
           <div className="max-w-3xl mx-auto px-4">
-            <h3 className="font-display text-lg font-bold text-ycod-black mb-4">
+            <h3 className="font-display text-lg font-bold text-ycod-black dark:text-white mb-4">
               Sources &amp; Further Reading
             </h3>
             <ul className="space-y-2">
@@ -140,17 +140,17 @@ export default function BlogPostPage() {
       <SectionDivider color="#F07070" />
 
       {/* Prev/Next navigation */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-white dark:bg-ycod-black transition-colors duration-300">
         <div className="max-w-3xl mx-auto px-4">
           <div className="flex flex-col sm:flex-row justify-between gap-4">
             {prevPost ? (
               <Link
                 href={`/blog/${prevPost.slug}`}
-                className="ninety-card bg-white flex-1 group"
+                className="ninety-card bg-white dark:bg-ycod-black/80 flex-1 group"
                 style={{ transform: 'rotate(-0.5deg)' }}
               >
-                <p className="font-body text-xs text-ycod-black/50 mb-1">&larr; Previous</p>
-                <p className="font-display font-bold text-sm text-ycod-black group-hover:text-ycod-coral transition-colors">
+                <p className="font-body text-xs text-ycod-black/50 dark:text-white/50 mb-1">&larr; Previous</p>
+                <p className="font-display font-bold text-sm text-ycod-black dark:text-white group-hover:text-ycod-coral transition-colors">
                   {prevPost.title}
                 </p>
               </Link>
@@ -160,11 +160,11 @@ export default function BlogPostPage() {
             {nextPost ? (
               <Link
                 href={`/blog/${nextPost.slug}`}
-                className="ninety-card bg-white flex-1 text-right group"
+                className="ninety-card bg-white dark:bg-ycod-black/80 flex-1 text-right group"
                 style={{ transform: 'rotate(0.5deg)' }}
               >
-                <p className="font-body text-xs text-ycod-black/50 mb-1">Next &rarr;</p>
-                <p className="font-display font-bold text-sm text-ycod-black group-hover:text-ycod-coral transition-colors">
+                <p className="font-body text-xs text-ycod-black/50 dark:text-white/50 mb-1">Next &rarr;</p>
+                <p className="font-display font-bold text-sm text-ycod-black dark:text-white group-hover:text-ycod-coral transition-colors">
                   {nextPost.title}
                 </p>
               </Link>

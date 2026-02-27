@@ -60,7 +60,7 @@ export default function ContactPage() {
 
       <SectionDivider />
 
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-white dark:bg-ycod-black transition-colors duration-300">
         <div className="max-w-5xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Contact Info */}
@@ -70,12 +70,12 @@ export default function ContactPage() {
               viewport={{ once: true }}
               variants={fadeInUp}
             >
-              <h2 className="font-display text-2xl font-bold text-ycod-black mb-6">
+              <h2 className="font-display text-2xl font-bold text-ycod-black dark:text-white mb-6">
                 Get in Touch
               </h2>
               <div className="space-y-6">
                 <div className="ninety-card bg-ycod-pink" style={{ transform: 'rotate(-1deg)' }}>
-                  <h3 className="font-display font-bold text-ycod-black mb-1">Email</h3>
+                  <h3 className="font-display font-bold text-ycod-black dark:text-white mb-1">Email</h3>
                   <a
                     href="mailto:Support@YCOD.org"
                     className="font-body text-ycod-black hover:text-ycod-coral transition-colors"
@@ -84,7 +84,7 @@ export default function ContactPage() {
                   </a>
                 </div>
                 <div className="ninety-card bg-ycod-blue" style={{ transform: 'rotate(1deg)' }}>
-                  <h3 className="font-display font-bold text-ycod-black mb-1">Phone</h3>
+                  <h3 className="font-display font-bold text-ycod-black dark:text-white mb-1">Phone</h3>
                   <a
                     href="tel:+17164184157"
                     className="font-body text-ycod-black hover:text-white transition-colors"
@@ -93,11 +93,11 @@ export default function ContactPage() {
                   </a>
                 </div>
                 <div className="ninety-card bg-ycod-yellow" style={{ transform: 'rotate(-0.5deg)' }}>
-                  <h3 className="font-display font-bold text-ycod-black mb-1">Location</h3>
+                  <h3 className="font-display font-bold text-ycod-black dark:text-white mb-1">Location</h3>
                   <p className="font-body text-ycod-black">Buffalo, NY (Western New York)</p>
                 </div>
                 <div className="ninety-card bg-ycod-coral" style={{ transform: 'rotate(1.5deg)' }}>
-                  <h3 className="font-display font-bold text-ycod-black mb-1">Social</h3>
+                  <h3 className="font-display font-bold text-ycod-black dark:text-white mb-1">Social</h3>
                   <div className="flex gap-4 mt-2">
                     <a
                       href="https://twitter.com/theycod"
@@ -130,7 +130,7 @@ export default function ContactPage() {
               {!submitted ? (
                 <form onSubmit={handleSubmit}>
                   <div className="ninety-card bg-ycod-green/10" style={{ transform: 'rotate(0.5deg)' }}>
-                    <h2 className="font-display text-2xl font-bold text-ycod-black mb-6">
+                    <h2 className="font-display text-2xl font-bold text-ycod-black dark:text-white mb-6">
                       Send a Message
                     </h2>
                     <div className="space-y-4">
@@ -144,7 +144,7 @@ export default function ContactPage() {
                           required
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          className="w-full px-4 py-3 border-ycod-black rounded-md font-body bg-white"
+                          className="w-full px-4 py-3 border-ycod-black rounded-md font-body bg-white dark:bg-ycod-black transition-colors duration-300"
                           style={{ borderWidth: '3px', borderStyle: 'solid', borderColor: '#1A1A2E' }}
                         />
                       </div>
@@ -158,7 +158,7 @@ export default function ContactPage() {
                           required
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          className="w-full px-4 py-3 border-ycod-black rounded-md font-body bg-white"
+                          className="w-full px-4 py-3 border-ycod-black rounded-md font-body bg-white dark:bg-ycod-black transition-colors duration-300"
                           style={{ borderWidth: '3px', borderStyle: 'solid', borderColor: '#1A1A2E' }}
                         />
                       </div>
@@ -196,10 +196,10 @@ export default function ContactPage() {
               ) : (
                 <div className="ninety-card bg-ycod-green/20 text-center py-12">
                   <div className="text-6xl mb-4">📬</div>
-                  <h2 className="font-display text-2xl font-bold text-ycod-black mb-2">
+                  <h2 className="font-display text-2xl font-bold text-ycod-black dark:text-white mb-2">
                     Message Sent!
                   </h2>
-                  <p className="font-body text-ycod-black/80">
+                  <p className="font-body text-ycod-black/80 dark:text-white/80">
                     Thanks for reaching out. We&apos;ll get back to you soon.
                   </p>
                 </div>

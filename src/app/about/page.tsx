@@ -36,7 +36,7 @@ export default function AboutPage() {
       <SectionDivider />
 
       {/* Origin Story */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-white dark:bg-ycod-black transition-colors duration-300">
         <div className="max-w-4xl mx-auto px-4">
           <motion.div
             className="text-center mb-16"
@@ -45,10 +45,10 @@ export default function AboutPage() {
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-ycod-black mb-4">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-ycod-black dark:text-white mb-4">
               Our Story
             </h2>
-            <p className="font-body text-lg text-ycod-black/70 max-w-2xl mx-auto">
+            <p className="font-body text-lg text-ycod-black/70 dark:text-white/70 max-w-2xl mx-auto">
               In 2017, when one of Evan&apos;s family members needed a kidney transplant, four
               students at East Aurora High School near Buffalo, NY decided to take action.
               What started as joining their school&apos;s Donate Life Club became a multinational
@@ -64,7 +64,7 @@ export default function AboutPage() {
       <SectionDivider color="#4A90D9" />
 
       {/* Team Section */}
-      <section className="py-16 md:py-24 bg-ycod-pink/20">
+      <section className="py-16 md:py-24 bg-ycod-pink/20 dark:bg-ycod-black transition-colors duration-300">
         <div className="max-w-6xl mx-auto px-4">
           <motion.div
             className="text-center mb-12"
@@ -73,7 +73,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-ycod-black mb-4">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-ycod-black dark:text-white mb-4">
               Meet the Team
             </h2>
 

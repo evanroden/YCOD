@@ -49,15 +49,15 @@ export default function BillImpactViz() {
   return (
     <motion.div
       ref={ref}
-      className="ninety-card bg-white"
+      className="ninety-card bg-white dark:bg-ycod-black/80"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
     >
-      <h3 className="font-display text-xl md:text-2xl font-bold text-ycod-black mb-2 text-center">
+      <h3 className="font-display text-xl md:text-2xl font-bold text-ycod-black dark:text-white mb-2 text-center">
         Projected Impact of Bill A07954
       </h3>
-      <p className="font-body text-sm text-ycod-black/60 text-center mb-8">
+      <p className="font-body text-sm text-ycod-black/60 dark:text-white/60 text-center mb-8">
         Based on outcomes from countries that switched to opt-out systems
       </p>
 
@@ -102,7 +102,7 @@ export default function BillImpactViz() {
       </div>
 
       <div className="mt-6 p-3 bg-ycod-blue/10 border-l-4 border-ycod-blue rounded-r-md">
-        <p className="font-body text-sm text-ycod-black/80">
+        <p className="font-body text-sm text-ycod-black/80 dark:text-white/80">
           <strong>These are conservative estimates</strong> based on real-world data from opt-out countries.
           Spain saw a 40% increase in donation rates within 10 years of switching. A similar shift in New York
           could save over 1,000 additional lives per year.

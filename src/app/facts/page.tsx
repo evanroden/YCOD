@@ -73,7 +73,7 @@ export default function FactsPage() {
       <SectionDivider />
 
       {/* Facts Grid */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-white dark:bg-ycod-black">
         <div className="max-w-3xl mx-auto px-4 space-y-8">
           {FACTS.map((fact, i) => (
             <FactCard key={fact.title} {...fact} index={i} />
@@ -84,7 +84,7 @@ export default function FactsPage() {
       <SectionDivider color="#4A90D9" />
 
       {/* Interactive Charts */}
-      <section className="py-16 md:py-24 bg-ycod-black/5">
+      <section className="py-16 md:py-24 bg-ycod-black/5 dark:bg-ycod-black transition-colors duration-300">
         <div className="max-w-4xl mx-auto px-4 space-y-12">
           <motion.div
             className="text-center"
@@ -92,10 +92,10 @@ export default function FactsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-ycod-black mb-3">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-ycod-black dark:text-white mb-3">
               The Data, Visualized
             </h2>
-            <p className="font-body text-lg text-ycod-black/70">
+            <p className="font-body text-lg text-ycod-black/70 dark:text-white/70">
               Explore the numbers behind the organ donation crisis.
             </p>
           </motion.div>
@@ -111,7 +111,7 @@ export default function FactsPage() {
       <SectionDivider color="#F7DC6F" />
 
       {/* Quiz Section */}
-      <section className="py-16 md:py-24 bg-ycod-yellow/20">
+      <section className="py-16 md:py-24 bg-ycod-yellow/20 dark:bg-ycod-black transition-colors duration-300">
         <div className="max-w-3xl mx-auto px-4">
           <motion.div
             className="text-center mb-10"
@@ -120,15 +120,15 @@ export default function FactsPage() {
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-ycod-black mb-2">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-ycod-black dark:text-white mb-2">
               Did You Know?
             </h2>
-            <p className="font-body text-lg text-ycod-black/70">
+            <p className="font-body text-lg text-ycod-black/70 dark:text-white/70">
               Test your organ donation knowledge with our quick quiz!
             </p>
           </motion.div>
 
-          <div className="ninety-card bg-white max-w-2xl mx-auto">
+          <div className="ninety-card bg-white dark:bg-ycod-black max-w-2xl mx-auto">
             {!quizState.finished ? (
               <>
                 <div className="flex justify-between items-center mb-4">
@@ -140,7 +140,7 @@ export default function FactsPage() {
                   </span>
                 </div>
 
-                <h3 className="font-display text-xl font-bold text-ycod-black mb-6">
+                <h3 className="font-display text-xl font-bold text-ycod-black dark:text-white mb-6">
                   {currentQuestion.question}
                 </h3>
 
@@ -196,14 +196,14 @@ export default function FactsPage() {
                 <div className="font-display text-6xl font-bold text-ycod-coral mb-4">
                   {quizState.score}/{QUIZ_QUESTIONS.length}
                 </div>
-                <h3 className="font-display text-2xl font-bold text-ycod-black mb-2">
+                <h3 className="font-display text-2xl font-bold text-ycod-black dark:text-white mb-2">
                   {quizState.score >= 4
                     ? 'Amazing! You know your stuff!'
                     : quizState.score >= 2
                     ? 'Good effort! Keep learning!'
                     : 'Now you know more than before!'}
                 </h3>
-                <p className="font-body text-ycod-black/70 mb-6">
+                <p className="font-body text-ycod-black/70 dark:text-white/70 mb-6">
                   Share these facts with friends and family to spread awareness!
                 </p>
                 <div className="flex gap-4 justify-center">

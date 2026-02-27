@@ -36,14 +36,14 @@ export default function TeamMember({ name, role, bio, image, color, index }: Tea
           </div>
         ) : (
           <div className={`w-32 h-32 mx-auto mb-4 rounded-full border-4 border-ycod-black flex items-center justify-center ${color} brightness-90`}>
-            <span className="text-4xl font-display font-bold text-ycod-black">
+            <span className="text-4xl font-display font-bold text-ycod-black dark:text-white">
               {name.charAt(0)}
             </span>
           </div>
         )}
-        <h3 className="font-display text-xl font-bold text-ycod-black">{name}</h3>
-        <p className="font-body text-sm font-semibold text-ycod-black/70 mb-3">{role}</p>
-        <p className="font-body text-sm text-ycod-black/80">{bio}</p>
+        <h3 className="font-display text-xl font-bold text-ycod-black dark:text-white">{name}</h3>
+        <p className="font-body text-sm font-semibold text-ycod-black/70 dark:text-white/70 mb-3">{role}</p>
+        <p className="font-body text-sm text-ycod-black/80 dark:text-white/80">{bio}</p>
       </NinetyCard>
     </motion.div>
   );

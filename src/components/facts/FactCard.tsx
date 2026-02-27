@@ -35,11 +35,11 @@ export default function FactCard({
         <div className="flex items-start gap-4">
           <span className="text-4xl flex-shrink-0" aria-hidden="true">{icon}</span>
           <div className="flex-1">
-            <div className="font-display text-3xl md:text-4xl font-bold text-ycod-black mb-1">
+            <div className="font-display text-3xl md:text-4xl font-bold text-ycod-black dark:text-white mb-1">
               {stat}
             </div>
-            <h3 className="font-display text-lg font-bold text-ycod-black mb-2">{title}</h3>
-            <p className="font-body text-sm text-ycod-black/80 mb-3">{description}</p>
+            <h3 className="font-display text-lg font-bold text-ycod-black dark:text-white mb-2">{title}</h3>
+            <p className="font-body text-sm text-ycod-black/80 dark:text-white/80 mb-3">{description}</p>
             <ShareFact stat={stat} text={`${title}: ${description}`} />
           </div>
         </div>

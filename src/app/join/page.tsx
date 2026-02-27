@@ -69,7 +69,7 @@ export default function JoinPage() {
       <SectionDivider />
 
       {/* Group image + form */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-white dark:bg-ycod-black transition-colors duration-300">
         <div className="max-w-4xl mx-auto px-4">
           {/* Group portrait */}
           <motion.div
@@ -99,7 +99,7 @@ export default function JoinPage() {
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <p className="font-body text-ycod-black/80">
+            <p className="font-body text-ycod-black/80 dark:text-white/80">
               <strong>Note:</strong> We won&apos;t ever ask for donations, nor do we accept
               individual donors at this time, instead relying on volunteer work from our team
               and the generosity of academic institutions and foundations.
@@ -117,7 +117,7 @@ export default function JoinPage() {
               viewport={{ once: true }}
               variants={fadeInUp}
             >
-              <h2 className="font-display text-2xl font-bold text-ycod-black mb-6">
+              <h2 className="font-display text-2xl font-bold text-ycod-black dark:text-white mb-6">
                 Join YCOD
               </h2>
               <div className="space-y-4">
@@ -131,7 +131,7 @@ export default function JoinPage() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 border-3 border-ycod-black rounded-md font-body bg-white"
+                    className="w-full px-4 py-3 border-3 border-ycod-black rounded-md font-body bg-white dark:bg-ycod-black transition-colors duration-300"
                     style={{ borderWidth: '3px' }}
                   />
                 </div>
@@ -145,7 +145,7 @@ export default function JoinPage() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 border-3 border-ycod-black rounded-md font-body bg-white"
+                    className="w-full px-4 py-3 border-3 border-ycod-black rounded-md font-body bg-white dark:bg-ycod-black transition-colors duration-300"
                     style={{ borderWidth: '3px' }}
                   />
                 </div>
@@ -160,7 +160,7 @@ export default function JoinPage() {
                     pattern="[0-9]{5}"
                     value={formData.zip}
                     onChange={(e) => setFormData({ ...formData, zip: e.target.value })}
-                    className="w-full px-4 py-3 border-3 border-ycod-black rounded-md font-body bg-white"
+                    className="w-full px-4 py-3 border-3 border-ycod-black rounded-md font-body bg-white dark:bg-ycod-black transition-colors duration-300"
                     style={{ borderWidth: '3px' }}
                     maxLength={5}
                   />
@@ -174,7 +174,7 @@ export default function JoinPage() {
                     type="text"
                     value={formData.address}
                     onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                    className="w-full px-4 py-3 border-3 border-ycod-black rounded-md font-body bg-white"
+                    className="w-full px-4 py-3 border-3 border-ycod-black rounded-md font-body bg-white dark:bg-ycod-black transition-colors duration-300"
                     style={{ borderWidth: '3px' }}
                   />
                 </div>
@@ -205,10 +205,10 @@ export default function JoinPage() {
               animate={{ opacity: 1, scale: 1 }}
             >
               <div className="text-6xl mb-4">🎉</div>
-              <h2 className="font-display text-2xl font-bold text-ycod-black mb-2">
+              <h2 className="font-display text-2xl font-bold text-ycod-black dark:text-white mb-2">
                 Welcome to the Movement!
               </h2>
-              <p className="font-body text-ycod-black/80">
+              <p className="font-body text-ycod-black/80 dark:text-white/80">
                 Thank you for joining YCOD. Together, we&apos;re saving lives.
               </p>
             </motion.div>
@@ -221,10 +221,10 @@ export default function JoinPage() {
       {/* Quick register + political action */}
       <section className="py-16 md:py-20 bg-ycod-yellow border-y-4 border-ycod-black">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="font-display text-3xl font-bold text-ycod-black mb-4">
+          <h2 className="font-display text-3xl font-bold text-ycod-black dark:text-white mb-4">
             Register as a Donor
           </h2>
-          <p className="font-body text-lg text-ycod-black/80 mb-6">
+          <p className="font-body text-lg text-ycod-black/80 dark:text-white/80 mb-6">
             Text <strong>REGISTER</strong> to <strong>57838</strong> to join the organ donor
             registry instantly.
           </p>
@@ -239,12 +239,12 @@ export default function JoinPage() {
         </div>
       </section>
 
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-white dark:bg-ycod-black transition-colors duration-300">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h3 className="font-display text-2xl font-bold text-ycod-black mb-4">
+          <h3 className="font-display text-2xl font-bold text-ycod-black dark:text-white mb-4">
             Contact Your Representatives
           </h3>
-          <p className="font-body text-ycod-black/70 mb-6">
+          <p className="font-body text-ycod-black/70 dark:text-white/70 mb-6">
             Let your elected officials know you support opt-out organ donation legislation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

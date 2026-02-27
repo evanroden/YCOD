@@ -1,7 +1,12 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { useI18n } from '@/lib/i18n';
 
 export default function Footer() {
+  const { t } = useI18n();
+
   return (
     <footer className="bg-ycod-black text-white relative overflow-hidden">
       {/* Decorative shapes */}
@@ -35,27 +40,27 @@ export default function Footer() {
 
           {/* Quick links */}
           <div>
-            <h3 className="font-display font-bold text-ycod-yellow mb-4">Quick Links</h3>
+            <h3 className="font-display font-bold text-ycod-yellow mb-4">{t('footer.quick_links')}</h3>
             <ul className="space-y-2 font-body">
-              <li><Link href="/about" className="text-gray-300 hover:text-ycod-pink transition-colors">About Us</Link></li>
-              <li><Link href="/initiatives" className="text-gray-300 hover:text-ycod-pink transition-colors">Initiatives</Link></li>
-              <li><Link href="/facts" className="text-gray-300 hover:text-ycod-pink transition-colors">Fast Facts</Link></li>
-              <li><Link href="/tedx" className="text-gray-300 hover:text-ycod-pink transition-colors">TEDx Talk</Link></li>
+              <li><Link href="/about" className="text-gray-300 hover:text-ycod-pink transition-colors">{t('nav.about')}</Link></li>
+              <li><Link href="/initiatives" className="text-gray-300 hover:text-ycod-pink transition-colors">{t('nav.initiatives')}</Link></li>
+              <li><Link href="/facts" className="text-gray-300 hover:text-ycod-pink transition-colors">{t('nav.facts')}</Link></li>
+              <li><Link href="/tedx" className="text-gray-300 hover:text-ycod-pink transition-colors">{t('nav.tedx')}</Link></li>
               <li><Link href="/bill" className="text-gray-300 hover:text-ycod-pink transition-colors">The Bill</Link></li>
-              <li><Link href="/blog" className="text-gray-300 hover:text-ycod-pink transition-colors">News &amp; Updates</Link></li>
+              <li><Link href="/blog" className="text-gray-300 hover:text-ycod-pink transition-colors">{t('nav.news')}</Link></li>
             </ul>
           </div>
 
           {/* Get involved */}
           <div>
-            <h3 className="font-display font-bold text-ycod-green mb-4">Get Involved</h3>
+            <h3 className="font-display font-bold text-ycod-green mb-4">{t('footer.get_involved')}</h3>
             <ul className="space-y-2 font-body">
-              <li><Link href="/join" className="text-gray-300 hover:text-ycod-pink transition-colors">Join Us</Link></li>
-              <li><Link href="/partners" className="text-gray-300 hover:text-ycod-pink transition-colors">Partners</Link></li>
-              <li><Link href="/contact" className="text-gray-300 hover:text-ycod-pink transition-colors">Contact</Link></li>
+              <li><Link href="/join" className="text-gray-300 hover:text-ycod-pink transition-colors">{t('nav.join')}</Link></li>
+              <li><Link href="/partners" className="text-gray-300 hover:text-ycod-pink transition-colors">{t('nav.partners')}</Link></li>
+              <li><Link href="/contact" className="text-gray-300 hover:text-ycod-pink transition-colors">{t('nav.contact')}</Link></li>
               <li>
                 <a href="sms:57838?body=register" className="text-ycod-coral hover:text-ycod-pink transition-colors font-semibold heart-cursor">
-                  Register as Donor
+                  {t('footer.register_donor')}
                 </a>
               </li>
             </ul>
@@ -63,7 +68,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-display font-bold text-ycod-coral mb-4">Contact</h3>
+            <h3 className="font-display font-bold text-ycod-coral mb-4">{t('footer.contact')}</h3>
             <ul className="space-y-2 font-body text-gray-300">
               <li>
                 <a href="mailto:Support@YCOD.org" className="hover:text-ycod-pink transition-colors">
@@ -107,20 +112,20 @@ export default function Footer() {
         {/* Quick register CTA */}
         <div className="mt-10 pt-8 border-t border-gray-800 text-center">
           <p className="font-display text-lg text-ycod-yellow mb-2">
-            Text REGISTER to 57838
+            {t('footer.text_register')}
           </p>
           <p className="text-gray-400 font-body text-sm mb-4">
-            Join the organ donor registry instantly through our partnership with ONE8FIFTY
+            {t('footer.join_registry')}
           </p>
-          <div className="visitor-counter inline-block">
+          <div className="visitor-counter inline-block" aria-hidden="true">
             VISITORS: {String(Math.floor(31337 + Math.random() * 100)).padStart(6, '0')}
           </div>
         </div>
 
         {/* Copyright */}
         <div className="mt-8 pt-6 border-t border-gray-800 text-center text-gray-500 font-body text-sm">
-          <p>&copy; {new Date().getFullYear()} The Youth Coalition for Organ Donation. All rights reserved.</p>
-          <p className="mt-1">A 501(c)(4) nonprofit lobbying organization.</p>
+          <p>{t('footer.copyright', { year: new Date().getFullYear().toString() })}</p>
+          <p className="mt-1">{t('footer.nonprofit')}</p>
         </div>
       </div>
     </footer>

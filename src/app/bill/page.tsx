@@ -36,7 +36,7 @@ export default function BillPage() {
       <SectionDivider />
 
       {/* Plain Language Explainer */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-white dark:bg-ycod-black transition-colors duration-300">
         <div className="max-w-4xl mx-auto px-4">
           <motion.div
             initial="hidden"
@@ -44,26 +44,26 @@ export default function BillPage() {
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <h2 className="font-display text-3xl font-bold text-ycod-black mb-8 text-center">
+            <h2 className="font-display text-3xl font-bold text-ycod-black dark:text-white mb-8 text-center">
               What the Bill Does
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
               <NinetyCard color="bg-ycod-coral/20" rotation={-1}>
-                <h3 className="font-display text-lg font-bold text-ycod-black mb-2">
+                <h3 className="font-display text-lg font-bold text-ycod-black dark:text-white mb-2">
                   The Problem
                 </h3>
-                <p className="font-body text-ycod-black/80">
+                <p className="font-body text-ycod-black/80 dark:text-white/80">
                   Currently at the NY DMV, you must actively choose to register as an organ
                   donor. Many people support donation but never check the box — they skip the
                   question, forget, or don&apos;t think about it.
                 </p>
               </NinetyCard>
               <NinetyCard color="bg-ycod-green/20" rotation={1}>
-                <h3 className="font-display text-lg font-bold text-ycod-black mb-2">
+                <h3 className="font-display text-lg font-bold text-ycod-black dark:text-white mb-2">
                   The Solution
                 </h3>
-                <p className="font-body text-ycod-black/80">
+                <p className="font-body text-ycod-black/80 dark:text-white/80">
                   Our bill changes the default: unless you specifically choose to skip the
                   organ donation question, you&apos;re registered as a donor. You always have
                   the right to opt out — the default just saves more lives.
@@ -73,7 +73,7 @@ export default function BillPage() {
 
             {/* Key provision */}
             <div className="ninety-card bg-ycod-yellow/30 mb-12" style={{ transform: 'rotate(0deg)' }}>
-              <h3 className="font-display text-lg font-bold text-ycod-black mb-3">
+              <h3 className="font-display text-lg font-bold text-ycod-black dark:text-white mb-3">
                 Key Provision
               </h3>
               <blockquote className="font-body text-lg italic text-ycod-black/90 border-l-4 border-ycod-coral pl-4">
@@ -83,7 +83,7 @@ export default function BillPage() {
             </div>
 
             {/* Safeguards */}
-            <h3 className="font-display text-2xl font-bold text-ycod-black mb-4">
+            <h3 className="font-display text-2xl font-bold text-ycod-black dark:text-white mb-4">
               Built-In Safeguards
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
@@ -101,7 +101,7 @@ export default function BillPage() {
                   rotation={i % 2 === 0 ? -1 : 1}
                 >
                   <h4 className="font-display font-bold text-ycod-black">{item.label}</h4>
-                  <p className="font-body text-sm text-ycod-black/80">{item.desc}</p>
+                  <p className="font-body text-sm text-ycod-black/80 dark:text-white/80">{item.desc}</p>
                 </NinetyCard>
               ))}
             </div>
@@ -121,7 +121,7 @@ export default function BillPage() {
       <SectionDivider color="#00C9A7" />
 
       {/* Full Bill Text */}
-      <section className="py-16 md:py-24 bg-ycod-black/5">
+      <section className="py-16 md:py-24 bg-ycod-black/5 dark:bg-white/5">
         <div className="max-w-3xl mx-auto px-4">
           <motion.div
             initial="hidden"
@@ -129,13 +129,13 @@ export default function BillPage() {
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <h2 className="font-display text-3xl font-bold text-ycod-black mb-4 text-center">
+            <h2 className="font-display text-3xl font-bold text-ycod-black dark:text-white mb-4 text-center">
               2021 Draft Bill Text
             </h2>
-            <p className="font-body text-center text-ycod-black/70 mb-8">
+            <p className="font-body text-center text-ycod-black/70 dark:text-white/70 mb-8">
               Based on Bill A07954 (2019), updated for the 2021 legislative session.
             </p>
-            <div className="ninety-card bg-white" style={{ transform: 'rotate(0deg)' }}>
+            <div className="ninety-card bg-white dark:bg-ycod-black transition-colors duration-300" style={{ transform: 'rotate(0deg)' }}>
               <pre className="font-body text-sm md:text-base text-ycod-black/90 whitespace-pre-wrap leading-relaxed">
                 {BILL_TEXT}
               </pre>
@@ -173,7 +173,7 @@ export default function BillPage() {
             <RetroButton href="/join" color="bg-ycod-yellow" className="text-ycod-black">
               Join the Movement
             </RetroButton>
-            <RetroButton href="/contact" color="bg-white" className="text-ycod-black">
+            <RetroButton href="/contact" color="bg-white dark:bg-ycod-black transition-colors duration-300" className="text-ycod-black">
               Contact Us
             </RetroButton>
           </div>

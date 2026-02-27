@@ -3,6 +3,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ScrollProgress from '@/components/ui/ScrollProgress';
 import BackToTop from '@/components/ui/BackToTop';
+import Providers from './Providers';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -37,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -45,13 +46,30 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap"
           rel="stylesheet"
         />
+        {/* Prevent flash of wrong theme */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('ycod-theme');var d=t==='dark'||(t!=='light'&&window.matchMedia('(prefers-color-scheme:dark)').matches);document.documentElement.classList.toggle('dark',d)}catch(e){}})()`,
+          }}
+        />
       </head>
-      <body className="font-body text-ycod-black bg-white antialiased">
-        <ScrollProgress />
-        <Navbar />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
-        <BackToTop />
+      <body className="font-body text-ycod-black dark:text-white bg-white dark:bg-ycod-black antialiased transition-colors duration-300">
+        <Providers>
+          {/* Skip to content link for accessibility */}
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[200] focus:bg-ycod-coral focus:text-white focus:px-4 focus:py-2 focus:rounded-md focus:font-display focus:font-bold focus:border-2 focus:border-ycod-black"
+          >
+            Skip to main content
+          </a>
+          <ScrollProgress />
+          <Navbar />
+          <main id="main-content" className="min-h-screen" role="main">
+            {children}
+          </main>
+          <Footer />
+          <BackToTop />
+        </Providers>
       </body>
     </html>
   );

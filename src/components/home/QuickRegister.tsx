@@ -25,7 +25,7 @@ export default function QuickRegister() {
   };
 
   return (
-    <section className="bg-ycod-yellow py-16 md:py-20 border-y-4 border-ycod-black">
+    <section className="bg-ycod-yellow dark:bg-ycod-yellow/90 py-16 md:py-20 border-y-4 border-ycod-black dark:border-white/30 transition-colors duration-300">
       <div className="max-w-4xl mx-auto px-4 text-center">
         <motion.div
           initial="hidden"
@@ -47,8 +47,8 @@ export default function QuickRegister() {
             It takes 30 seconds. No forms. No waiting.
           </p>
 
-          <div className="ninety-card bg-white max-w-lg mx-auto mb-8 heart-cursor" style={{ transform: 'rotate(-1deg)' }}>
-            <p className="font-display text-2xl md:text-3xl font-bold text-ycod-black mb-2">
+          <div className="ninety-card bg-white dark:bg-ycod-black max-w-lg mx-auto mb-8 heart-cursor" style={{ transform: 'rotate(-1deg)' }}>
+            <p className="font-display text-2xl md:text-3xl font-bold text-ycod-black dark:text-white mb-2">
               Text <span className="text-ycod-coral">REGISTER</span> to
             </p>
             <a
@@ -57,7 +57,7 @@ export default function QuickRegister() {
             >
               57838
             </a>
-            <p className="font-body text-sm text-ycod-black/60 mt-3">
+            <p className="font-body text-sm text-ycod-black/60 dark:text-white/60 mt-3">
               In partnership with ONE8FIFTY
             </p>
           </div>
@@ -82,7 +82,7 @@ export default function QuickRegister() {
               <AnimatePresence>
                 {showCopied && (
                   <motion.p
-                    className="absolute -bottom-8 left-1/2 -translate-x-1/2 font-body text-sm font-bold text-ycod-black whitespace-nowrap"
+                    className="absolute -bottom-8 left-1/2 -translate-x-1/2 font-body text-sm font-bold text-ycod-black dark:text-white whitespace-nowrap"
                     initial={{ opacity: 0, y: -5 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0 }}

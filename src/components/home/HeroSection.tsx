@@ -4,8 +4,11 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import RetroButton from '@/components/ui/RetroButton';
 import MemphisBackground from '@/components/ui/MemphisBackground';
+import { useI18n } from '@/lib/i18n';
 
 export default function HeroSection() {
+  const { t } = useI18n();
+
   return (
     <MemphisBackground variant="blue" className="min-h-[90vh] flex items-center" overlay={false}>
       <div className="absolute inset-0 bg-gradient-to-b from-sky-900/40 via-sky-900/25 to-sky-900/45" />
@@ -36,8 +39,8 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
         >
-          Youth Coalition for{' '}
-          <span className="text-ycod-yellow">Organ Donation</span>
+          {t('hero.title1')}{' '}
+          <span className="text-ycod-yellow">{t('hero.title2')}</span>
         </motion.h1>
 
         <motion.p
@@ -46,7 +49,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.5 }}
         >
-          New Yorkers helping New Yorkers save lives
+          {t('hero.subtitle')}
         </motion.p>
 
         <motion.div
@@ -56,10 +59,10 @@ export default function HeroSection() {
           transition={{ delay: 0.7, duration: 0.5 }}
         >
           <RetroButton href="/join" color="bg-ycod-coral" className="text-white text-lg px-8 py-4">
-            Join the Movement
+            {t('hero.join')}
           </RetroButton>
           <RetroButton href="/facts" color="bg-ycod-yellow" className="text-ycod-black text-lg px-8 py-4">
-            Learn the Facts
+            {t('hero.facts')}
           </RetroButton>
         </motion.div>
       </div>

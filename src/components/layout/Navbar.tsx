@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { NAV_LINKS } from '@/lib/constants';
 import RetroButton from '@/components/ui/RetroButton';
+import SettingsPanel from '@/components/ui/SettingsPanel';
 import MobileMenu from './MobileMenu';
 
 export default function Navbar() {
@@ -20,7 +21,7 @@ export default function Navbar() {
   return (
     <>
       <nav className={`sticky top-[4px] z-50 backdrop-blur-md border-b-4 border-ycod-coral transition-all duration-300 ${
-        scrolled ? 'bg-white/95 shadow-lg' : 'bg-white/90'
+        scrolled ? 'bg-white/95 dark:bg-ycod-black/95 shadow-lg' : 'bg-white/90 dark:bg-ycod-black/90'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
@@ -42,7 +43,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="squiggly-underline font-body font-semibold text-ycod-black hover:text-ycod-coral transition-colors"
+                  className="squiggly-underline font-body font-semibold text-ycod-black dark:text-white hover:text-ycod-coral transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -50,20 +51,24 @@ export default function Navbar() {
               <RetroButton href="/join" color="bg-ycod-coral" className="text-white ml-2">
                 Join
               </RetroButton>
+              <SettingsPanel />
             </div>
 
-            {/* Mobile hamburger */}
-            <button
-              className="md:hidden p-2 border-2 border-ycod-black rounded"
-              onClick={() => setMobileOpen(true)}
-              aria-label="Open menu"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1A2E" strokeWidth="3" strokeLinecap="round">
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <line x1="3" y1="12" x2="21" y2="12" />
-                <line x1="3" y1="18" x2="21" y2="18" />
-              </svg>
-            </button>
+            {/* Mobile: settings + hamburger */}
+            <div className="md:hidden flex items-center gap-2">
+              <SettingsPanel />
+              <button
+                className="p-2 border-2 border-ycod-black dark:border-white/60 rounded"
+                onClick={() => setMobileOpen(true)}
+                aria-label="Open menu"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" className="text-ycod-black dark:text-white">
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <line x1="3" y1="12" x2="21" y2="12" />
+                  <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </nav>

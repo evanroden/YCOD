@@ -8,7 +8,7 @@ import { fadeInUp } from '@/lib/animations';
 
 export default function CoverageTeaser() {
   return (
-    <section className="bg-white py-16 md:py-24">
+    <section className="bg-white dark:bg-ycod-black py-16 md:py-24 transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-4">
         <motion.div
           className="text-center mb-12"
@@ -16,10 +16,10 @@ export default function CoverageTeaser() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-ycod-black mb-4">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-ycod-black dark:text-white mb-4">
             As Seen In
           </h2>
-          <p className="font-body text-lg text-ycod-black/70">
+          <p className="font-body text-lg text-ycod-black/70 dark:text-white/70">
             Our story has been covered by media outlets across the country
           </p>
         </motion.div>
@@ -32,13 +32,13 @@ export default function CoverageTeaser() {
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          <div className="ninety-card bg-white p-4 md:p-8" style={{ transform: 'rotate(-0.5deg)' }}>
+          <div className="ninety-card bg-white dark:bg-ycod-black p-4 md:p-8" style={{ transform: 'rotate(-0.5deg)' }}>
             <Image
               src="/images/coverage-logos.png"
               alt="Media coverage logos: Spectrum News, Radio One, MarketWatch, Yahoo, Business Insider, Yahoo Finance, Canadian Insider, MSN, Morningstar"
               width={800}
               height={250}
-              className="w-full h-auto"
+              className="w-full h-auto dark:brightness-90 dark:invert dark:hue-rotate-180"
             />
           </div>
         </motion.div>

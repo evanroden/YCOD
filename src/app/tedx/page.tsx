@@ -32,7 +32,7 @@ export default function TEDxPage() {
       </section>
 
       {/* Video Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-white dark:bg-ycod-black transition-colors duration-300">
         <div className="max-w-4xl mx-auto px-4">
           <motion.div
             initial="hidden"
@@ -91,15 +91,15 @@ export default function TEDxPage() {
               </div>
             </div>
             <div>
-              <h2 className="font-display text-2xl md:text-3xl font-bold text-ycod-black mb-4">
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-ycod-black dark:text-white mb-4">
                 About the Speaker
               </h2>
-              <p className="font-body text-lg text-ycod-black/80 mb-4">
+              <p className="font-body text-lg text-ycod-black/80 dark:text-white/80 mb-4">
                 Evan Roden is the founder of The Youth Coalition for Organ Donation. A Biomedical
                 Engineering graduate from Tulane University and current Sustainability Engineer at
                 ENFRA, Evan has been advocating for organ donation reform since 2017.
               </p>
-              <p className="font-body text-lg text-ycod-black/80 mb-6">
+              <p className="font-body text-lg text-ycod-black/80 dark:text-white/80 mb-6">
                 After a family member needed a kidney transplant, Evan co-founded YCOD with three
                 classmates at East Aurora High School. The organization has grown to 3,000+ members,
                 drafted actual legislation, and earned nominations and endorsements from major

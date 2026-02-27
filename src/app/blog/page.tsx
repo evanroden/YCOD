@@ -56,21 +56,23 @@ export default function BlogPage() {
       <SectionDivider />
 
       {/* Filters */}
-      <section className="py-8 bg-white border-b-2 border-ycod-black/10">
+      <section className="py-8 bg-white dark:bg-ycod-black border-b-2 border-ycod-black/10 dark:border-white/10 transition-colors duration-300">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
             {/* Category filters */}
-            <div className="flex flex-wrap gap-2 justify-center">
+            <div className="flex flex-wrap gap-2 justify-center" role="tablist" aria-label="Filter by category">
               {ALL_CATEGORIES.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`font-display font-bold text-sm px-4 py-2 rounded-full border-2 border-ycod-black transition-all duration-150 ${
+                  role="tab"
+                  aria-selected={activeCategory === cat}
+                  className={`font-display font-bold text-sm px-4 py-2 rounded-full border-2 border-ycod-black dark:border-white/30 transition-all duration-150 ${
                     activeCategory === cat
                       ? cat === 'all'
-                        ? 'bg-ycod-black text-white shadow-retro-sm'
+                        ? 'bg-ycod-black dark:bg-white text-white dark:text-ycod-black shadow-retro-sm'
                         : `${CATEGORY_COLORS[cat as BlogCategory]} text-ycod-black shadow-retro-sm`
-                      : 'bg-white text-ycod-black hover:bg-gray-50'
+                      : 'bg-white dark:bg-ycod-black text-ycod-black dark:text-white hover:bg-gray-50 dark:hover:bg-white/5'
                   }`}
                 >
                   {cat === 'all' ? 'All Posts' : CATEGORY_LABELS[cat as BlogCategory]}
@@ -85,13 +87,15 @@ export default function BlogPage() {
                 placeholder="Search posts..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full font-body text-sm px-4 py-2 pl-10 border-2 border-ycod-black rounded-md bg-white"
+                className="w-full font-body text-sm px-4 py-2 pl-10 border-2 border-ycod-black dark:border-white/30 rounded-md bg-white dark:bg-ycod-black dark:text-white"
+                aria-label="Search blog posts"
               />
               <svg
-                className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-ycod-black/40"
+                className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-ycod-black/40 dark:text-white/40"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                aria-hidden="true"
               >
                 <path
                   strokeLinecap="round"
@@ -106,20 +110,20 @@ export default function BlogPage() {
       </section>
 
       {/* Posts Grid */}
-      <section className="py-16 md:py-24 bg-ycod-yellow/10">
+      <section className="py-16 md:py-24 bg-ycod-yellow/10 dark:bg-ycod-black transition-colors duration-300">
         <div className="max-w-6xl mx-auto px-4">
           {filteredPosts.length === 0 ? (
             <div className="text-center py-16">
-              <p className="font-display text-2xl font-bold text-ycod-black/40 mb-2">
+              <p className="font-display text-2xl font-bold text-ycod-black/40 dark:text-white/40 mb-2">
                 No posts found
               </p>
-              <p className="font-body text-ycod-black/50">
+              <p className="font-body text-ycod-black/50 dark:text-white/50">
                 Try a different search or category.
               </p>
             </div>
           ) : (
             <>
-              <p className="font-body text-sm text-ycod-black/50 mb-8">
+              <p className="font-body text-sm text-ycod-black/50 dark:text-white/50 mb-8">
                 Showing {filteredPosts.length} post{filteredPosts.length !== 1 ? 's' : ''}
               </p>
               <motion.div

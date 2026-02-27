@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NAV_LINKS } from '@/lib/constants';
@@ -12,9 +12,13 @@ interface MobileMenuProps {
 }
 
 export default function MobileMenu({ open, onClose }: MobileMenuProps) {
+  const closeRef = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
     if (open) {
       document.body.style.overflow = 'hidden';
+      // Focus the close button when menu opens
+      setTimeout(() => closeRef.current?.focus(), 100);
     } else {
       document.body.style.overflow = '';
     }
@@ -22,6 +26,16 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
       document.body.style.overflow = '';
     };
   }, [open]);
+
+  // Close on Escape key
+  useEffect(() => {
+    if (!open) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', handler);
+    return () => document.removeEventListener('keydown', handler);
+  }, [open, onClose]);
 
   return (
     <AnimatePresence>
@@ -32,11 +46,15 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Navigation menu"
         >
           <div className="absolute inset-0 bg-ycod-black/80" />
           <div className="relative z-10 flex flex-col items-center justify-center h-full px-8">
             {/* Close button */}
             <button
+              ref={closeRef}
               className="absolute top-6 right-6 p-2 text-white"
               onClick={onClose}
               aria-label="Close menu"
@@ -47,7 +65,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
               </svg>
             </button>
 
-            <nav className="flex flex-col items-center gap-6">
+            <nav className="flex flex-col items-center gap-6" aria-label="Mobile navigation">
               {NAV_LINKS.map((link, i) => (
                 <motion.div
                   key={link.href}

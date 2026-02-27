@@ -29,15 +29,15 @@ export default function CountryComparisonChart() {
   return (
     <motion.div
       ref={ref}
-      className="ninety-card bg-white"
+      className="ninety-card bg-white dark:bg-ycod-black/80"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
     >
-      <h3 className="font-display text-xl md:text-2xl font-bold text-ycod-black mb-2 text-center">
+      <h3 className="font-display text-xl md:text-2xl font-bold text-ycod-black dark:text-white mb-2 text-center">
         Registration Rates: Opt-Out vs. Opt-In
       </h3>
-      <p className="font-body text-sm text-ycod-black/60 text-center mb-8">
+      <p className="font-body text-sm text-ycod-black/60 dark:text-white/60 text-center mb-8">
         Countries with opt-out systems consistently outperform opt-in countries.
       </p>
 
@@ -45,15 +45,15 @@ export default function CountryComparisonChart() {
       <div className="flex gap-6 justify-center mb-6">
         <div className="flex items-center gap-2">
           <div className="w-4 h-4 rounded-sm border-2 border-ycod-black" style={{ background: '#00C9A7' }} />
-          <span className="font-body text-xs text-ycod-black/70">Opt-out system</span>
+          <span className="font-body text-xs text-ycod-black/70 dark:text-white/70">Opt-out system</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-4 h-4 rounded-sm border-2 border-ycod-black" style={{ background: '#F7DC6F' }} />
-          <span className="font-body text-xs text-ycod-black/70">Opt-in system</span>
+          <span className="font-body text-xs text-ycod-black/70 dark:text-white/70">Opt-in system</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-4 h-4 rounded-sm border-2 border-ycod-black" style={{ background: '#F07070' }} />
-          <span className="font-body text-xs text-ycod-black/70">New York</span>
+          <span className="font-body text-xs text-ycod-black/70 dark:text-white/70">New York</span>
         </div>
       </div>
 
@@ -110,7 +110,7 @@ export default function CountryComparisonChart() {
 
       {/* Annotation */}
       <div className="mt-6 p-3 bg-ycod-green/10 border-l-4 border-ycod-green rounded-r-md">
-        <p className="font-body text-sm text-ycod-black/80">
+        <p className="font-body text-sm text-ycod-black/80 dark:text-white/80">
           <strong>The pattern is clear:</strong> opt-out systems produce 20–40% higher registration
           rates. That translates directly into lives saved.
         </p>
