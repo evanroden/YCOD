@@ -1,0 +1,120 @@
+'use client';
+
+import { motion, useInView } from 'framer-motion';
+import { useRef, useState } from 'react';
+
+interface CountryData {
+  country: string;
+  rate: number;
+  system: 'opt-in' | 'opt-out';
+  flag: string;
+  color: string;
+}
+
+const COUNTRY_DATA: CountryData[] = [
+  { country: 'Spain', rate: 90, system: 'opt-out', flag: '🇪🇸', color: '#00C9A7' },
+  { country: 'France', rate: 83, system: 'opt-out', flag: '🇫🇷', color: '#00C9A7' },
+  { country: 'UK', rate: 80, system: 'opt-out', flag: '🇬🇧', color: '#00C9A7' },
+  { country: 'Austria', rate: 78, system: 'opt-out', flag: '🇦🇹', color: '#00C9A7' },
+  { country: 'Netherlands', rate: 73, system: 'opt-out', flag: '🇳🇱', color: '#00C9A7' },
+  { country: 'US Average', rate: 60, system: 'opt-in', flag: '🇺🇸', color: '#F7DC6F' },
+  { country: 'New York', rate: 50, system: 'opt-in', flag: '🗽', color: '#F07070' },
+];
+
+export default function CountryComparisonChart() {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  return (
+    <motion.div
+      ref={ref}
+      className="ninety-card bg-white"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+    >
+      <h3 className="font-display text-xl md:text-2xl font-bold text-ycod-black mb-2 text-center">
+        Registration Rates: Opt-Out vs. Opt-In
+      </h3>
+      <p className="font-body text-sm text-ycod-black/60 text-center mb-8">
+        Countries with opt-out systems consistently outperform opt-in countries.
+      </p>
+
+      {/* Legend */}
+      <div className="flex gap-6 justify-center mb-6">
+        <div className="flex items-center gap-2">
+          <div className="w-4 h-4 rounded-sm border-2 border-ycod-black" style={{ background: '#00C9A7' }} />
+          <span className="font-body text-xs text-ycod-black/70">Opt-out system</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="w-4 h-4 rounded-sm border-2 border-ycod-black" style={{ background: '#F7DC6F' }} />
+          <span className="font-body text-xs text-ycod-black/70">Opt-in system</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="w-4 h-4 rounded-sm border-2 border-ycod-black" style={{ background: '#F07070' }} />
+          <span className="font-body text-xs text-ycod-black/70">New York</span>
+        </div>
+      </div>
+
+      {/* Chart */}
+      <div className="space-y-3">
+        {COUNTRY_DATA.map((item, index) => (
+          <div
+            key={item.country}
+            className="group cursor-default"
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
+            <div className="flex items-center gap-3">
+              <span className="text-lg w-8 text-center flex-shrink-0">{item.flag}</span>
+              <span className="font-display font-bold text-sm text-ycod-black w-24 flex-shrink-0">
+                {item.country}
+              </span>
+              <div className="flex-1 relative h-8 bg-gray-100 rounded-md border-2 border-ycod-black overflow-hidden">
+                <motion.div
+                  className="absolute inset-y-0 left-0 rounded-r-sm flex items-center justify-end pr-2"
+                  style={{ background: item.color }}
+                  initial={{ width: 0 }}
+                  animate={isInView ? { width: `${item.rate}%` } : { width: 0 }}
+                  transition={{
+                    duration: 0.8,
+                    delay: index * 0.1,
+                    ease: 'easeOut',
+                  }}
+                >
+                  <span className="font-display font-bold text-sm text-ycod-black">
+                    {item.rate}%
+                  </span>
+                </motion.div>
+              </div>
+            </div>
+            {/* Tooltip */}
+            {hoveredIndex === index && (
+              <motion.div
+                className="ml-11 mt-1 px-3 py-1.5 bg-ycod-black text-white rounded text-xs font-body"
+                initial={{ opacity: 0, y: -5 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.15 }}
+              >
+                {item.system === 'opt-out'
+                  ? `${item.country} uses an opt-out system — citizens are registered by default.`
+                  : item.country === 'New York'
+                  ? 'New York uses opt-in. Historically one of the lowest registration rates in the US.'
+                  : 'The US uses an opt-in system — you must actively choose to register.'}
+              </motion.div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* Annotation */}
+      <div className="mt-6 p-3 bg-ycod-green/10 border-l-4 border-ycod-green rounded-r-md">
+        <p className="font-body text-sm text-ycod-black/80">
+          <strong>The pattern is clear:</strong> opt-out systems produce 20–40% higher registration
+          rates. That translates directly into lives saved.
+        </p>
+      </div>
+    </motion.div>
+  );
+}

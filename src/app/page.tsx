@@ -4,6 +4,8 @@ import MissionStatement from '@/components/home/MissionStatement';
 import QuickRegister from '@/components/home/QuickRegister';
 import CoverageTeaser from '@/components/home/CoverageTeaser';
 import SectionDivider from '@/components/ui/SectionDivider';
+import ImpactCalculator from '@/components/ui/ImpactCalculator';
+import WaitlistTicker from '@/components/ui/WaitlistTicker';
 import JoinCTA from './JoinCTA';
 
 export default function Home() {
@@ -12,13 +14,16 @@ export default function Home() {
       <HeroSection />
       <SectionDivider color="#F5A0B8" />
       <StatsCounter />
+      <WaitlistTicker />
       <SectionDivider color="#4A90D9" />
       <MissionStatement />
       <SectionDivider color="#F07070" />
-      <QuickRegister />
+      <ImpactCalculator />
       <SectionDivider color="#00C9A7" />
-      <CoverageTeaser />
+      <QuickRegister />
       <SectionDivider color="#F7DC6F" />
+      <CoverageTeaser />
+      <SectionDivider color="#F5A0B8" />
       <JoinCTA />
     </>
   );

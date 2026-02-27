@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --ycod-pink: #F5A0B8;
   --ycod-blue: #4A90D9;
@@ -185,6 +189,48 @@
 input:focus, textarea:focus, select:focus {
   outline: 3px solid var(--ycod-blue);
   outline-offset: 2px;
+}
+
+/* Range slider styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 12px;
+  border-radius: 6px;
+  border: 3px solid var(--ycod-black);
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid var(--ycod-black);
+  box-shadow: 2px 2px 0px var(--ycod-black);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+  transform: scale(0.95);
+  box-shadow: 1px 1px 0px var(--ycod-black);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid var(--ycod-black);
+  box-shadow: 2px 2px 0px var(--ycod-black);
+  cursor: pointer;
 }
 
 /* Heart cursor near register CTAs */

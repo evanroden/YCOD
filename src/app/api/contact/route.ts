@@ -3,7 +3,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 
 const DATA_DIR = path.join(process.cwd(), 'data');
-const MEMBERS_FILE = path.join(DATA_DIR, 'members.json');
+const MESSAGES_FILE = path.join(DATA_DIR, 'messages.json');
 
 async function ensureDataDir() {
   try {
@@ -13,9 +13,9 @@ async function ensureDataDir() {
   }
 }
 
-async function readMembers(): Promise<Record<string, unknown>[]> {
+async function readMessages(): Promise<Record<string, unknown>[]> {
   try {
-    const raw = await fs.readFile(MEMBERS_FILE, 'utf-8');
+    const raw = await fs.readFile(MESSAGES_FILE, 'utf-8');
     return JSON.parse(raw);
   } catch {
     return [];
@@ -26,15 +26,13 @@ export async function POST(request: Request) {
   try {
     const data = await request.json();
 
-    // Validate required fields
-    if (!data.name || !data.email || !data.zip) {
+    if (!data.name || !data.email || !data.message) {
       return NextResponse.json(
-        { error: 'Name, email, and zip code are required' },
+        { error: 'Name, email, and message are required' },
         { status: 400 }
       );
     }
 
-    // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(data.email)) {
       return NextResponse.json(
@@ -46,38 +44,25 @@ export async function POST(request: Request) {
     const entry = {
       name: data.name,
       email: data.email,
-      zip: data.zip,
-      address: data.address || '',
+      message: data.message,
       timestamp: new Date().toISOString(),
-      source: 'join-form',
     };
 
-    // Persist to file
     await ensureDataDir();
-    const members = await readMembers();
-    members.push(entry);
-    await fs.writeFile(MEMBERS_FILE, JSON.stringify(members, null, 2));
+    const messages = await readMessages();
+    messages.push(entry);
+    await fs.writeFile(MESSAGES_FILE, JSON.stringify(messages, null, 2));
 
-    console.log('New YCOD member signup:', entry);
+    console.log('New contact message:', entry);
 
     return NextResponse.json({
       success: true,
-      message: 'Welcome to YCOD!',
-      memberCount: members.length,
+      message: 'Message received! We\'ll get back to you soon.',
     });
   } catch {
     return NextResponse.json(
       { error: 'Something went wrong. Please try again.' },
       { status: 500 }
     );
-  }
-}
-
-export async function GET() {
-  try {
-    const members = await readMembers();
-    return NextResponse.json({ count: members.length });
-  } catch {
-    return NextResponse.json({ count: 0 });
   }
 }

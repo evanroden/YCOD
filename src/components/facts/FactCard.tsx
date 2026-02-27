@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import NinetyCard from '@/components/ui/NinetyCard';
+import ShareFact from '@/components/ui/ShareFact';
 
 interface FactCardProps {
   stat: string;
@@ -33,12 +34,13 @@ export default function FactCard({
       <NinetyCard color={color} rotation={rotation}>
         <div className="flex items-start gap-4">
           <span className="text-4xl flex-shrink-0" aria-hidden="true">{icon}</span>
-          <div>
+          <div className="flex-1">
             <div className="font-display text-3xl md:text-4xl font-bold text-ycod-black mb-1">
               {stat}
             </div>
             <h3 className="font-display text-lg font-bold text-ycod-black mb-2">{title}</h3>
-            <p className="font-body text-sm text-ycod-black/80">{description}</p>
+            <p className="font-body text-sm text-ycod-black/80 mb-3">{description}</p>
+            <ShareFact stat={stat} text={`${title}: ${description}`} />
           </div>
         </div>
       </NinetyCard>

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import InitiativeCard from '@/components/initiatives/InitiativeCard';
 import SectionDivider from '@/components/ui/SectionDivider';
 import RetroButton from '@/components/ui/RetroButton';
+import DMVSimulator from '@/components/ui/DMVSimulator';
 import { INITIATIVES } from '@/lib/constants';
 import { fadeInUp } from '@/lib/animations';
 
@@ -47,44 +48,8 @@ export default function InitiativesPage() {
 
       <SectionDivider color="#F07070" />
 
-      {/* Opt-Out Explainer */}
-      <section className="py-16 md:py-24 bg-ycod-yellow/20">
-        <div className="max-w-4xl mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-          >
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-ycod-black mb-6 text-center">
-              How Opt-Out Works
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="ninety-card bg-ycod-coral/20" style={{ transform: 'rotate(-1deg)' }}>
-                <h3 className="font-display text-xl font-bold text-ycod-black mb-3">
-                  Current System (Opt-In)
-                </h3>
-                <p className="font-body text-ycod-black/80">
-                  When you visit the DMV, you must actively choose to register as an organ donor.
-                  Many people never check the box — not because they oppose donation, but because
-                  they skip the question or don&apos;t think about it.
-                </p>
-              </div>
-              <div className="ninety-card bg-ycod-green/30" style={{ transform: 'rotate(1deg)' }}>
-                <h3 className="font-display text-xl font-bold text-ycod-black mb-3">
-                  Proposed System (Opt-Out)
-                </h3>
-                <p className="font-body text-ycod-black/80">
-                  Under our proposed legislation, everyone would be registered as a donor by
-                  default, with the option to opt out. You always have the choice — but the
-                  default saves lives. Countries using this system see dramatically higher
-                  registration rates.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {/* DMV Simulator */}
+      <DMVSimulator />
 
       <SectionDivider color="#4A90D9" />
 

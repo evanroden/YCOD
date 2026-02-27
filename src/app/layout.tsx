@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import ScrollProgress from '@/components/ui/ScrollProgress';
+import BackToTop from '@/components/ui/BackToTop';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -45,9 +47,11 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body text-ycod-black bg-white antialiased">
+        <ScrollProgress />
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );

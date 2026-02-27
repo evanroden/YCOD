@@ -5,8 +5,9 @@ import { motion } from 'framer-motion';
 import TeamMember from '@/components/team/TeamMember';
 import SectionDivider from '@/components/ui/SectionDivider';
 import RetroButton from '@/components/ui/RetroButton';
-import { TEAM, TIMELINE_EVENTS } from '@/lib/constants';
-import { fadeInUp, staggerContainer } from '@/lib/animations';
+import InteractiveTimeline from '@/components/ui/InteractiveTimeline';
+import { TEAM } from '@/lib/constants';
+import { fadeInUp } from '@/lib/animations';
 
 export default function AboutPage() {
   return (
@@ -55,50 +56,8 @@ export default function AboutPage() {
             </p>
           </motion.div>
 
-          {/* Timeline */}
-          <div className="relative">
-            <div className="timeline-line" />
-            <motion.div
-              className="space-y-12"
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: '-100px' }}
-            >
-              {TIMELINE_EVENTS.map((event, i) => (
-                <motion.div
-                  key={i}
-                  variants={fadeInUp}
-                  className={`relative flex items-center ${
-                    i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                  } flex-row`}
-                >
-                  {/* Timeline node */}
-                  <div className="absolute left-4 md:left-1/2 w-6 h-6 -translate-x-1/2 z-10">
-                    <div className="w-6 h-6 rounded-full border-4 border-ycod-black bg-ycod-yellow" />
-                  </div>
-
-                  {/* Content */}
-                  <div className={`ml-12 md:ml-0 md:w-5/12 ${i % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
-                    <div
-                      className="ninety-card bg-white"
-                      style={{ transform: `rotate(${i % 2 === 0 ? -1 : 1}deg)` }}
-                    >
-                      <span className="font-display text-sm font-bold text-ycod-coral">
-                        {event.year}
-                      </span>
-                      <h3 className="font-display text-lg font-bold text-ycod-black mb-2">
-                        {event.title}
-                      </h3>
-                      <p className="font-body text-sm text-ycod-black/70">
-                        {event.description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
+          {/* Interactive Timeline */}
+          <InteractiveTimeline />
         </div>
       </section>
 

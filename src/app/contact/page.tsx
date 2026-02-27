@@ -9,10 +9,30 @@ import { fadeInUp } from '@/lib/animations';
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    setError('');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const result = await res.json();
+      if (!res.ok) {
+        setError(result.error || 'Something went wrong.');
+        return;
+      }
+      setSubmitted(true);
+    } catch {
+      setError('Could not send message. Please try again or email us directly.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -157,13 +177,18 @@ export default function ContactPage() {
                         />
                       </div>
                     </div>
+                    {error && (
+                      <div className="p-3 bg-ycod-coral/20 border-2 border-ycod-coral rounded-md">
+                        <p className="font-body text-sm text-ycod-coral">{error}</p>
+                      </div>
+                    )}
                     <div className="mt-6">
                       <RetroButton
                         type="submit"
                         color="bg-ycod-coral"
                         className="text-white w-full text-center"
                       >
-                        Send Message
+                        {submitting ? 'Sending...' : 'Send Message'}
                       </RetroButton>
                     </div>
                   </div>

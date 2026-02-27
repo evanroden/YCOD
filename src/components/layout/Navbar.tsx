@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { NAV_LINKS } from '@/lib/constants';
@@ -9,10 +9,19 @@ import MobileMenu from './MobileMenu';
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <>
-      <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b-4 border-ycod-coral">
+      <nav className={`sticky top-[4px] z-50 backdrop-blur-md border-b-4 border-ycod-coral transition-all duration-300 ${
+        scrolled ? 'bg-white/95 shadow-lg' : 'bg-white/90'
+      }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}

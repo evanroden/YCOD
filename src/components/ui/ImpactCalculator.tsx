@@ -1,0 +1,194 @@
+'use client';
+
+import { useState, useCallback } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const NY_POPULATION = 19_500_000;
+const CURRENT_REGISTRATION = 0.50;
+const LIVES_PER_DONOR = 8;
+const TISSUE_PER_DONOR = 75;
+const DONORS_PER_REGISTERED = 0.003; // ~0.3% of registered become actual donors per year
+
+export default function ImpactCalculator() {
+  const [registrationRate, setRegistrationRate] = useState(50);
+
+  const handleSliderChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setRegistrationRate(Number(e.target.value));
+  }, []);
+
+  const currentRegistered = Math.round(NY_POPULATION * CURRENT_REGISTRATION);
+  const newRegistered = Math.round(NY_POPULATION * (registrationRate / 100));
+  const additionalRegistered = Math.max(0, newRegistered - currentRegistered);
+  const additionalDonors = Math.round(additionalRegistered * DONORS_PER_REGISTERED);
+  const livesSaved = additionalDonors * LIVES_PER_DONOR;
+  const tissueHealed = additionalDonors * TISSUE_PER_DONOR;
+
+  const getSliderColor = () => {
+    if (registrationRate <= 50) return '#F07070';
+    if (registrationRate <= 70) return '#F7DC6F';
+    if (registrationRate <= 85) return '#4A90D9';
+    return '#00C9A7';
+  };
+
+  const getMessage = () => {
+    if (registrationRate <= 50) return 'This is where New York stands today.';
+    if (registrationRate <= 60) return 'A modest increase — already making a difference.';
+    if (registrationRate <= 70) return 'This is achievable with simple policy changes.';
+    if (registrationRate <= 80) return 'Countries with opt-out systems hit these numbers.';
+    if (registrationRate <= 90) return 'Spain-level registration. Thousands of lives saved.';
+    return 'Near-universal registration. The dream scenario.';
+  };
+
+  return (
+    <section className="py-16 md:py-24 bg-ycod-black">
+      <div className="max-w-4xl mx-auto px-4">
+        <motion.div
+          className="text-center mb-10"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-3">
+            What If More New Yorkers Registered?
+          </h2>
+          <p className="font-body text-lg text-white/70">
+            Drag the slider to see the impact of higher registration rates.
+          </p>
+        </motion.div>
+
+        <motion.div
+          className="ninety-card bg-white"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+        >
+          {/* Slider */}
+          <div className="mb-8">
+            <div className="flex justify-between items-center mb-3">
+              <span className="font-display font-bold text-ycod-black text-sm">NY Registration Rate</span>
+              <motion.span
+                className="font-display text-3xl font-bold"
+                style={{ color: getSliderColor() }}
+                key={registrationRate}
+                initial={{ scale: 1.3 }}
+                animate={{ scale: 1 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 15 }}
+              >
+                {registrationRate}%
+              </motion.span>
+            </div>
+            <div className="relative">
+              <input
+                type="range"
+                min="37"
+                max="99"
+                value={registrationRate}
+                onChange={handleSliderChange}
+                className="w-full h-3 rounded-full appearance-none cursor-pointer"
+                style={{
+                  background: `linear-gradient(to right, ${getSliderColor()} 0%, ${getSliderColor()} ${((registrationRate - 37) / 62) * 100}%, #e5e7eb ${((registrationRate - 37) / 62) * 100}%, #e5e7eb 100%)`,
+                }}
+                aria-label="New York registration rate slider"
+              />
+              {/* Marker for current 50% */}
+              <div
+                className="absolute top-5 text-xs font-body text-ycod-black/50"
+                style={{ left: `${((50 - 37) / 62) * 100}%`, transform: 'translateX(-50%)' }}
+              >
+                Current (50%)
+              </div>
+              {/* Marker for Spain ~90% */}
+              <div
+                className="absolute top-5 text-xs font-body text-ycod-black/50"
+                style={{ left: `${((90 - 37) / 62) * 100}%`, transform: 'translateX(-50%)' }}
+              >
+                Spain (90%)
+              </div>
+            </div>
+          </div>
+
+          {/* Message */}
+          <AnimatePresence mode="wait">
+            <motion.p
+              key={getMessage()}
+              className="font-body text-center text-ycod-black/70 italic mb-8 text-sm"
+              initial={{ opacity: 0, y: 5 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -5 }}
+              transition={{ duration: 0.2 }}
+            >
+              {getMessage()}
+            </motion.p>
+          </AnimatePresence>
+
+          {/* Results Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <motion.div
+              className="ninety-card bg-ycod-pink/20 text-center"
+              style={{ transform: 'rotate(-1deg)' }}
+            >
+              <motion.div
+                className="font-display text-3xl md:text-4xl font-bold text-ycod-coral"
+                key={additionalRegistered}
+                initial={{ scale: 0.8 }}
+                animate={{ scale: 1 }}
+                transition={{ type: 'spring', stiffness: 200 }}
+              >
+                +{additionalRegistered.toLocaleString()}
+              </motion.div>
+              <p className="font-body text-sm text-ycod-black/70 mt-1">New Registrations</p>
+            </motion.div>
+
+            <motion.div
+              className="ninety-card bg-ycod-blue/20 text-center"
+              style={{ transform: 'rotate(0.5deg)' }}
+            >
+              <motion.div
+                className="font-display text-3xl md:text-4xl font-bold text-ycod-blue"
+                key={livesSaved}
+                initial={{ scale: 0.8 }}
+                animate={{ scale: 1 }}
+                transition={{ type: 'spring', stiffness: 200 }}
+              >
+                {livesSaved.toLocaleString()}
+              </motion.div>
+              <p className="font-body text-sm text-ycod-black/70 mt-1">Lives Saved Per Year</p>
+            </motion.div>
+
+            <motion.div
+              className="ninety-card bg-ycod-green/20 text-center"
+              style={{ transform: 'rotate(-0.5deg)' }}
+            >
+              <motion.div
+                className="font-display text-3xl md:text-4xl font-bold text-ycod-green"
+                key={tissueHealed}
+                initial={{ scale: 0.8 }}
+                animate={{ scale: 1 }}
+                transition={{ type: 'spring', stiffness: 200 }}
+              >
+                {tissueHealed.toLocaleString()}
+              </motion.div>
+              <p className="font-body text-sm text-ycod-black/70 mt-1">Tissue Recipients Healed</p>
+            </motion.div>
+          </div>
+
+          {/* Callout */}
+          {registrationRate > 50 && (
+            <motion.div
+              className="mt-6 p-4 bg-ycod-green/10 border-2 border-dashed border-ycod-green rounded-md text-center"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              transition={{ duration: 0.3 }}
+            >
+              <p className="font-body text-sm text-ycod-black/80">
+                That&apos;s <strong>{additionalRegistered.toLocaleString()}</strong> more registered donors —
+                enough to potentially save <strong>{livesSaved.toLocaleString()}</strong> lives through organ
+                transplants every year. An opt-out system could get us there.
+              </p>
+            </motion.div>
+          )}
+        </motion.div>
+      </div>
+    </section>
+  );
+}

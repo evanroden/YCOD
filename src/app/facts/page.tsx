@@ -5,6 +5,9 @@ import { motion } from 'framer-motion';
 import FactCard from '@/components/facts/FactCard';
 import SectionDivider from '@/components/ui/SectionDivider';
 import RetroButton from '@/components/ui/RetroButton';
+import CountryComparisonChart from '@/components/ui/CountryComparisonChart';
+import OrganBreakdownChart from '@/components/ui/OrganBreakdownChart';
+import MythVsFact from '@/components/ui/MythVsFact';
 import { FACTS, QUIZ_QUESTIONS } from '@/lib/constants';
 import { fadeInUp } from '@/lib/animations';
 
@@ -77,6 +80,33 @@ export default function FactsPage() {
           ))}
         </div>
       </section>
+
+      <SectionDivider color="#4A90D9" />
+
+      {/* Interactive Charts */}
+      <section className="py-16 md:py-24 bg-ycod-black/5">
+        <div className="max-w-4xl mx-auto px-4 space-y-12">
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-ycod-black mb-3">
+              The Data, Visualized
+            </h2>
+            <p className="font-body text-lg text-ycod-black/70">
+              Explore the numbers behind the organ donation crisis.
+            </p>
+          </motion.div>
+          <CountryComparisonChart />
+          <OrganBreakdownChart />
+        </div>
+      </section>
+
+      {/* Myths vs Facts */}
+      <SectionDivider color="#F07070" />
+      <MythVsFact />
 
       <SectionDivider color="#F7DC6F" />
 

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import SectionDivider from '@/components/ui/SectionDivider';
 import RetroButton from '@/components/ui/RetroButton';
+import ActionChecklist from '@/components/ui/ActionChecklist';
 import { fadeInUp } from '@/lib/animations';
 
 export default function JoinPage() {
@@ -16,19 +17,26 @@ export default function JoinPage() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
+    setError('');
     try {
-      await fetch('/api/join', {
+      const res = await fetch('/api/join', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
+      const result = await res.json();
+      if (!res.ok) {
+        setError(result.error || 'Something went wrong.');
+        return;
+      }
       setSubmitted(true);
     } catch {
-      alert('Something went wrong. Please try again.');
+      setError('Could not submit. Please try again or email us at Support@YCOD.org.');
     } finally {
       setSubmitting(false);
     }
@@ -171,6 +179,11 @@ export default function JoinPage() {
                   />
                 </div>
               </div>
+              {error && (
+                <div className="mt-4 p-3 bg-ycod-coral/20 border-2 border-ycod-coral rounded-md">
+                  <p className="font-body text-sm text-ycod-coral">{error}</p>
+                </div>
+              )}
               <div className="mt-6">
                 <RetroButton
                   type="submit"
@@ -180,6 +193,10 @@ export default function JoinPage() {
                   {submitting ? 'Joining...' : 'Join the Movement'}
                 </RetroButton>
               </div>
+              <p className="font-body text-xs text-ycod-black/40 mt-3 text-center">
+                Your information is stored securely and used only for YCOD communications.
+                We never share your data with third parties.
+              </p>
             </motion.form>
           ) : (
             <motion.div
@@ -250,6 +267,9 @@ export default function JoinPage() {
           </div>
         </div>
       </section>
+
+      {/* Action Checklist */}
+      <ActionChecklist />
     </>
   );
 }

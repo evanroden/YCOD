@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import SectionDivider from '@/components/ui/SectionDivider';
 import RetroButton from '@/components/ui/RetroButton';
 import NinetyCard from '@/components/ui/NinetyCard';
+import BillImpactViz from '@/components/ui/BillImpactViz';
+import LetterGenerator from '@/components/ui/LetterGenerator';
 import { BILL_TEXT } from '@/lib/constants';
 import { fadeInUp } from '@/lib/animations';
 
@@ -109,6 +111,15 @@ export default function BillPage() {
 
       <SectionDivider color="#4A90D9" />
 
+      {/* Impact Visualization */}
+      <section className="py-16 md:py-24 bg-ycod-blue/5">
+        <div className="max-w-4xl mx-auto px-4">
+          <BillImpactViz />
+        </div>
+      </section>
+
+      <SectionDivider color="#00C9A7" />
+
       {/* Full Bill Text */}
       <section className="py-16 md:py-24 bg-ycod-black/5">
         <div className="max-w-3xl mx-auto px-4">
@@ -143,6 +154,9 @@ export default function BillPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Letter Generator */}
+      <LetterGenerator />
 
       <SectionDivider color="#F07070" />
 
