@@ -12,12 +12,12 @@ interface OrganData {
   icon: string;
 }
 
-const ORGAN_DATA: OrganData[] = [
-  { organ: 'Kidney', percentage: 85, count: '~87,500', color: '#F07070', icon: '🫘' },
-  { organ: 'Liver', percentage: 10, count: '~10,300', color: '#4A90D9', icon: '🫀' },
-  { organ: 'Heart', percentage: 3, count: '~3,100', color: '#F5A0B8', icon: '❤️' },
-  { organ: 'Lung', percentage: 1, count: '~1,000', color: '#00C9A7', icon: '🫁' },
-  { organ: 'Other', percentage: 1, count: '~1,100', color: '#F7DC6F', icon: '🏥' },
+const ORGAN_DATA: (OrganData & { i18nKey: string })[] = [
+  { organ: 'Kidney', i18nKey: 'organ.kidney', percentage: 85, count: '~87,500', color: '#F07070', icon: '🫘' },
+  { organ: 'Liver', i18nKey: 'organ.liver', percentage: 10, count: '~10,300', color: '#4A90D9', icon: '🫀' },
+  { organ: 'Heart', i18nKey: 'organ.heart', percentage: 3, count: '~3,100', color: '#F5A0B8', icon: '❤️' },
+  { organ: 'Lung', i18nKey: 'organ.lung', percentage: 1, count: '~1,000', color: '#00C9A7', icon: '🫁' },
+  { organ: 'Other', i18nKey: 'organ.other', percentage: 1, count: '~1,100', color: '#F7DC6F', icon: '🏥' },
 ];
 
 function DonutSegment({
@@ -107,7 +107,7 @@ export default function OrganBreakdownChart() {
               {hoveredIndex !== null ? ORGAN_DATA[hoveredIndex].percentage + '%' : '103K+'}
             </span>
             <span className="font-body text-xs text-ycod-black/60 dark:text-white/60">
-              {hoveredIndex !== null ? ORGAN_DATA[hoveredIndex].organ : t('organ.waiting')}
+              {hoveredIndex !== null ? t(ORGAN_DATA[hoveredIndex].i18nKey) : t('organ.waiting')}
             </span>
           </div>
         </div>
@@ -132,7 +132,7 @@ export default function OrganBreakdownChart() {
               />
               <span className="text-lg flex-shrink-0">{item.icon}</span>
               <div className="flex-1">
-                <span className="font-display font-bold text-sm text-ycod-black">{item.organ}</span>
+                <span className="font-display font-bold text-sm text-ycod-black">{t(item.i18nKey)}</span>
                 <span className="font-body text-xs text-ycod-black/50 ml-2">{item.count} {t('organ.people')}</span>
               </div>
               <span className="font-display font-bold text-sm" style={{ color: item.color }}>

@@ -28,7 +28,7 @@ export default function BlogPostContent({ post, prevPost, nextPost }: BlogPostCo
   const categoryColor = CATEGORY_COLORS[post.category];
   const translated = locale !== 'en' ? blogTranslations[locale]?.[post.slug] : null;
   const title = translated?.title || post.title;
-  const contentNote = locale !== 'en' ? t('blog.content_note') : '';
+  const translatedContent = translated?.content || post.content;
   const dateFormatted = new Date(post.date).toLocaleDateString(LOCALE_MAP[locale] || 'en-US', {
     year: 'numeric',
     month: 'long',
@@ -84,11 +84,6 @@ export default function BlogPostContent({ post, prevPost, nextPost }: BlogPostCo
       {/* Content */}
       <section className="py-12 md:py-16 bg-white dark:bg-ycod-black transition-colors duration-300">
         <div className="max-w-3xl mx-auto px-4">
-          {contentNote && (
-            <div className="mb-6 p-3 bg-ycod-yellow/20 border-l-4 border-ycod-yellow rounded-r-md">
-              <p className="font-body text-sm text-ycod-black/70 dark:text-white/70 italic">{contentNote}</p>
-            </div>
-          )}
           <motion.div
             className="prose prose-lg dark:prose-invert max-w-none
               prose-headings:font-display prose-headings:text-ycod-black dark:prose-headings:text-white prose-headings:font-bold
@@ -103,7 +98,7 @@ export default function BlogPostContent({ post, prevPost, nextPost }: BlogPostCo
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            dangerouslySetInnerHTML={{ __html: post.content }}
+            dangerouslySetInnerHTML={{ __html: translatedContent }}
           />
         </div>
       </section>

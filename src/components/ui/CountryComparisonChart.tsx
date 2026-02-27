@@ -12,14 +12,14 @@ interface CountryData {
   color: string;
 }
 
-const COUNTRY_DATA: CountryData[] = [
-  { country: 'Spain', rate: 90, system: 'opt-out', flag: '🇪🇸', color: '#00C9A7' },
-  { country: 'France', rate: 83, system: 'opt-out', flag: '🇫🇷', color: '#00C9A7' },
-  { country: 'UK', rate: 80, system: 'opt-out', flag: '🇬🇧', color: '#00C9A7' },
-  { country: 'Austria', rate: 78, system: 'opt-out', flag: '🇦🇹', color: '#00C9A7' },
-  { country: 'Netherlands', rate: 73, system: 'opt-out', flag: '🇳🇱', color: '#00C9A7' },
-  { country: 'US Average', rate: 60, system: 'opt-in', flag: '🇺🇸', color: '#F7DC6F' },
-  { country: 'New York', rate: 50, system: 'opt-in', flag: '🗽', color: '#F07070' },
+const COUNTRY_DATA: (CountryData & { i18nKey: string })[] = [
+  { country: 'Spain', i18nKey: 'chart.country.spain', rate: 90, system: 'opt-out', flag: '🇪🇸', color: '#00C9A7' },
+  { country: 'France', i18nKey: 'chart.country.france', rate: 83, system: 'opt-out', flag: '🇫🇷', color: '#00C9A7' },
+  { country: 'UK', i18nKey: 'chart.country.uk', rate: 80, system: 'opt-out', flag: '🇬🇧', color: '#00C9A7' },
+  { country: 'Austria', i18nKey: 'chart.country.austria', rate: 78, system: 'opt-out', flag: '🇦🇹', color: '#00C9A7' },
+  { country: 'Netherlands', i18nKey: 'chart.country.netherlands', rate: 73, system: 'opt-out', flag: '🇳🇱', color: '#00C9A7' },
+  { country: 'US Average', i18nKey: 'chart.country.us', rate: 60, system: 'opt-in', flag: '🇺🇸', color: '#F7DC6F' },
+  { country: 'New York', i18nKey: 'chart.country.ny', rate: 50, system: 'opt-in', flag: '🗽', color: '#F07070' },
 ];
 
 export default function CountryComparisonChart() {
@@ -71,7 +71,7 @@ export default function CountryComparisonChart() {
             <div className="flex items-center gap-3">
               <span className="text-lg w-8 text-center flex-shrink-0">{item.flag}</span>
               <span className="font-display font-bold text-sm text-ycod-black w-24 flex-shrink-0">
-                {item.country}
+                {t(item.i18nKey)}
               </span>
               <div className="flex-1 relative h-8 bg-gray-100 rounded-md border-2 border-ycod-black overflow-hidden">
                 <motion.div
@@ -100,8 +100,8 @@ export default function CountryComparisonChart() {
                 transition={{ duration: 0.15 }}
               >
                 {item.system === 'opt-out'
-                  ? t('chart.tooltip_optout', { country: item.country })
-                  : item.country === 'New York'
+                  ? t('chart.tooltip_optout', { country: t(item.i18nKey) })
+                  : item.i18nKey === 'chart.country.ny'
                   ? t('chart.tooltip_ny')
                   : t('chart.tooltip_optin')}
               </motion.div>

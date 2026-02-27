@@ -1,8 +1,29 @@
-export const blogTranslations: Record<
-  string,
-  Record<string, { title: string; excerpt: string }>
-> = {
-  zh: {
+import { blogContentZh1 } from './blog-content-zh-1';
+import { blogContentZh2 } from './blog-content-zh-2';
+import { blogContentZh3 } from './blog-content-zh-3';
+import { blogContentEs1 } from './blog-content-es-1';
+import { blogContentEs2 } from './blog-content-es-2';
+import { blogContentEs3 } from './blog-content-es-3';
+import { blogContentFr1 } from './blog-content-fr-1';
+import { blogContentFr2 } from './blog-content-fr-2';
+import { blogContentFr3 } from './blog-content-fr-3';
+
+const zhContent: Record<string, string> = { ...blogContentZh1, ...blogContentZh2, ...blogContentZh3 };
+const esContent: Record<string, string> = { ...blogContentEs1, ...blogContentEs2, ...blogContentEs3 };
+const frContent: Record<string, string> = { ...blogContentFr1, ...blogContentFr2, ...blogContentFr3 };
+
+function addContent(
+  translations: Record<string, { title: string; excerpt: string }>,
+  content: Record<string, string>,
+): Record<string, { title: string; excerpt: string; content?: string }> {
+  const result: Record<string, { title: string; excerpt: string; content?: string }> = {};
+  for (const slug of Object.keys(translations)) {
+    result[slug] = { ...translations[slug], content: content[slug] };
+  }
+  return result;
+}
+
+const zhTranslations: Record<string, { title: string; excerpt: string }> = {
     "englands-opt-out-organ-donation-law": {
       title: "英格兰的麦克斯和凯拉法案：器官捐献的新时代",
       excerpt:
@@ -153,9 +174,9 @@ export const blogTranslations: Record<
       excerpt:
         "YCOD站在青年主导运动的前沿，致力于推动纽约州器官捐献法律的变革……",
     },
-  },
+};
 
-  es: {
+const esTranslations: Record<string, { title: string; excerpt: string }> = {
     "englands-opt-out-organ-donation-law": {
       title:
         "La Ley de Max y Keira en Inglaterra: Una nueva era para la donación de órganos",
@@ -336,9 +357,9 @@ export const blogTranslations: Record<
       excerpt:
         "YCOD está a la vanguardia de un movimiento liderado por jóvenes para cambiar las leyes de donación de órganos en el estado de Nueva York...",
     },
-  },
+};
 
-  fr: {
+const frTranslations: Record<string, { title: string; excerpt: string }> = {
     "englands-opt-out-organ-donation-law": {
       title:
         "La loi Max et Keira en Angleterre : une nouvelle ère pour le don d'organes",
@@ -519,5 +540,13 @@ export const blogTranslations: Record<
       excerpt:
         "YCOD est à l'avant-garde d'un mouvement porté par la jeunesse pour changer les lois sur le don d'organes dans l'État de New York...",
     },
-  },
+};
+
+export const blogTranslations: Record<
+  string,
+  Record<string, { title: string; excerpt: string; content?: string }>
+> = {
+  zh: addContent(zhTranslations, zhContent),
+  es: addContent(esTranslations, esContent),
+  fr: addContent(frTranslations, frContent),
 };

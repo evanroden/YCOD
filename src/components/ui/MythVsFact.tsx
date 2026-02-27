@@ -4,38 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useI18n } from '@/lib/i18n';
 
-interface MythFactPair {
-  myth: string;
-  fact: string;
-  source?: string;
-}
-
-const MYTHS: MythFactPair[] = [
-  {
-    myth: 'Doctors won\'t try as hard to save me if I\'m a registered donor.',
-    fact: 'Your medical team\'s only job is to save YOUR life. Organ donation is only considered after all life-saving measures have been exhausted and death is declared by a completely separate team.',
-  },
-  {
-    myth: 'I\'m too old to be an organ donor.',
-    fact: 'There is no age limit for organ donation. Cecil Lockhart donated organs at age 95. Medical suitability is determined at the time of death, not by your birthday.',
-  },
-  {
-    myth: 'My religion doesn\'t allow organ donation.',
-    fact: 'No major world religion opposes organ donation. Christianity, Judaism, Islam, Hinduism, Buddhism, and Sikhism all support it as an act of compassion and generosity.',
-  },
-  {
-    myth: 'If I donate, my body won\'t be suitable for an open-casket funeral.',
-    fact: 'Organ and tissue recovery is performed by skilled surgeons in a sterile operating room. The body is treated with dignity and respect, and an open-casket funeral is absolutely possible.',
-  },
-  {
-    myth: 'Rich or famous people get organs faster.',
-    fact: 'The organ allocation system (managed by UNOS) is based on medical urgency, blood type, time on the waitlist, and geographic proximity — not wealth, fame, or social status.',
-  },
-  {
-    myth: 'Organ donation costs money for the donor\'s family.',
-    fact: 'There is zero cost to the donor\'s family for organ donation. All medical costs related to donation are covered by the organ procurement organization or the recipient\'s insurance.',
-  },
-];
+const MYTH_INDICES = [0, 1, 2, 3, 4, 5];
 
 export default function MythVsFact() {
   const { t } = useI18n();
@@ -58,7 +27,7 @@ export default function MythVsFact() {
     if (allRevealed) {
       setFlippedCards(new Set());
     } else {
-      setFlippedCards(new Set(MYTHS.map((_, i) => i)));
+      setFlippedCards(new Set(MYTH_INDICES));
     }
     setAllRevealed(!allRevealed);
   };
@@ -87,8 +56,10 @@ export default function MythVsFact() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {MYTHS.map((item, index) => {
+          {MYTH_INDICES.map((index) => {
             const isFlipped = flippedCards.has(index);
+            const mythText = t(`myth.${index}.myth`);
+            const factText = t(`myth.${index}.fact`);
             return (
               <motion.div
                 key={index}
@@ -100,7 +71,7 @@ export default function MythVsFact() {
                 transition={{ delay: index * 0.08 }}
                 role="button"
                 aria-expanded={isFlipped}
-                aria-label={isFlipped ? `Fact: ${item.fact}` : `Myth: ${item.myth}. Activate to reveal the truth.`}
+                aria-label={isFlipped ? factText : `${mythText}. ${t('myth.tap_reveal')}`}
                 tabIndex={0}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
@@ -125,7 +96,7 @@ export default function MythVsFact() {
                           {t('myth.myth_label')}
                         </span>
                         <p className="font-body text-ycod-black/90 font-semibold">
-                          &ldquo;{item.myth}&rdquo;
+                          &ldquo;{mythText}&rdquo;
                         </p>
                       </div>
                       <p className="font-body text-xs text-ycod-coral/60 mt-3">
@@ -147,7 +118,7 @@ export default function MythVsFact() {
                           {t('myth.fact_label')}
                         </span>
                         <p className="font-body text-ycod-black/90">
-                          {item.fact}
+                          {factText}
                         </p>
                       </div>
                       <p className="font-body text-xs text-ycod-green/60 mt-3">
