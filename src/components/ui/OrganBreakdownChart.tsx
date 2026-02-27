@@ -2,6 +2,7 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
+import { useI18n } from '@/lib/i18n';
 
 interface OrganData {
   organ: string;
@@ -58,6 +59,7 @@ function DonutSegment({
 }
 
 export default function OrganBreakdownChart() {
+  const { t } = useI18n();
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -73,10 +75,10 @@ export default function OrganBreakdownChart() {
       viewport={{ once: true }}
     >
       <h3 className="font-display text-xl md:text-2xl font-bold text-ycod-black dark:text-white mb-2 text-center">
-        What Organs Are People Waiting For?
+        {t('organ.title')}
       </h3>
       <p className="font-body text-sm text-ycod-black/60 dark:text-white/60 text-center mb-8">
-        Out of 103,000+ people on the national transplant waitlist
+        {t('organ.subtitle')}
       </p>
 
       <div className="flex flex-col md:flex-row items-center gap-8">
@@ -105,7 +107,7 @@ export default function OrganBreakdownChart() {
               {hoveredIndex !== null ? ORGAN_DATA[hoveredIndex].percentage + '%' : '103K+'}
             </span>
             <span className="font-body text-xs text-ycod-black/60 dark:text-white/60">
-              {hoveredIndex !== null ? ORGAN_DATA[hoveredIndex].organ : 'waiting'}
+              {hoveredIndex !== null ? ORGAN_DATA[hoveredIndex].organ : t('organ.waiting')}
             </span>
           </div>
         </div>
@@ -131,7 +133,7 @@ export default function OrganBreakdownChart() {
               <span className="text-lg flex-shrink-0">{item.icon}</span>
               <div className="flex-1">
                 <span className="font-display font-bold text-sm text-ycod-black">{item.organ}</span>
-                <span className="font-body text-xs text-ycod-black/50 ml-2">{item.count} people</span>
+                <span className="font-body text-xs text-ycod-black/50 ml-2">{item.count} {t('organ.people')}</span>
               </div>
               <span className="font-display font-bold text-sm" style={{ color: item.color }}>
                 {item.percentage}%
@@ -144,9 +146,7 @@ export default function OrganBreakdownChart() {
       {/* Kidney callout */}
       <div className="mt-6 p-3 bg-ycod-coral/10 border-l-4 border-ycod-coral rounded-r-md">
         <p className="font-body text-sm text-ycod-black/80 dark:text-white/80">
-          <strong>The kidney crisis dominates the waitlist.</strong> 85% of people waiting need a kidney,
-          and the average wait is 3–5 years. Living donation can help — you only need one kidney to live
-          a full, healthy life.
+          {t('organ.callout')}
         </p>
       </div>
     </motion.div>

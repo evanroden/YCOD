@@ -5,6 +5,19 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NAV_LINKS } from '@/lib/constants';
 import RetroButton from '@/components/ui/RetroButton';
+import { useI18n } from '@/lib/i18n';
+
+const NAV_I18N_MAP: Record<string, string> = {
+  '/about': 'nav.about',
+  '/initiatives': 'nav.initiatives',
+  '/facts': 'nav.facts',
+  '/bill': 'nav.bill',
+  '/blog': 'nav.news',
+  '/coverage': 'nav.coverage',
+  '/tedx': 'nav.tedx',
+  '/partners': 'nav.partners',
+  '/contact': 'nav.contact',
+};
 
 interface MobileMenuProps {
   open: boolean;
@@ -12,6 +25,7 @@ interface MobileMenuProps {
 }
 
 export default function MobileMenu({ open, onClose }: MobileMenuProps) {
+  const { t } = useI18n();
   const closeRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLElement | null>(null);
@@ -103,7 +117,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                     className="text-2xl font-display font-bold text-white hover:text-ycod-yellow transition-colors"
                     onClick={onClose}
                   >
-                    {link.label}
+                    {t(NAV_I18N_MAP[link.href] || 'nav.about')}
                   </Link>
                 </motion.div>
               ))}
@@ -113,7 +127,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                 transition={{ delay: 0.1 + NAV_LINKS.length * 0.08 }}
               >
                 <RetroButton href="/join" color="bg-ycod-coral" className="text-white text-xl mt-4">
-                  Join the Movement
+                  {t('cta.join')}
                 </RetroButton>
               </motion.div>
             </nav>

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { TIMELINE_EVENTS } from '@/lib/constants';
+import { useI18n } from '@/lib/i18n';
 
 const EXTENDED_DETAILS: Record<string, string> = {
   'YCOD is Founded': 'What began as a personal cause — Evan\'s family member needed a kidney transplant — became a mission. Four East Aurora High School students decided they wouldn\'t just wait for change. They\'d make it.',
@@ -17,6 +18,7 @@ const EXTENDED_DETAILS: Record<string, string> = {
 };
 
 export default function InteractiveTimeline() {
+  const { t } = useI18n();
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   return (
@@ -51,7 +53,7 @@ export default function InteractiveTimeline() {
                 onClick={() => setExpandedIndex(isExpanded ? null : index)}
                 whileHover={{ scale: 1.3 }}
                 whileTap={{ scale: 0.9 }}
-                aria-label={`${isExpanded ? 'Collapse' : 'Expand'} ${event.title}`}
+                aria-label={`${isExpanded ? t('timeline.click_collapse') : t('timeline.click_expand')} ${event.title}`}
               />
             </div>
 
@@ -92,7 +94,7 @@ export default function InteractiveTimeline() {
                 </AnimatePresence>
 
                 <p className="font-body text-xs text-ycod-blue/60 mt-2">
-                  {isExpanded ? 'Click to collapse' : 'Click to read more'}
+                  {isExpanded ? t('timeline.click_collapse') : t('timeline.click_expand')}
                 </p>
               </motion.div>
             </div>

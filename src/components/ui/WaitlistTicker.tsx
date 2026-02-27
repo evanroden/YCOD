@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { useI18n } from '@/lib/i18n';
 
 const INITIAL_WAITLIST = 103000;
 const ADDITIONS_PER_DAY = 13;
@@ -9,6 +10,7 @@ const DEATHS_PER_DAY = 17;
 const TRANSPLANTS_PER_DAY = 30;
 
 export default function WaitlistTicker() {
+  const { t } = useI18n();
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
   const [elapsed, setElapsed] = useState(0);
@@ -20,11 +22,10 @@ export default function WaitlistTicker() {
       setElapsed((prev) => prev + 1);
       setPulse(true);
       setTimeout(() => setPulse(false), 400);
-    }, 6000); // tick every 6 seconds for visible change
+    }, 6000);
     return () => clearInterval(interval);
   }, [isInView]);
 
-  // Simulated changes per tick (6 seconds = 1/14400th of a day)
   const ticksPerDay = 14400;
   const addedTotal = Math.floor((elapsed * ADDITIONS_PER_DAY) / ticksPerDay * 100) / 100;
   const deathsTotal = Math.floor((elapsed * DEATHS_PER_DAY) / ticksPerDay * 100) / 100;
@@ -34,6 +35,8 @@ export default function WaitlistTicker() {
 
   const minutesOnPage = Math.floor(elapsed * 6 / 60);
   const secondsOnPage = (elapsed * 6) % 60;
+  const timeStr = minutesOnPage > 0 ? `${minutesOnPage}m ${secondsOnPage}s` : `${secondsOnPage}s`;
+  const deathsStr = (DEATHS_PER_DAY / 24 / 60 * (elapsed * 6 / 60)).toFixed(1);
 
   return (
     <div ref={ref} className="py-12 bg-ycod-black">
@@ -46,7 +49,7 @@ export default function WaitlistTicker() {
         >
           <div className="text-center mb-6">
             <p className="font-body text-white/50 text-xs uppercase tracking-widest mb-2">
-              National Transplant Waitlist — Simulated Live Counter
+              {t('waitlist.title')}
             </p>
             <motion.div
               className={`font-display text-5xl md:text-7xl font-bold transition-colors duration-300 ${
@@ -56,7 +59,7 @@ export default function WaitlistTicker() {
               {currentWaitlist.toLocaleString()}
             </motion.div>
             <p className="font-body text-white/60 text-sm mt-2">
-              people waiting right now
+              {t('waitlist.people_waiting')}
             </p>
           </div>
 
@@ -65,19 +68,19 @@ export default function WaitlistTicker() {
               <div className="font-display text-lg md:text-xl font-bold text-ycod-green">
                 +{ADDITIONS_PER_DAY}
               </div>
-              <p className="font-body text-white/50 text-xs">added daily</p>
+              <p className="font-body text-white/50 text-xs">{t('waitlist.added_daily')}</p>
             </div>
             <div className="p-3 rounded-md bg-white/5">
               <div className="font-display text-lg md:text-xl font-bold text-ycod-blue">
                 {TRANSPLANTS_PER_DAY}
               </div>
-              <p className="font-body text-white/50 text-xs">transplants/day</p>
+              <p className="font-body text-white/50 text-xs">{t('waitlist.transplants_day')}</p>
             </div>
             <div className="p-3 rounded-md bg-white/5">
               <div className="font-display text-lg md:text-xl font-bold text-ycod-coral">
                 -{DEATHS_PER_DAY}
               </div>
-              <p className="font-body text-white/50 text-xs">die waiting daily</p>
+              <p className="font-body text-white/50 text-xs">{t('waitlist.die_daily')}</p>
             </div>
           </div>
 
@@ -87,9 +90,7 @@ export default function WaitlistTicker() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
             >
-              You&apos;ve been on this page for {minutesOnPage > 0 ? `${minutesOnPage}m ` : ''}{secondsOnPage}s.
-              In that time, approximately {(DEATHS_PER_DAY / 24 / 60 * (elapsed * 6 / 60)).toFixed(1)} people
-              died waiting for an organ.
+              {t('waitlist.time_message', { time: timeStr, deaths: deathsStr })}
             </motion.p>
           )}
         </motion.div>

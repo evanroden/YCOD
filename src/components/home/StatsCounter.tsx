@@ -4,8 +4,18 @@ import { motion } from 'framer-motion';
 import AnimatedCounter from '@/components/ui/AnimatedCounter';
 import { STATS } from '@/lib/constants';
 import { staggerContainer, fadeInUp } from '@/lib/animations';
+import { useI18n } from '@/lib/i18n';
+
+const STAT_I18N_KEYS = [
+  'stats.waiting',
+  'stats.ny_waiting',
+  'stats.die_daily',
+  'stats.lives_saved',
+];
 
 export default function StatsCounter() {
+  const { t } = useI18n();
+
   return (
     <section className="bg-ycod-green py-16 md:py-24">
       <div className="max-w-6xl mx-auto px-4">
@@ -31,7 +41,7 @@ export default function StatsCounter() {
                 />
               </div>
               <p className="font-body font-semibold text-ycod-black/80 text-sm md:text-base">
-                {stat.label}
+                {t(STAT_I18N_KEYS[i])}
               </p>
             </motion.div>
           ))}

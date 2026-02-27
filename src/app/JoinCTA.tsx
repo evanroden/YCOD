@@ -4,8 +4,11 @@ import { motion } from 'framer-motion';
 import MemphisBackground from '@/components/ui/MemphisBackground';
 import RetroButton from '@/components/ui/RetroButton';
 import { fadeInUp } from '@/lib/animations';
+import { useI18n } from '@/lib/i18n';
 
 export default function JoinCTA() {
+  const { t } = useI18n();
+
   return (
     <MemphisBackground variant="blue" className="py-16 md:py-24">
       <div className="max-w-4xl mx-auto px-4 text-center">
@@ -16,17 +19,16 @@ export default function JoinCTA() {
           variants={fadeInUp}
         >
           <h2 className="font-display text-3xl md:text-5xl font-bold text-white mb-4">
-            This Is a Movement of Many
+            {t('home.movement_title')}
           </h2>
           <p className="font-body text-xl text-white/90 mb-4">
-            Over 3,000 members strong and growing. Young people and those young at heart,
-            coming together to save lives.
+            {t('home.movement_desc1')}
           </p>
           <p className="font-body text-lg text-white/70 mb-8">
-            Join us in advocating for opt-out organ donation in New York State.
+            {t('home.movement_desc2')}
           </p>
           <RetroButton href="/join" color="bg-ycod-yellow" className="text-ycod-black text-lg px-10 py-4">
-            Join the Movement
+            {t('cta.join')}
           </RetroButton>
         </motion.div>
       </div>

@@ -40,7 +40,7 @@ export default function Footer() {
               className="h-16 w-auto mb-4"
             />
             <p className="text-gray-400 font-body text-sm">
-              Youth Coalition for Organ Donation. New Yorkers helping New Yorkers save lives.
+              {t('footer.description')}
             </p>
           </div>
 
@@ -52,9 +52,9 @@ export default function Footer() {
               <li><Link href="/initiatives" className="text-gray-300 hover:text-ycod-pink transition-colors">{t('nav.initiatives')}</Link></li>
               <li><Link href="/facts" className="text-gray-300 hover:text-ycod-pink transition-colors">{t('nav.facts')}</Link></li>
               <li><Link href="/tedx" className="text-gray-300 hover:text-ycod-pink transition-colors">{t('nav.tedx')}</Link></li>
-              <li><Link href="/bill" className="text-gray-300 hover:text-ycod-pink transition-colors">The Bill</Link></li>
+              <li><Link href="/bill" className="text-gray-300 hover:text-ycod-pink transition-colors">{t('footer.the_bill')}</Link></li>
               <li><Link href="/blog" className="text-gray-300 hover:text-ycod-pink transition-colors">{t('nav.news')}</Link></li>
-              <li><Link href="/coverage" className="text-gray-300 hover:text-ycod-pink transition-colors">Press Coverage</Link></li>
+              <li><Link href="/coverage" className="text-gray-300 hover:text-ycod-pink transition-colors">{t('footer.press_coverage')}</Link></li>
             </ul>
           </div>
 
@@ -125,7 +125,7 @@ export default function Footer() {
             {t('footer.join_registry')}
           </p>
           <div className="visitor-counter inline-block" aria-hidden="true">
-            VISITORS: {visitorCount}
+            {t('footer.visitors')}: {visitorCount}
           </div>
         </div>
 

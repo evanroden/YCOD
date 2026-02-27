@@ -2,49 +2,51 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-
-const BEFORE_AFTER = [
-  {
-    label: 'Registration Rate',
-    before: '~50%',
-    after: '~85%+',
-    beforeWidth: 50,
-    afterWidth: 85,
-    colorBefore: '#F07070',
-    colorAfter: '#00C9A7',
-  },
-  {
-    label: 'Annual Donors (NY)',
-    before: '~1,600',
-    after: '~2,700+',
-    beforeWidth: 45,
-    afterWidth: 80,
-    colorBefore: '#F07070',
-    colorAfter: '#00C9A7',
-  },
-  {
-    label: 'Lives Saved (NY/year)',
-    before: '~800',
-    after: '~2,100+',
-    beforeWidth: 30,
-    afterWidth: 80,
-    colorBefore: '#F07070',
-    colorAfter: '#00C9A7',
-  },
-  {
-    label: 'Waitlist Reduction',
-    before: 'Growing',
-    after: 'Shrinking',
-    beforeWidth: 70,
-    afterWidth: 30,
-    colorBefore: '#F07070',
-    colorAfter: '#00C9A7',
-  },
-];
+import { useI18n } from '@/lib/i18n';
 
 export default function BillImpactViz() {
+  const { t } = useI18n();
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+  const BEFORE_AFTER = [
+    {
+      label: t('impact.reg_rate'),
+      before: '~50%',
+      after: '~85%+',
+      beforeWidth: 50,
+      afterWidth: 85,
+      colorBefore: '#F07070',
+      colorAfter: '#00C9A7',
+    },
+    {
+      label: t('impact.annual_donors'),
+      before: '~1,600',
+      after: '~2,700+',
+      beforeWidth: 45,
+      afterWidth: 80,
+      colorBefore: '#F07070',
+      colorAfter: '#00C9A7',
+    },
+    {
+      label: t('impact.lives_saved'),
+      before: '~800',
+      after: '~2,100+',
+      beforeWidth: 30,
+      afterWidth: 80,
+      colorBefore: '#F07070',
+      colorAfter: '#00C9A7',
+    },
+    {
+      label: t('impact.waitlist_reduction'),
+      before: t('impact.growing'),
+      after: t('impact.shrinking'),
+      beforeWidth: 70,
+      afterWidth: 30,
+      colorBefore: '#F07070',
+      colorAfter: '#00C9A7',
+    },
+  ];
 
   return (
     <motion.div
@@ -55,20 +57,20 @@ export default function BillImpactViz() {
       viewport={{ once: true }}
     >
       <h3 className="font-display text-xl md:text-2xl font-bold text-ycod-black dark:text-white mb-2 text-center">
-        Projected Impact of Bill A07954
+        {t('impact.title')}
       </h3>
       <p className="font-body text-sm text-ycod-black/60 dark:text-white/60 text-center mb-8">
-        Based on outcomes from countries that switched to opt-out systems
+        {t('impact.subtitle')}
       </p>
 
       <div className="space-y-6">
         {BEFORE_AFTER.map((item, index) => (
-          <div key={item.label}>
+          <div key={index}>
             <p className="font-display font-bold text-sm text-ycod-black mb-2">{item.label}</p>
             <div className="space-y-1.5">
               {/* Before */}
               <div className="flex items-center gap-3">
-                <span className="font-body text-xs text-ycod-black/50 w-14 text-right flex-shrink-0">Before</span>
+                <span className="font-body text-xs text-ycod-black/50 w-14 text-right flex-shrink-0">{t('impact.before')}</span>
                 <div className="flex-1 h-7 bg-gray-100 rounded border-2 border-ycod-black overflow-hidden relative">
                   <motion.div
                     className="absolute inset-y-0 left-0 flex items-center justify-end pr-2 rounded-r-sm"
@@ -83,7 +85,7 @@ export default function BillImpactViz() {
               </div>
               {/* After */}
               <div className="flex items-center gap-3">
-                <span className="font-body text-xs text-ycod-green w-14 text-right flex-shrink-0 font-bold">After</span>
+                <span className="font-body text-xs text-ycod-green w-14 text-right flex-shrink-0 font-bold">{t('impact.after')}</span>
                 <div className="flex-1 h-7 bg-gray-100 rounded border-2 border-ycod-black overflow-hidden relative">
                   <motion.div
                     className="absolute inset-y-0 left-0 flex items-center justify-end pr-2 rounded-r-sm"
@@ -103,9 +105,7 @@ export default function BillImpactViz() {
 
       <div className="mt-6 p-3 bg-ycod-blue/10 border-l-4 border-ycod-blue rounded-r-md">
         <p className="font-body text-sm text-ycod-black/80 dark:text-white/80">
-          <strong>These are conservative estimates</strong> based on real-world data from opt-out countries.
-          Spain saw a 40% increase in donation rates within 10 years of switching. A similar shift in New York
-          could save over 1,000 additional lives per year.
+          {t('impact.note')}
         </p>
       </div>
     </motion.div>

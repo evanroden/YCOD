@@ -2,64 +2,66 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useI18n } from '@/lib/i18n';
 
 interface ActionItem {
   id: string;
-  label: string;
-  description: string;
+  labelKey: string;
+  descKey: string;
   icon: string;
   link?: string;
-  linkText?: string;
+  linkKey?: string;
 }
 
 const ACTIONS: ActionItem[] = [
   {
     id: 'register',
-    label: 'Register as an organ donor',
-    description: 'Text REGISTER to 57838 through our partner ONE8FIFTY.',
+    labelKey: 'action.register',
+    descKey: 'action.register_desc',
     icon: '❤️',
     link: 'sms:57838?body=register',
-    linkText: 'Send text now',
+    linkKey: 'action.register_link',
   },
   {
     id: 'join',
-    label: 'Join YCOD',
-    description: 'Add your name to our growing movement of 3,000+ supporters.',
+    labelKey: 'action.join_ycod',
+    descKey: 'action.join_desc',
     icon: '✊',
     link: '/join',
-    linkText: 'Join here',
+    linkKey: 'action.join_link',
   },
   {
     id: 'learn',
-    label: 'Learn the facts',
-    description: 'Know the numbers so you can share them with others.',
+    labelKey: 'action.learn',
+    descKey: 'action.learn_desc',
     icon: '📊',
     link: '/facts',
-    linkText: 'Read facts',
+    linkKey: 'action.learn_link',
   },
   {
     id: 'talk',
-    label: 'Talk to your family',
-    description: 'Have the conversation about organ donation with the people you love.',
+    labelKey: 'action.talk',
+    descKey: 'action.talk_desc',
     icon: '💬',
   },
   {
     id: 'share',
-    label: 'Share on social media',
-    description: 'Spread awareness — post a fact or share our website.',
+    labelKey: 'action.share',
+    descKey: 'action.share_desc',
     icon: '📱',
   },
   {
     id: 'write',
-    label: 'Write your representative',
-    description: 'Use our letter generator to contact your NY Assembly member or senator.',
+    labelKey: 'action.write',
+    descKey: 'action.write_desc',
     icon: '✉️',
     link: '/bill',
-    linkText: 'Write a letter',
+    linkKey: 'action.write_link',
   },
 ];
 
 export default function ActionChecklist() {
+  const { t } = useI18n();
   const [checked, setChecked] = useState<Set<string>>(new Set());
 
   useEffect(() => {
@@ -100,10 +102,10 @@ export default function ActionChecklist() {
           viewport={{ once: true }}
         >
           <h2 className="font-display text-3xl md:text-4xl font-bold text-ycod-black dark:text-white mb-3">
-            How You Can Help
+            {t('action.title')}
           </h2>
           <p className="font-body text-lg text-ycod-black/70 dark:text-white/70">
-            Every action makes a difference. Track your impact below.
+            {t('action.subtitle')}
           </p>
         </motion.div>
 
@@ -111,10 +113,10 @@ export default function ActionChecklist() {
         <div className="mb-8">
           <div className="flex justify-between items-center mb-2">
             <span className="font-display font-bold text-sm text-ycod-black">
-              Your Progress
+              {t('action.progress')}
             </span>
             <span className="font-display font-bold text-sm text-ycod-coral">
-              {checked.size}/{ACTIONS.length} completed
+              {t('action.completed', { done: String(checked.size), total: String(ACTIONS.length) })}
             </span>
           </div>
           <div className="h-4 bg-gray-200 rounded-full border-2 border-ycod-black overflow-hidden">
@@ -141,10 +143,10 @@ export default function ActionChecklist() {
             >
               <div className="text-4xl mb-2">🎉</div>
               <p className="font-display font-bold text-ycod-black">
-                You&apos;re an organ donation champion!
+                {t('action.champion_title')}
               </p>
               <p className="font-body text-sm text-ycod-black/70 dark:text-white/70">
-                Thank you for taking every step. You&apos;re helping save lives.
+                {t('action.champion_text')}
               </p>
             </motion.div>
           )}
@@ -202,17 +204,17 @@ export default function ActionChecklist() {
                     <span className={`font-display font-bold text-sm ${
                       isChecked ? 'text-ycod-black/50 line-through' : 'text-ycod-black'
                     }`}>
-                      {action.label}
+                      {t(action.labelKey)}
                     </span>
                   </div>
-                  <p className="font-body text-xs text-ycod-black/60 dark:text-white/60 mt-1">{action.description}</p>
-                  {action.link && !isChecked && (
+                  <p className="font-body text-xs text-ycod-black/60 dark:text-white/60 mt-1">{t(action.descKey)}</p>
+                  {action.link && action.linkKey && !isChecked && (
                     <a
                       href={action.link}
                       className="font-body text-xs text-ycod-blue hover:text-ycod-coral underline mt-1 inline-block"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      {action.linkText} →
+                      {t(action.linkKey)} →
                     </a>
                   )}
                 </div>

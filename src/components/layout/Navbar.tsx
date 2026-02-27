@@ -7,8 +7,22 @@ import { NAV_LINKS } from '@/lib/constants';
 import RetroButton from '@/components/ui/RetroButton';
 import SettingsPanel from '@/components/ui/SettingsPanel';
 import MobileMenu from './MobileMenu';
+import { useI18n } from '@/lib/i18n';
+
+const NAV_I18N_MAP: Record<string, string> = {
+  '/about': 'nav.about',
+  '/initiatives': 'nav.initiatives',
+  '/facts': 'nav.facts',
+  '/bill': 'nav.bill',
+  '/blog': 'nav.news',
+  '/coverage': 'nav.coverage',
+  '/tedx': 'nav.tedx',
+  '/partners': 'nav.partners',
+  '/contact': 'nav.contact',
+};
 
 export default function Navbar() {
+  const { t } = useI18n();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -45,11 +59,11 @@ export default function Navbar() {
                   href={link.href}
                   className="squiggly-underline font-body font-semibold text-ycod-black dark:text-white hover:text-ycod-coral transition-colors"
                 >
-                  {link.label}
+                  {t(NAV_I18N_MAP[link.href] || 'nav.about')}
                 </Link>
               ))}
               <RetroButton href="/join" color="bg-ycod-coral" className="text-white ml-2">
-                Join
+                {t('nav.join')}
               </RetroButton>
               <SettingsPanel />
             </div>

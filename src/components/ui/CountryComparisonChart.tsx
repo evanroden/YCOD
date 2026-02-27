@@ -2,6 +2,7 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
+import { useI18n } from '@/lib/i18n';
 
 interface CountryData {
   country: string;
@@ -22,6 +23,7 @@ const COUNTRY_DATA: CountryData[] = [
 ];
 
 export default function CountryComparisonChart() {
+  const { t } = useI18n();
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -35,25 +37,25 @@ export default function CountryComparisonChart() {
       viewport={{ once: true }}
     >
       <h3 className="font-display text-xl md:text-2xl font-bold text-ycod-black dark:text-white mb-2 text-center">
-        Registration Rates: Opt-Out vs. Opt-In
+        {t('chart.reg_title')}
       </h3>
       <p className="font-body text-sm text-ycod-black/60 dark:text-white/60 text-center mb-8">
-        Countries with opt-out systems consistently outperform opt-in countries.
+        {t('chart.reg_subtitle')}
       </p>
 
       {/* Legend */}
       <div className="flex gap-6 justify-center mb-6">
         <div className="flex items-center gap-2">
           <div className="w-4 h-4 rounded-sm border-2 border-ycod-black" style={{ background: '#00C9A7' }} />
-          <span className="font-body text-xs text-ycod-black/70 dark:text-white/70">Opt-out system</span>
+          <span className="font-body text-xs text-ycod-black/70 dark:text-white/70">{t('chart.optout_system')}</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-4 h-4 rounded-sm border-2 border-ycod-black" style={{ background: '#F7DC6F' }} />
-          <span className="font-body text-xs text-ycod-black/70 dark:text-white/70">Opt-in system</span>
+          <span className="font-body text-xs text-ycod-black/70 dark:text-white/70">{t('chart.optin_system')}</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-4 h-4 rounded-sm border-2 border-ycod-black" style={{ background: '#F07070' }} />
-          <span className="font-body text-xs text-ycod-black/70 dark:text-white/70">New York</span>
+          <span className="font-body text-xs text-ycod-black/70 dark:text-white/70">{t('chart.new_york')}</span>
         </div>
       </div>
 
@@ -98,10 +100,10 @@ export default function CountryComparisonChart() {
                 transition={{ duration: 0.15 }}
               >
                 {item.system === 'opt-out'
-                  ? `${item.country} uses an opt-out system — citizens are registered by default.`
+                  ? t('chart.tooltip_optout', { country: item.country })
                   : item.country === 'New York'
-                  ? 'New York uses opt-in. Historically one of the lowest registration rates in the US.'
-                  : 'The US uses an opt-in system — you must actively choose to register.'}
+                  ? t('chart.tooltip_ny')
+                  : t('chart.tooltip_optin')}
               </motion.div>
             )}
           </div>
@@ -111,8 +113,7 @@ export default function CountryComparisonChart() {
       {/* Annotation */}
       <div className="mt-6 p-3 bg-ycod-green/10 border-l-4 border-ycod-green rounded-r-md">
         <p className="font-body text-sm text-ycod-black/80 dark:text-white/80">
-          <strong>The pattern is clear:</strong> opt-out systems produce 20–40% higher registration
-          rates. That translates directly into lives saved.
+          {t('chart.reg_annotation')}
         </p>
       </div>
     </motion.div>

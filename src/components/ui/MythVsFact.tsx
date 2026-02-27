@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useI18n } from '@/lib/i18n';
 
 interface MythFactPair {
   myth: string;
@@ -37,6 +38,7 @@ const MYTHS: MythFactPair[] = [
 ];
 
 export default function MythVsFact() {
+  const { t } = useI18n();
   const [flippedCards, setFlippedCards] = useState<Set<number>>(new Set());
   const [allRevealed, setAllRevealed] = useState(false);
 
@@ -71,16 +73,16 @@ export default function MythVsFact() {
           viewport={{ once: true }}
         >
           <h2 className="font-display text-3xl md:text-4xl font-bold text-ycod-black dark:text-white mb-3">
-            Myths vs. Facts
+            {t('myth.title')}
           </h2>
           <p className="font-body text-lg text-ycod-black/70 dark:text-white/70 mb-4">
-            Tap each myth to reveal the truth. How many did you believe?
+            {t('myth.subtitle')}
           </p>
           <button
             onClick={revealAll}
             className="font-body text-sm text-ycod-blue hover:text-ycod-coral transition-colors underline"
           >
-            {allRevealed ? 'Hide all answers' : 'Reveal all answers'}
+            {allRevealed ? t('myth.hide_all') : t('myth.reveal_all')}
           </button>
         </motion.div>
 
@@ -120,14 +122,14 @@ export default function MythVsFact() {
                     >
                       <div>
                         <span className="inline-block px-2 py-0.5 bg-ycod-coral text-white font-display font-bold text-xs rounded border-2 border-ycod-black mb-3">
-                          MYTH
+                          {t('myth.myth_label')}
                         </span>
                         <p className="font-body text-ycod-black/90 font-semibold">
                           &ldquo;{item.myth}&rdquo;
                         </p>
                       </div>
                       <p className="font-body text-xs text-ycod-coral/60 mt-3">
-                        Tap to reveal the truth →
+                        {t('myth.tap_reveal')}
                       </p>
                     </motion.div>
                   ) : (
@@ -142,14 +144,14 @@ export default function MythVsFact() {
                     >
                       <div>
                         <span className="inline-block px-2 py-0.5 bg-ycod-green text-white font-display font-bold text-xs rounded border-2 border-ycod-black mb-3">
-                          FACT
+                          {t('myth.fact_label')}
                         </span>
                         <p className="font-body text-ycod-black/90">
                           {item.fact}
                         </p>
                       </div>
                       <p className="font-body text-xs text-ycod-green/60 mt-3">
-                        ← Tap to see the myth
+                        {t('myth.tap_myth')}
                       </p>
                     </motion.div>
                   )}

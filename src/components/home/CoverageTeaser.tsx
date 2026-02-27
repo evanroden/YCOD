@@ -5,8 +5,11 @@ import { motion } from 'framer-motion';
 import RetroButton from '@/components/ui/RetroButton';
 import RetroYouTube from '@/components/ui/RetroYouTube';
 import { fadeInUp } from '@/lib/animations';
+import { useI18n } from '@/lib/i18n';
 
 export default function CoverageTeaser() {
+  const { t } = useI18n();
+
   return (
     <section className="bg-white dark:bg-ycod-black py-16 md:py-24 transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-4">
@@ -17,10 +20,10 @@ export default function CoverageTeaser() {
           viewport={{ once: true }}
         >
           <h2 className="font-display text-3xl md:text-4xl font-bold text-ycod-black dark:text-white mb-4">
-            As Seen In
+            {t('home.as_seen_in')}
           </h2>
           <p className="font-body text-lg text-ycod-black/70 dark:text-white/70">
-            Our story has been covered by media outlets across the country
+            {t('home.media_covered')}
           </p>
         </motion.div>
 
@@ -41,7 +44,7 @@ export default function CoverageTeaser() {
               className="w-full h-auto dark:brightness-90 dark:invert dark:hue-rotate-180"
             />
             <p className="font-display text-sm font-bold text-ycod-blue dark:text-ycod-yellow mt-3 text-center group-hover:text-ycod-coral transition-colors">
-              View All Press Coverage &rarr;
+              {t('home.view_press')} &rarr;
             </p>
           </a>
         </motion.div>
@@ -61,11 +64,10 @@ export default function CoverageTeaser() {
               />
             </div>
             <p className="font-body text-white/80 text-sm mb-4">
-              Watch our founder Evan Roden&apos;s TEDx talk on youth political engagement
-              and organ donation advocacy.
+              {t('home.tedx_desc')}
             </p>
             <RetroButton href="/tedx" color="bg-ycod-coral" className="text-white">
-              Watch Full Talk
+              {t('home.watch_full')}
             </RetroButton>
           </div>
         </motion.div>

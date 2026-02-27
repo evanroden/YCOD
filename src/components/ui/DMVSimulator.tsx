@@ -3,10 +3,12 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import RetroButton from './RetroButton';
+import { useI18n } from '@/lib/i18n';
 
 type SimStep = 'intro' | 'opt-in-form' | 'opt-in-result' | 'opt-out-form' | 'opt-out-result' | 'compare';
 
 export default function DMVSimulator() {
+  const { t } = useI18n();
   const [step, setStep] = useState<SimStep>('intro');
   const [optInChoice, setOptInChoice] = useState<'yes' | 'no' | 'skip' | null>(null);
   const [optOutChoice, setOptOutChoice] = useState<'keep' | 'remove' | null>(null);
@@ -27,10 +29,10 @@ export default function DMVSimulator() {
           viewport={{ once: true }}
         >
           <h2 className="font-display text-3xl md:text-4xl font-bold text-ycod-black dark:text-white mb-3">
-            Experience the Difference
+            {t('dmv.title')}
           </h2>
           <p className="font-body text-lg text-ycod-black/70 dark:text-white/70">
-            Walk through both systems yourself. See why defaults matter.
+            {t('dmv.subtitle')}
           </p>
         </motion.div>
 
@@ -52,18 +54,17 @@ export default function DMVSimulator() {
               >
                 <div className="text-5xl mb-4">🚗</div>
                 <h3 className="font-display text-xl font-bold text-ycod-black dark:text-white mb-3">
-                  You&apos;re at the DMV, renewing your license.
+                  {t('dmv.at_dmv')}
                 </h3>
                 <p className="font-body text-ycod-black/70 dark:text-white/70 mb-8 max-w-md mx-auto">
-                  You&apos;ll go through the organ donation question two ways: the current opt-in system
-                  and the proposed opt-out system. Watch how the default changes your experience.
+                  {t('dmv.intro_text')}
                 </p>
                 <RetroButton
                   color="bg-ycod-blue"
                   className="text-white"
                   onClick={() => setStep('opt-in-form')}
                 >
-                  Start: Current System (Opt-In)
+                  {t('dmv.start_optin')}
                 </RetroButton>
               </motion.div>
             )}
@@ -78,9 +79,9 @@ export default function DMVSimulator() {
               >
                 <div className="flex items-center gap-3 mb-6">
                   <span className="inline-block px-3 py-1 bg-ycod-coral text-white font-display font-bold text-xs rounded-full border-2 border-ycod-black">
-                    CURRENT SYSTEM
+                    {t('dmv.current_system')}
                   </span>
-                  <span className="font-body text-sm text-ycod-black/60 dark:text-white/60">Opt-In</span>
+                  <span className="font-body text-sm text-ycod-black/60 dark:text-white/60">{t('dmv.optin_label')}</span>
                 </div>
 
                 <div className="p-5 bg-gray-50 rounded-md border-2 border-dashed border-gray-300 mb-6">
@@ -88,16 +89,16 @@ export default function DMVSimulator() {
                     <span className="text-2xl">📋</span>
                     <div>
                       <p className="font-display font-bold text-ycod-black dark:text-white mb-1">
-                        DMV License Application — Section 7
+                        {t('dmv.dmv_section')}
                       </p>
                       <p className="font-body text-sm text-ycod-black/60 dark:text-white/60 italic">
-                        (After 45 minutes of paperwork, eye tests, and photos...)
+                        {t('dmv.after_paperwork')}
                       </p>
                     </div>
                   </div>
                   <div className="p-4 bg-white rounded border-2 border-ycod-black">
                     <p className="font-body text-sm text-ycod-black mb-4">
-                      <strong>Would you like to register as an organ and tissue donor?</strong>
+                      <strong>{t('dmv.optin_question')}</strong>
                     </p>
                     <div className="space-y-2">
                       <button
@@ -108,7 +109,7 @@ export default function DMVSimulator() {
                         }`}
                         onClick={() => setOptInChoice('yes')}
                       >
-                        ☐ Yes, I want to register as an organ donor
+                        ☐ {t('dmv.optin_yes')}
                       </button>
                       <button
                         className={`w-full text-left p-3 rounded border-2 font-body text-sm transition-all ${
@@ -118,11 +119,11 @@ export default function DMVSimulator() {
                         }`}
                         onClick={() => setOptInChoice('skip')}
                       >
-                        ☐ Skip this question
+                        ☐ {t('dmv.optin_skip')}
                       </button>
                     </div>
                     <p className="font-body text-xs text-ycod-black/40 mt-3 italic">
-                      Most people skip — they&apos;re tired, rushed, and just want their license.
+                      {t('dmv.optin_most_skip')}
                     </p>
                   </div>
                 </div>
@@ -134,7 +135,7 @@ export default function DMVSimulator() {
                       className="text-white"
                       onClick={() => setStep('opt-in-result')}
                     >
-                      Submit Application →
+                      {t('dmv.submit')}
                     </RetroButton>
                   </motion.div>
                 )}
@@ -155,24 +156,14 @@ export default function DMVSimulator() {
                 </div>
                 <h3 className="font-display text-xl font-bold text-ycod-black dark:text-white mb-3">
                   {optInChoice === 'yes'
-                    ? 'You registered! You\'re in the minority.'
-                    : 'You skipped. So do most people.'}
+                    ? t('dmv.optin_yes_title')
+                    : t('dmv.optin_skip_title')}
                 </h3>
                 <div className="ninety-card bg-gray-50 mb-6 inline-block text-left" style={{ transform: 'rotate(-0.5deg)' }}>
                   <p className="font-body text-sm text-ycod-black/70 dark:text-white/70">
-                    {optInChoice === 'yes' ? (
-                      <>
-                        Only about <strong>50% of New Yorkers</strong> check &quot;yes.&quot; The rest skip
-                        it — not because they oppose donation, but because <strong>the default is
-                        &quot;no.&quot;</strong>
-                      </>
-                    ) : (
-                      <>
-                        You&apos;re in good company — about <strong>50% of New Yorkers</strong> skip this
-                        question. Not because they&apos;re against donation, but because <strong>the
-                        default does nothing</strong> and they&apos;re tired of forms.
-                      </>
-                    )}
+                    {optInChoice === 'yes'
+                      ? t('dmv.optin_yes_text')
+                      : t('dmv.optin_skip_text')}
                   </p>
                 </div>
                 <div>
@@ -181,7 +172,7 @@ export default function DMVSimulator() {
                     className="text-white"
                     onClick={() => setStep('opt-out-form')}
                   >
-                    Now Try: Proposed System (Opt-Out) →
+                    {t('dmv.try_optout')}
                   </RetroButton>
                 </div>
               </motion.div>
@@ -197,9 +188,9 @@ export default function DMVSimulator() {
               >
                 <div className="flex items-center gap-3 mb-6">
                   <span className="inline-block px-3 py-1 bg-ycod-green text-white font-display font-bold text-xs rounded-full border-2 border-ycod-black">
-                    PROPOSED SYSTEM
+                    {t('dmv.proposed_system')}
                   </span>
-                  <span className="font-body text-sm text-ycod-black/60 dark:text-white/60">Opt-Out</span>
+                  <span className="font-body text-sm text-ycod-black/60 dark:text-white/60">{t('dmv.optout_label')}</span>
                 </div>
 
                 <div className="p-5 bg-gray-50 rounded-md border-2 border-dashed border-gray-300 mb-6">
@@ -207,24 +198,24 @@ export default function DMVSimulator() {
                     <span className="text-2xl">📋</span>
                     <div>
                       <p className="font-display font-bold text-ycod-black dark:text-white mb-1">
-                        DMV License Application — Section 7
+                        {t('dmv.dmv_section')}
                       </p>
                       <p className="font-body text-sm text-ycod-black/60 dark:text-white/60 italic">
-                        (Same DMV, same paperwork, same tired applicant...)
+                        {t('dmv.same_dmv')}
                       </p>
                     </div>
                   </div>
                   <div className="p-4 bg-white rounded border-2 border-ycod-black">
                     <div className="p-3 bg-ycod-green/10 rounded border border-ycod-green mb-4">
                       <p className="font-body text-sm text-ycod-black">
-                        ✅ <strong>You are registered as an organ and tissue donor.</strong>
+                        ✅ <strong>{t('dmv.optout_registered')}</strong>
                       </p>
                       <p className="font-body text-xs text-ycod-black/60 dark:text-white/60 mt-1">
-                        You will receive confirmation by mail. You may opt out at any time.
+                        {t('dmv.optout_mail')}
                       </p>
                     </div>
                     <p className="font-body text-sm text-ycod-black mb-3">
-                      <strong>Would you like to change this?</strong>
+                      <strong>{t('dmv.optout_change')}</strong>
                     </p>
                     <div className="space-y-2">
                       <button
@@ -235,7 +226,7 @@ export default function DMVSimulator() {
                         }`}
                         onClick={() => setOptOutChoice('keep')}
                       >
-                        ☐ Keep my registration (do nothing)
+                        ☐ {t('dmv.optout_keep')}
                       </button>
                       <button
                         className={`w-full text-left p-3 rounded border-2 font-body text-sm transition-all ${
@@ -245,11 +236,11 @@ export default function DMVSimulator() {
                         }`}
                         onClick={() => setOptOutChoice('remove')}
                       >
-                        ☐ Remove me from the donor registry
+                        ☐ {t('dmv.optout_remove')}
                       </button>
                     </div>
                     <p className="font-body text-xs text-ycod-black/40 mt-3 italic">
-                      Most people do nothing — and that&apos;s the point. The default saves lives.
+                      {t('dmv.optout_default')}
                     </p>
                   </div>
                 </div>
@@ -261,7 +252,7 @@ export default function DMVSimulator() {
                       className="text-white"
                       onClick={() => setStep('opt-out-result')}
                     >
-                      Submit Application →
+                      {t('dmv.submit')}
                     </RetroButton>
                   </motion.div>
                 )}
@@ -282,23 +273,14 @@ export default function DMVSimulator() {
                 </div>
                 <h3 className="font-display text-xl font-bold text-ycod-black dark:text-white mb-3">
                   {optOutChoice === 'keep'
-                    ? 'You stayed registered. No extra effort required.'
-                    : 'Your choice is respected. You opted out.'}
+                    ? t('dmv.keep_title')
+                    : t('dmv.remove_title')}
                 </h3>
                 <div className="ninety-card bg-gray-50 mb-6 inline-block text-left" style={{ transform: 'rotate(0.5deg)' }}>
                   <p className="font-body text-sm text-ycod-black/70 dark:text-white/70">
-                    {optOutChoice === 'keep' ? (
-                      <>
-                        In opt-out countries, <strong>80–90% of people stay registered</strong> simply because
-                        the default is &quot;yes.&quot; No one is forced — but the path of least resistance
-                        saves lives.
-                      </>
-                    ) : (
-                      <>
-                        Opt-out doesn&apos;t mean forced. <strong>You can always say no.</strong> The difference
-                        is that the default helps instead of hurts. People who want to opt out still can — easily.
-                      </>
-                    )}
+                    {optOutChoice === 'keep'
+                      ? t('dmv.keep_text')
+                      : t('dmv.remove_text')}
                   </p>
                 </div>
                 <div>
@@ -307,7 +289,7 @@ export default function DMVSimulator() {
                     className="text-white"
                     onClick={() => setStep('compare')}
                   >
-                    See the Comparison →
+                    {t('dmv.see_comparison')}
                   </RetroButton>
                 </div>
               </motion.div>
@@ -322,30 +304,30 @@ export default function DMVSimulator() {
                 exit={{ opacity: 0 }}
               >
                 <h3 className="font-display text-xl font-bold text-ycod-black dark:text-white mb-6 text-center">
-                  Same Person. Same DMV. Different Default.
+                  {t('dmv.compare_title')}
                 </h3>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                   <div className="ninety-card bg-ycod-coral/10 text-center" style={{ transform: 'rotate(-1deg)' }}>
                     <div className="text-3xl mb-2">😐</div>
-                    <p className="font-display font-bold text-ycod-black text-sm mb-1">Current: Opt-In</p>
+                    <p className="font-display font-bold text-ycod-black text-sm mb-1">{t('dmv.current_optin')}</p>
                     <div className="font-display text-4xl font-bold text-ycod-coral mb-1">~50%</div>
-                    <p className="font-body text-xs text-ycod-black/60 dark:text-white/60">register in NY</p>
+                    <p className="font-body text-xs text-ycod-black/60 dark:text-white/60">{t('dmv.register_ny')}</p>
                   </div>
                   <div className="ninety-card bg-ycod-green/10 text-center" style={{ transform: 'rotate(1deg)' }}>
                     <div className="text-3xl mb-2">🎉</div>
-                    <p className="font-display font-bold text-ycod-black text-sm mb-1">Proposed: Opt-Out</p>
+                    <p className="font-display font-bold text-ycod-black text-sm mb-1">{t('dmv.proposed_optout')}</p>
                     <div className="font-display text-4xl font-bold text-ycod-green mb-1">~85%+</div>
-                    <p className="font-body text-xs text-ycod-black/60 dark:text-white/60">register in opt-out countries</p>
+                    <p className="font-body text-xs text-ycod-black/60 dark:text-white/60">{t('dmv.register_optout')}</p>
                   </div>
                 </div>
 
                 <div className="p-4 bg-ycod-blue/10 rounded-md border-2 border-ycod-blue text-center mb-6">
                   <p className="font-display font-bold text-ycod-black">
-                    That&apos;s millions more potential donors — with zero extra effort from anyone.
+                    {t('dmv.millions_more')}
                   </p>
                   <p className="font-body text-sm text-ycod-black/60 dark:text-white/60 mt-1">
-                    This is what YCOD&apos;s Bill A07954 would do for New York.
+                    {t('dmv.bill_would_do')}
                   </p>
                 </div>
 
@@ -355,13 +337,13 @@ export default function DMVSimulator() {
                     className="text-ycod-black"
                     onClick={reset}
                   >
-                    Try Again
+                    {t('dmv.try_again')}
                   </RetroButton>
                   <RetroButton href="/bill" color="bg-ycod-blue" className="text-white">
-                    Read the Bill
+                    {t('dmv.read_bill')}
                   </RetroButton>
                   <RetroButton href="/join" color="bg-ycod-coral" className="text-white">
-                    Join the Movement
+                    {t('cta.join')}
                   </RetroButton>
                 </div>
               </motion.div>
