@@ -5,8 +5,10 @@ import { motion } from 'framer-motion';
 import SectionDivider from '@/components/ui/SectionDivider';
 import RetroButton from '@/components/ui/RetroButton';
 import { fadeInUp } from '@/lib/animations';
+import { useI18n } from '@/lib/i18n';
 
 export default function ContactPage() {
+  const { t } = useI18n();
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -29,7 +31,7 @@ export default function ContactPage() {
       }
       setSubmitted(true);
     } catch {
-      setError('Could not send message. Please try again or email us directly.');
+      setError(t('contact.error'));
     } finally {
       setSubmitting(false);
     }
@@ -45,7 +47,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            Contact Us
+            {t('contact.title')}
           </motion.h1>
           <motion.p
             className="font-body text-xl text-white/90"
@@ -53,7 +55,7 @@ export default function ContactPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            New Yorkers helping New Yorkers
+            {t('contact.subtitle')}
           </motion.p>
         </div>
       </section>
@@ -71,11 +73,11 @@ export default function ContactPage() {
               variants={fadeInUp}
             >
               <h2 className="font-display text-2xl font-bold text-ycod-black dark:text-white mb-6">
-                Get in Touch
+                {t('contact.info_title')}
               </h2>
               <div className="space-y-6">
                 <div className="ninety-card bg-ycod-pink" style={{ transform: 'rotate(-1deg)' }}>
-                  <h3 className="font-display font-bold text-ycod-black dark:text-white mb-1">Email</h3>
+                  <h3 className="font-display font-bold text-ycod-black dark:text-white mb-1">{t('contact.email')}</h3>
                   <a
                     href="mailto:Support@YCOD.org"
                     className="font-body text-ycod-black hover:text-ycod-coral transition-colors"
@@ -84,7 +86,7 @@ export default function ContactPage() {
                   </a>
                 </div>
                 <div className="ninety-card bg-ycod-blue" style={{ transform: 'rotate(1deg)' }}>
-                  <h3 className="font-display font-bold text-ycod-black dark:text-white mb-1">Phone</h3>
+                  <h3 className="font-display font-bold text-ycod-black dark:text-white mb-1">{t('contact.phone')}</h3>
                   <a
                     href="tel:+17164184157"
                     className="font-body text-ycod-black hover:text-white transition-colors"
@@ -93,11 +95,11 @@ export default function ContactPage() {
                   </a>
                 </div>
                 <div className="ninety-card bg-ycod-yellow" style={{ transform: 'rotate(-0.5deg)' }}>
-                  <h3 className="font-display font-bold text-ycod-black dark:text-white mb-1">Location</h3>
-                  <p className="font-body text-ycod-black">Buffalo, NY (Western New York)</p>
+                  <h3 className="font-display font-bold text-ycod-black dark:text-white mb-1">{t('contact.location')}</h3>
+                  <p className="font-body text-ycod-black">{t('contact.location_text')}</p>
                 </div>
                 <div className="ninety-card bg-ycod-coral" style={{ transform: 'rotate(1.5deg)' }}>
-                  <h3 className="font-display font-bold text-ycod-black dark:text-white mb-1">Social</h3>
+                  <h3 className="font-display font-bold text-ycod-black dark:text-white mb-1">{t('contact.social')}</h3>
                   <div className="flex gap-4 mt-2">
                     <a
                       href="https://twitter.com/theycod"
@@ -131,12 +133,12 @@ export default function ContactPage() {
                 <form onSubmit={handleSubmit}>
                   <div className="ninety-card bg-ycod-green/10" style={{ transform: 'rotate(0.5deg)' }}>
                     <h2 className="font-display text-2xl font-bold text-ycod-black dark:text-white mb-6">
-                      Send a Message
+                      {t('contact.form_title')}
                     </h2>
                     <div className="space-y-4">
                       <div>
                         <label htmlFor="contact-name" className="block font-body font-semibold text-ycod-black mb-1">
-                          Name *
+                          {t('contact.name_label')}
                         </label>
                         <input
                           id="contact-name"
@@ -150,7 +152,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <label htmlFor="contact-email" className="block font-body font-semibold text-ycod-black mb-1">
-                          Email *
+                          {t('contact.email_label')}
                         </label>
                         <input
                           id="contact-email"
@@ -164,7 +166,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <label htmlFor="contact-message" className="block font-body font-semibold text-ycod-black mb-1">
-                          Message *
+                          {t('contact.message_label')}
                         </label>
                         <textarea
                           id="contact-message"
@@ -172,7 +174,7 @@ export default function ContactPage() {
                           rows={5}
                           value={formData.message}
                           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                          className="w-full px-4 py-3 border-ycod-black rounded-md font-body bg-white resize-vertical"
+                          className="w-full px-4 py-3 border-ycod-black rounded-md font-body bg-white dark:bg-ycod-black dark:text-white resize-vertical transition-colors duration-300"
                           style={{ borderWidth: '3px', borderStyle: 'solid', borderColor: '#1A1A2E' }}
                         />
                       </div>
@@ -188,7 +190,7 @@ export default function ContactPage() {
                         color="bg-ycod-coral"
                         className="text-white w-full text-center"
                       >
-                        {submitting ? 'Sending...' : 'Send Message'}
+                        {submitting ? t('contact.submitting') : t('contact.submit')}
                       </RetroButton>
                     </div>
                   </div>
@@ -197,10 +199,10 @@ export default function ContactPage() {
                 <div className="ninety-card bg-ycod-green/20 text-center py-12">
                   <div className="text-6xl mb-4">📬</div>
                   <h2 className="font-display text-2xl font-bold text-ycod-black dark:text-white mb-2">
-                    Message Sent!
+                    {t('contact.success_title')}
                   </h2>
                   <p className="font-body text-ycod-black/80 dark:text-white/80">
-                    Thanks for reaching out. We&apos;ll get back to you soon.
+                    {t('contact.success_text')}
                   </p>
                 </div>
               )}

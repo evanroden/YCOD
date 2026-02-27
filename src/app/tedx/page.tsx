@@ -6,8 +6,11 @@ import SectionDivider from '@/components/ui/SectionDivider';
 import RetroButton from '@/components/ui/RetroButton';
 import RetroYouTube from '@/components/ui/RetroYouTube';
 import { fadeInUp } from '@/lib/animations';
+import { useI18n } from '@/lib/i18n';
 
 export default function TEDxPage() {
+  const { t } = useI18n();
+
   return (
     <>
       {/* Hero */}
@@ -18,7 +21,7 @@ export default function TEDxPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            TEDx <span className="text-ycod-coral">Talk</span>
+            {t('tedx.title')} <span className="text-ycod-coral">{t('tedx.title_colored')}</span>
           </motion.h1>
           <motion.p
             className="font-body text-xl text-white/90 max-w-2xl mx-auto"
@@ -26,7 +29,7 @@ export default function TEDxPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            Youth political engagement and organ donation advocacy
+            {t('tedx.subtitle')}
           </motion.p>
         </div>
       </section>
@@ -58,13 +61,10 @@ export default function TEDxPage() {
           >
             <blockquote className="ninety-card bg-ycod-coral/10" style={{ transform: 'rotate(-0.5deg)' }}>
               <p className="font-display text-xl md:text-2xl font-bold text-ycod-black leading-relaxed mb-4">
-                &ldquo;Young people are seen as apolitical. That&apos;s not true anymore. Young
-                people are far more likely to be generally participatory than older Americans, more
-                likely to want to engage further in the political process, and more likely to vote
-                than any time in the past fifty years.&rdquo;
+                {t('tedx.quote')}
               </p>
               <cite className="font-body text-ycod-coral font-semibold not-italic">
-                — Evan Roden, TEDx Talk
+                {t('tedx.quote_cite')}
               </cite>
             </blockquote>
           </motion.div>
@@ -92,21 +92,16 @@ export default function TEDxPage() {
             </div>
             <div>
               <h2 className="font-display text-2xl md:text-3xl font-bold text-ycod-black dark:text-white mb-4">
-                About the Speaker
+                {t('tedx.speaker_title')}
               </h2>
               <p className="font-body text-lg text-ycod-black/80 dark:text-white/80 mb-4">
-                Evan Roden is the founder of The Youth Coalition for Organ Donation. A Biomedical
-                Engineering graduate from Tulane University and current Sustainability Engineer at
-                ENFRA, Evan has been advocating for organ donation reform since 2017.
+                {t('tedx.speaker_bio1')}
               </p>
               <p className="font-body text-lg text-ycod-black/80 dark:text-white/80 mb-6">
-                After a family member needed a kidney transplant, Evan co-founded YCOD with three
-                classmates at East Aurora High School. The organization has grown to 3,000+ members,
-                drafted actual legislation, and earned nominations and endorsements from major
-                organizations.
+                {t('tedx.speaker_bio2')}
               </p>
               <RetroButton href="/about" color="bg-ycod-blue" className="text-white">
-                Learn Our Full Story
+                {t('tedx.learn_story')}
               </RetroButton>
             </div>
           </motion.div>
@@ -119,14 +114,14 @@ export default function TEDxPage() {
       <section className="bg-ycod-green py-16 text-center">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
-            Inspired? Take Action.
+            {t('tedx.cta_title')}
           </h2>
           <p className="font-body text-lg text-white/90 mb-6">
-            Join thousands of young people making a difference.
+            {t('tedx.cta_subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <RetroButton href="/join" color="bg-ycod-yellow" className="text-ycod-black">
-              Join the Movement
+              {t('cta.join')}
             </RetroButton>
             <RetroButton
               href="sms:57838?body=register"
@@ -134,7 +129,7 @@ export default function TEDxPage() {
               className="text-white heart-cursor"
               external
             >
-              Register as a Donor
+              {t('tedx.register_donor')}
             </RetroButton>
           </div>
         </div>

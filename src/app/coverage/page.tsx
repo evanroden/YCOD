@@ -6,6 +6,7 @@ import SectionDivider from '@/components/ui/SectionDivider';
 import NinetyCard from '@/components/ui/NinetyCard';
 import RetroButton from '@/components/ui/RetroButton';
 import { staggerContainer, fadeInUp } from '@/lib/animations';
+import { useI18n } from '@/lib/i18n';
 
 const coverageItems = [
   {
@@ -56,6 +57,8 @@ const coverageItems = [
 ];
 
 export default function CoveragePage() {
+  const { t } = useI18n();
+
   return (
     <>
       <section className="bg-ycod-yellow py-16 md:py-24">
@@ -65,7 +68,7 @@ export default function CoveragePage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            Media Coverage
+            {t('coverage.title')}
           </motion.h1>
           <motion.p
             className="font-body text-xl text-ycod-black/80 dark:text-white/80 max-w-2xl mx-auto"
@@ -73,7 +76,7 @@ export default function CoveragePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            Our story has been shared across local, national, and international media.
+            {t('coverage.subtitle')}
           </motion.p>
         </div>
       </section>
@@ -133,10 +136,10 @@ export default function CoveragePage() {
       <section className="bg-ycod-blue py-16 text-center">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
-            Watch Our TEDx Talk
+            {t('coverage.cta_title')}
           </h2>
           <RetroButton href="/tedx" color="bg-ycod-yellow" className="text-ycod-black">
-            Watch Now
+            {t('coverage.cta_button')}
           </RetroButton>
         </div>
       </section>

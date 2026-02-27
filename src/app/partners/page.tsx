@@ -6,8 +6,11 @@ import SectionDivider from '@/components/ui/SectionDivider';
 import RetroButton from '@/components/ui/RetroButton';
 import { PARTNERS } from '@/lib/constants';
 import { staggerContainer, fadeInUp } from '@/lib/animations';
+import { useI18n } from '@/lib/i18n';
 
 export default function PartnersPage() {
+  const { t } = useI18n();
+
   return (
     <>
       {/* Hero */}
@@ -18,7 +21,7 @@ export default function PartnersPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            Our Partners
+            {t('partners.title')}
           </motion.h1>
           <motion.p
             className="font-body text-xl text-ycod-black/80 dark:text-white/80 max-w-2xl mx-auto"
@@ -26,8 +29,7 @@ export default function PartnersPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            We&apos;re proud to work alongside these incredible organizations in the fight
-            to save lives through organ donation.
+            {t('partners.subtitle')}
           </motion.p>
         </div>
       </section>
@@ -75,13 +77,13 @@ export default function PartnersPage() {
       <section className="bg-ycod-blue py-16 text-center">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
-            Partner With Us
+            {t('partners.cta_title')}
           </h2>
           <p className="font-body text-lg text-white/90 mb-6">
-            Interested in supporting our mission? Get in touch.
+            {t('partners.cta_subtitle')}
           </p>
           <RetroButton href="/contact" color="bg-ycod-yellow" className="text-ycod-black">
-            Contact Us
+            {t('nav.contact')}
           </RetroButton>
         </div>
       </section>

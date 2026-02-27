@@ -10,8 +10,10 @@ import OrganBreakdownChart from '@/components/ui/OrganBreakdownChart';
 import MythVsFact from '@/components/ui/MythVsFact';
 import { FACTS, QUIZ_QUESTIONS } from '@/lib/constants';
 import { fadeInUp } from '@/lib/animations';
+import { useI18n } from '@/lib/i18n';
 
 export default function FactsPage() {
+  const { t } = useI18n();
   const [quizState, setQuizState] = useState<{
     currentQ: number;
     score: number;
@@ -57,7 +59,7 @@ export default function FactsPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            Fast Facts
+            {t('facts.title')}
           </motion.h1>
           <motion.p
             className="font-body text-xl text-white/90 max-w-2xl mx-auto"
@@ -65,7 +67,7 @@ export default function FactsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            The numbers that drive our mission. Share these — they save lives.
+            {t('facts.subtitle')}
           </motion.p>
         </div>
       </section>
@@ -93,10 +95,10 @@ export default function FactsPage() {
             viewport={{ once: true }}
           >
             <h2 className="font-display text-3xl md:text-4xl font-bold text-ycod-black dark:text-white mb-3">
-              The Data, Visualized
+              {t('facts.charts_title')}
             </h2>
             <p className="font-body text-lg text-ycod-black/70 dark:text-white/70">
-              Explore the numbers behind the organ donation crisis.
+              {t('facts.charts_subtitle')}
             </p>
           </motion.div>
           <CountryComparisonChart />
@@ -121,10 +123,10 @@ export default function FactsPage() {
             variants={fadeInUp}
           >
             <h2 className="font-display text-3xl md:text-4xl font-bold text-ycod-black dark:text-white mb-2">
-              Did You Know?
+              {t('facts.quiz_title')}
             </h2>
             <p className="font-body text-lg text-ycod-black/70 dark:text-white/70">
-              Test your organ donation knowledge with our quick quiz!
+              {t('facts.quiz_subtitle')}
             </p>
           </motion.div>
 
@@ -133,10 +135,10 @@ export default function FactsPage() {
               <>
                 <div className="flex justify-between items-center mb-4">
                   <span className="font-display font-bold text-ycod-blue">
-                    Question {quizState.currentQ + 1} of {QUIZ_QUESTIONS.length}
+                    {t('facts.quiz_question', { current: String(quizState.currentQ + 1), total: String(QUIZ_QUESTIONS.length) })}
                   </span>
                   <span className="font-display font-bold text-ycod-coral">
-                    Score: {quizState.score}
+                    {t('facts.quiz_score', { score: String(quizState.score) })}
                   </span>
                 </div>
 
@@ -185,8 +187,8 @@ export default function FactsPage() {
                       onClick={nextQuestion}
                     >
                       {quizState.currentQ >= QUIZ_QUESTIONS.length - 1
-                        ? 'See Results'
-                        : 'Next Question'}
+                        ? t('facts.quiz_results')
+                        : t('facts.quiz_next')}
                     </RetroButton>
                   </motion.div>
                 )}
@@ -198,13 +200,13 @@ export default function FactsPage() {
                 </div>
                 <h3 className="font-display text-2xl font-bold text-ycod-black dark:text-white mb-2">
                   {quizState.score >= 4
-                    ? 'Amazing! You know your stuff!'
+                    ? t('facts.quiz_excellent')
                     : quizState.score >= 2
-                    ? 'Good effort! Keep learning!'
-                    : 'Now you know more than before!'}
+                    ? t('facts.quiz_good')
+                    : t('facts.quiz_ok')}
                 </h3>
                 <p className="font-body text-ycod-black/70 dark:text-white/70 mb-6">
-                  Share these facts with friends and family to spread awareness!
+                  {t('facts.quiz_share')}
                 </p>
                 <div className="flex gap-4 justify-center">
                   <RetroButton
@@ -212,10 +214,10 @@ export default function FactsPage() {
                     className="text-ycod-black"
                     onClick={resetQuiz}
                   >
-                    Try Again
+                    {t('facts.quiz_retry')}
                   </RetroButton>
                   <RetroButton href="/join" color="bg-ycod-coral" className="text-white">
-                    Join the Movement
+                    {t('cta.join')}
                   </RetroButton>
                 </div>
               </div>

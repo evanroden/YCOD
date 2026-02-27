@@ -7,8 +7,10 @@ import SectionDivider from '@/components/ui/SectionDivider';
 import RetroButton from '@/components/ui/RetroButton';
 import ActionChecklist from '@/components/ui/ActionChecklist';
 import { fadeInUp } from '@/lib/animations';
+import { useI18n } from '@/lib/i18n';
 
 export default function JoinPage() {
+  const { t } = useI18n();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -52,7 +54,7 @@ export default function JoinPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            Be Part of the Movement
+            {t('join.title')}
           </motion.h1>
           <motion.p
             className="font-body text-xl text-white/90 max-w-2xl mx-auto"
@@ -60,8 +62,7 @@ export default function JoinPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            If you&apos;re a young person (or young at heart), you can join us in working
-            towards organ donation policy awareness.
+            {t('join.subtitle')}
           </motion.p>
         </div>
       </section>
@@ -100,9 +101,7 @@ export default function JoinPage() {
             variants={fadeInUp}
           >
             <p className="font-body text-ycod-black/80 dark:text-white/80">
-              <strong>Note:</strong> We won&apos;t ever ask for donations, nor do we accept
-              individual donors at this time, instead relying on volunteer work from our team
-              and the generosity of academic institutions and foundations.
+              {t('join.note')}
             </p>
           </motion.div>
 
@@ -118,12 +117,12 @@ export default function JoinPage() {
               variants={fadeInUp}
             >
               <h2 className="font-display text-2xl font-bold text-ycod-black dark:text-white mb-6">
-                Join YCOD
+                {t('join.form_title')}
               </h2>
               <div className="space-y-4">
                 <div>
                   <label htmlFor="name" className="block font-body font-semibold text-ycod-black mb-1">
-                    Name *
+                    {t('join.name_label')}
                   </label>
                   <input
                     id="name"
@@ -137,7 +136,7 @@ export default function JoinPage() {
                 </div>
                 <div>
                   <label htmlFor="email" className="block font-body font-semibold text-ycod-black mb-1">
-                    Email *
+                    {t('join.email_label')}
                   </label>
                   <input
                     id="email"
@@ -151,7 +150,7 @@ export default function JoinPage() {
                 </div>
                 <div>
                   <label htmlFor="zip" className="block font-body font-semibold text-ycod-black mb-1">
-                    Zip Code *
+                    {t('join.zip_label')}
                   </label>
                   <input
                     id="zip"
@@ -167,7 +166,7 @@ export default function JoinPage() {
                 </div>
                 <div>
                   <label htmlFor="address" className="block font-body font-semibold text-ycod-black mb-1">
-                    Mailing Address <span className="text-ycod-black/50">(optional — for a small thank-you gift)</span>
+                    {t('join.address_label')} <span className="text-ycod-black/50">{t('join.address_hint')}</span>
                   </label>
                   <input
                     id="address"
@@ -190,12 +189,11 @@ export default function JoinPage() {
                   color="bg-ycod-coral"
                   className="text-white w-full text-center"
                 >
-                  {submitting ? 'Joining...' : 'Join the Movement'}
+                  {submitting ? t('join.submitting') : t('join.submit')}
                 </RetroButton>
               </div>
               <p className="font-body text-xs text-ycod-black/40 mt-3 text-center">
-                Your information is stored securely and used only for YCOD communications.
-                We never share your data with third parties.
+                {t('join.privacy')}
               </p>
             </motion.form>
           ) : (
@@ -206,10 +204,10 @@ export default function JoinPage() {
             >
               <div className="text-6xl mb-4">🎉</div>
               <h2 className="font-display text-2xl font-bold text-ycod-black dark:text-white mb-2">
-                Welcome to the Movement!
+                {t('join.success_title')}
               </h2>
               <p className="font-body text-ycod-black/80 dark:text-white/80">
-                Thank you for joining YCOD. Together, we&apos;re saving lives.
+                {t('join.success_text')}
               </p>
             </motion.div>
           )}
@@ -222,11 +220,10 @@ export default function JoinPage() {
       <section className="py-16 md:py-20 bg-ycod-yellow border-y-4 border-ycod-black">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="font-display text-3xl font-bold text-ycod-black dark:text-white mb-4">
-            Register as a Donor
+            {t('join.register_title')}
           </h2>
           <p className="font-body text-lg text-ycod-black/80 dark:text-white/80 mb-6">
-            Text <strong>REGISTER</strong> to <strong>57838</strong> to join the organ donor
-            registry instantly.
+            {t('join.register_text')}
           </p>
           <RetroButton
             href="sms:57838?body=register"
@@ -234,7 +231,7 @@ export default function JoinPage() {
             className="text-white text-lg heart-cursor"
             external
           >
-            Send Text Now
+            {t('cta.send_text')}
           </RetroButton>
         </div>
       </section>
@@ -242,10 +239,10 @@ export default function JoinPage() {
       <section className="py-12 bg-white dark:bg-ycod-black transition-colors duration-300">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h3 className="font-display text-2xl font-bold text-ycod-black dark:text-white mb-4">
-            Contact Your Representatives
+            {t('join.reps_title')}
           </h3>
           <p className="font-body text-ycod-black/70 dark:text-white/70 mb-6">
-            Let your elected officials know you support opt-out organ donation legislation.
+            {t('join.reps_text')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <RetroButton
@@ -254,7 +251,7 @@ export default function JoinPage() {
               className="text-white"
               external
             >
-              Find Your Assembly Member
+              {t('join.find_assembly')}
             </RetroButton>
             <RetroButton
               href="https://www.nysenate.gov/find-my-senator"
@@ -262,7 +259,7 @@ export default function JoinPage() {
               className="text-ycod-black"
               external
             >
-              Find Your Senator
+              {t('join.find_senator')}
             </RetroButton>
           </div>
         </div>

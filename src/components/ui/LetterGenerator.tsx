@@ -2,8 +2,10 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useI18n } from '@/lib/i18n';
 
 export default function LetterGenerator() {
+  const { t } = useI18n();
   const [name, setName] = useState('');
   const [zip, setZip] = useState('');
   const [personalStory, setPersonalStory] = useState('');
@@ -52,10 +54,10 @@ ${zip || '[Your ZIP Code]'}`;
           viewport={{ once: true }}
         >
           <h2 className="font-display text-3xl md:text-4xl font-bold text-ycod-black dark:text-white mb-3">
-            Write Your Representative
+            {t('letter.title')}
           </h2>
           <p className="font-body text-lg text-ycod-black/70 dark:text-white/70">
-            We&apos;ll generate a letter for you. Just fill in your details, copy it, and send.
+            {t('letter.subtitle')}
           </p>
         </motion.div>
 
@@ -69,12 +71,12 @@ ${zip || '[Your ZIP Code]'}`;
             viewport={{ once: true }}
           >
             <h3 className="font-display text-lg font-bold text-ycod-black dark:text-white mb-4">
-              Your Details
+              {t('letter.details')}
             </h3>
             <div className="space-y-4">
               <div>
                 <label htmlFor="letter-name" className="block font-body font-semibold text-ycod-black text-sm mb-1">
-                  Your Name
+                  {t('letter.name_label')}
                 </label>
                 <input
                   id="letter-name"
@@ -88,7 +90,7 @@ ${zip || '[Your ZIP Code]'}`;
               </div>
               <div>
                 <label htmlFor="letter-zip" className="block font-body font-semibold text-ycod-black text-sm mb-1">
-                  Your ZIP Code
+                  {t('letter.zip_label')}
                 </label>
                 <input
                   id="letter-zip"
@@ -103,7 +105,7 @@ ${zip || '[Your ZIP Code]'}`;
               </div>
               <div>
                 <label htmlFor="letter-story" className="block font-body font-semibold text-ycod-black text-sm mb-1">
-                  Personal Story <span className="text-ycod-black/40">(optional, but powerful)</span>
+                  {t('letter.story_label')} <span className="text-ycod-black/40">{t('letter.story_hint')}</span>
                 </label>
                 <textarea
                   id="letter-story"
@@ -128,13 +130,13 @@ ${zip || '[Your ZIP Code]'}`;
           >
             <div className="flex justify-between items-center mb-4">
               <h3 className="font-display text-lg font-bold text-ycod-black">
-                Letter Preview
+                {t('letter.preview')}
               </h3>
               <button
                 onClick={handleCopy}
                 className="retro-btn bg-ycod-coral text-white text-xs px-3 py-1.5"
               >
-                {copied ? '✅ Copied!' : '📋 Copy Letter'}
+                {copied ? `✅ ${t('letter.copied')}` : `📋 ${t('letter.copy')}`}
               </button>
             </div>
             <pre className="font-body text-xs text-ycod-black/80 dark:text-white/80 whitespace-pre-wrap leading-relaxed max-h-[400px] overflow-y-auto bg-white/50 p-3 rounded border border-ycod-black/20">
@@ -146,8 +148,7 @@ ${zip || '[Your ZIP Code]'}`;
         {/* Privacy notice */}
         <div className="mt-6 text-center">
           <p className="font-body text-xs text-ycod-black/40 dark:text-white/40">
-            Your name, ZIP code, and personal story are used only to generate this letter in your browser.
-            Nothing is sent to our servers or stored. We do not collect, save, or share any data you enter here.
+            {t('letter.privacy')}
           </p>
         </div>
 
@@ -159,14 +160,14 @@ ${zip || '[Your ZIP Code]'}`;
           viewport={{ once: true }}
         >
           <p className="font-body text-sm text-ycod-black/60 dark:text-white/60 mb-4">
-            After copying your letter, find your representative and send it:
+            {t('letter.send_hint')}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
               href={`mailto:?subject=${encodeURIComponent('Support Opt-Out Organ Donation in New York')}&body=${encodeURIComponent(letterText)}`}
               className="retro-btn bg-ycod-coral text-white text-sm"
             >
-              Open in Email Client
+              {t('letter.email_client')}
             </a>
             <a
               href="https://nyassembly.gov/mem/search/"
@@ -174,7 +175,7 @@ ${zip || '[Your ZIP Code]'}`;
               rel="noopener noreferrer"
               className="retro-btn bg-ycod-blue text-white text-sm"
             >
-              Find Your Assembly Member
+              {t('join.find_assembly')}
             </a>
             <a
               href="https://www.nysenate.gov/find-my-senator"
@@ -182,7 +183,7 @@ ${zip || '[Your ZIP Code]'}`;
               rel="noopener noreferrer"
               className="retro-btn bg-ycod-green text-ycod-black text-sm"
             >
-              Find Your Senator
+              {t('join.find_senator')}
             </a>
           </div>
         </motion.div>

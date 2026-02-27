@@ -7,8 +7,11 @@ import RetroButton from '@/components/ui/RetroButton';
 import DMVSimulator from '@/components/ui/DMVSimulator';
 import { INITIATIVES } from '@/lib/constants';
 import { fadeInUp } from '@/lib/animations';
+import { useI18n } from '@/lib/i18n';
 
 export default function InitiativesPage() {
+  const { t } = useI18n();
+
   return (
     <>
       {/* Hero */}
@@ -19,7 +22,7 @@ export default function InitiativesPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            Our Initiatives
+            {t('initiatives.title')}
           </motion.h1>
           <motion.p
             className="font-body text-xl text-white/90 max-w-2xl mx-auto"
@@ -27,8 +30,7 @@ export default function InitiativesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            Five pillars driving change in organ donation policy and awareness across New York State
-            and beyond.
+            {t('initiatives.subtitle')}
           </motion.p>
         </div>
       </section>
@@ -57,17 +59,17 @@ export default function InitiativesPage() {
       <section className="bg-ycod-coral py-16 text-center">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
-            Support These Initiatives
+            {t('initiatives.cta_title')}
           </h2>
           <p className="font-body text-lg text-white/90 mb-6">
-            Read the proposed legislation and join our movement.
+            {t('initiatives.cta_subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <RetroButton href="/bill" color="bg-white dark:bg-ycod-black transition-colors duration-300" className="text-ycod-black">
-              Read the Bill
+              {t('initiatives.read_bill')}
             </RetroButton>
             <RetroButton href="/join" color="bg-ycod-yellow" className="text-ycod-black">
-              Join Us
+              {t('initiatives.join_us')}
             </RetroButton>
           </div>
         </div>

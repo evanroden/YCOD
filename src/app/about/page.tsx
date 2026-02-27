@@ -8,8 +8,11 @@ import RetroButton from '@/components/ui/RetroButton';
 import InteractiveTimeline from '@/components/ui/InteractiveTimeline';
 import { TEAM } from '@/lib/constants';
 import { fadeInUp } from '@/lib/animations';
+import { useI18n } from '@/lib/i18n';
 
 export default function AboutPage() {
+  const { t } = useI18n();
+
   return (
     <>
       {/* Hero */}
@@ -20,7 +23,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            Who We Are
+            {t('about.title')}
           </motion.h1>
           <motion.p
             className="font-body text-xl text-white/90 max-w-2xl mx-auto"
@@ -28,7 +31,7 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            Four high school students who decided that saving lives shouldn&apos;t be optional.
+            {t('about.subtitle')}
           </motion.p>
         </div>
       </section>
@@ -46,13 +49,10 @@ export default function AboutPage() {
             variants={fadeInUp}
           >
             <h2 className="font-display text-3xl md:text-4xl font-bold text-ycod-black dark:text-white mb-4">
-              Our Story
+              {t('about.story_title')}
             </h2>
             <p className="font-body text-lg text-ycod-black/70 dark:text-white/70 max-w-2xl mx-auto">
-              In 2017, when one of Evan&apos;s family members needed a kidney transplant, four
-              students at East Aurora High School near Buffalo, NY decided to take action.
-              What started as joining their school&apos;s Donate Life Club became a multinational
-              movement.
+              {t('about.story_text')}
             </p>
           </motion.div>
 
@@ -74,7 +74,7 @@ export default function AboutPage() {
             variants={fadeInUp}
           >
             <h2 className="font-display text-3xl md:text-4xl font-bold text-ycod-black dark:text-white mb-4">
-              Meet the Team
+              {t('about.team_title')}
             </h2>
 
             {/* Group portrait */}
@@ -105,10 +105,10 @@ export default function AboutPage() {
       <section className="bg-ycod-blue py-16 text-center">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Join Our Story?
+            {t('about.cta_title')}
           </h2>
           <RetroButton href="/join" color="bg-ycod-yellow" className="text-ycod-black text-lg">
-            Join the Movement
+            {t('cta.join')}
           </RetroButton>
         </div>
       </section>

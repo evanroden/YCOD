@@ -5,8 +5,10 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import RetroButton from '@/components/ui/RetroButton';
 import { fadeInUp } from '@/lib/animations';
+import { useI18n } from '@/lib/i18n';
 
 export default function QuickRegister() {
+  const { t } = useI18n();
   const [isMobile, setIsMobile] = useState(false);
   const [showCopied, setShowCopied] = useState(false);
 
@@ -41,15 +43,15 @@ export default function QuickRegister() {
             className="mx-auto mb-4"
           />
           <h2 className="font-display text-3xl md:text-5xl font-bold text-ycod-black mb-4">
-            Become a Donor Today
+            {t('cta.register')}
           </h2>
           <p className="font-body text-xl text-ycod-black/80 mb-8">
-            It takes 30 seconds. No forms. No waiting.
+            {t('cta.takes_seconds')}
           </p>
 
           <div className="ninety-card bg-white dark:bg-ycod-black max-w-lg mx-auto mb-8 heart-cursor" style={{ transform: 'rotate(-1deg)' }}>
             <p className="font-display text-2xl md:text-3xl font-bold text-ycod-black dark:text-white mb-2">
-              Text <span className="text-ycod-coral">REGISTER</span> to
+              {t('cta.text_register')}
             </p>
             <a
               href="sms:57838?body=register"
@@ -58,7 +60,7 @@ export default function QuickRegister() {
               57838
             </a>
             <p className="font-body text-sm text-ycod-black/60 dark:text-white/60 mt-3">
-              In partnership with ONE8FIFTY
+              {t('cta.partnership')}
             </p>
           </div>
 
@@ -68,7 +70,7 @@ export default function QuickRegister() {
               color="bg-ycod-coral"
               className="text-white text-lg px-10 py-4"
             >
-              Send Text Now
+              {t('cta.send_text')}
             </RetroButton>
           ) : (
             <div className="relative inline-block">
@@ -77,7 +79,7 @@ export default function QuickRegister() {
                 color="bg-ycod-coral"
                 className="text-white text-lg px-10 py-4"
               >
-                Copy Text Instructions
+                {t('cta.copy_instructions')}
               </RetroButton>
               <AnimatePresence>
                 {showCopied && (
@@ -87,7 +89,7 @@ export default function QuickRegister() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0 }}
                   >
-                    Copied! Send from your phone.
+                    {t('cta.copied')}
                   </motion.p>
                 )}
               </AnimatePresence>
@@ -95,7 +97,7 @@ export default function QuickRegister() {
           )}
 
           <p className="font-body text-xs text-ycod-black/50 mt-6">
-            Open your phone&apos;s messaging app and text &quot;REGISTER&quot; to 57838
+            {t('cta.phone_instruction')}
           </p>
         </motion.div>
       </div>

@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useI18n } from '@/lib/i18n';
 
 const NY_POPULATION = 19_500_000;
 const CURRENT_REGISTRATION = 0.50;
@@ -10,6 +11,7 @@ const TISSUE_PER_DONOR = 75;
 const DONORS_PER_REGISTERED = 0.003; // ~0.3% of registered become actual donors per year
 
 export default function ImpactCalculator() {
+  const { t } = useI18n();
   const [registrationRate, setRegistrationRate] = useState(50);
 
   const handleSliderChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
@@ -31,12 +33,12 @@ export default function ImpactCalculator() {
   };
 
   const getMessage = () => {
-    if (registrationRate <= 50) return 'This is where New York stands today.';
-    if (registrationRate <= 60) return 'A modest increase — already making a difference.';
-    if (registrationRate <= 70) return 'This is achievable with simple policy changes.';
-    if (registrationRate <= 80) return 'Countries with opt-out systems hit these numbers.';
-    if (registrationRate <= 90) return 'Spain-level registration. Thousands of lives saved.';
-    return 'Near-universal registration. The dream scenario.';
+    if (registrationRate <= 50) return t('calc.msg_current');
+    if (registrationRate <= 60) return t('calc.msg_modest');
+    if (registrationRate <= 70) return t('calc.msg_achievable');
+    if (registrationRate <= 80) return t('calc.msg_optout');
+    if (registrationRate <= 90) return t('calc.msg_spain');
+    return t('calc.msg_universal');
   };
 
   return (
@@ -49,10 +51,10 @@ export default function ImpactCalculator() {
           viewport={{ once: true }}
         >
           <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-3">
-            What If More New Yorkers Registered?
+            {t('calc.title')}
           </h2>
           <p className="font-body text-lg text-white/70">
-            Drag the slider to see the impact of higher registration rates.
+            {t('calc.subtitle')}
           </p>
         </motion.div>
 
@@ -65,7 +67,7 @@ export default function ImpactCalculator() {
           {/* Slider */}
           <div className="mb-8">
             <div className="flex justify-between items-center mb-3">
-              <span className="font-display font-bold text-ycod-black text-sm">NY Registration Rate</span>
+              <span className="font-display font-bold text-ycod-black text-sm">{t('calc.rate_label')}</span>
               <motion.span
                 className="font-display text-3xl font-bold"
                 style={{ color: getSliderColor() }}
@@ -140,7 +142,7 @@ export default function ImpactCalculator() {
               >
                 +{additionalRegistered.toLocaleString()}
               </motion.div>
-              <p className="font-body text-sm text-ycod-black/70 mt-1">New Registrations</p>
+              <p className="font-body text-sm text-ycod-black/70 mt-1">{t('calc.new_registrations')}</p>
             </motion.div>
 
             <motion.div
@@ -156,7 +158,7 @@ export default function ImpactCalculator() {
               >
                 {livesSaved.toLocaleString()}
               </motion.div>
-              <p className="font-body text-sm text-ycod-black/70 mt-1">Lives Saved Per Year</p>
+              <p className="font-body text-sm text-ycod-black/70 mt-1">{t('calc.lives_saved')}</p>
             </motion.div>
 
             <motion.div
@@ -172,7 +174,7 @@ export default function ImpactCalculator() {
               >
                 {tissueHealed.toLocaleString()}
               </motion.div>
-              <p className="font-body text-sm text-ycod-black/70 mt-1">Tissue Recipients Healed</p>
+              <p className="font-body text-sm text-ycod-black/70 mt-1">{t('calc.tissue_healed')}</p>
             </motion.div>
           </div>
 

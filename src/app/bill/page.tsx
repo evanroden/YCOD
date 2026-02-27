@@ -8,8 +8,20 @@ import BillImpactViz from '@/components/ui/BillImpactViz';
 import LetterGenerator from '@/components/ui/LetterGenerator';
 import { BILL_TEXT } from '@/lib/constants';
 import { fadeInUp } from '@/lib/animations';
+import { useI18n } from '@/lib/i18n';
 
 export default function BillPage() {
+  const { t } = useI18n();
+
+  const safeguards = [
+    { label: t('bill.safeguard_dmv'), desc: t('bill.safeguard_dmv_desc') },
+    { label: t('bill.safeguard_question'), desc: t('bill.safeguard_question_desc') },
+    { label: t('bill.safeguard_optout'), desc: t('bill.safeguard_optout_desc') },
+    { label: t('bill.safeguard_notice'), desc: t('bill.safeguard_notice_desc') },
+    { label: t('bill.safeguard_minors'), desc: t('bill.safeguard_minors_desc') },
+    { label: t('bill.safeguard_choice'), desc: t('bill.safeguard_choice_desc') },
+  ];
+
   return (
     <>
       {/* Hero */}
@@ -20,7 +32,7 @@ export default function BillPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            The Bill
+            {t('bill.title')}
           </motion.h1>
           <motion.p
             className="font-body text-xl text-white/90 max-w-2xl mx-auto"
@@ -28,7 +40,7 @@ export default function BillPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            Our proposed legislation to change organ donation from opt-in to opt-out at the DMV
+            {t('bill.subtitle')}
           </motion.p>
         </div>
       </section>
@@ -45,28 +57,24 @@ export default function BillPage() {
             variants={fadeInUp}
           >
             <h2 className="font-display text-3xl font-bold text-ycod-black dark:text-white mb-8 text-center">
-              What the Bill Does
+              {t('bill.what_title')}
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
               <NinetyCard color="bg-ycod-coral/20" rotation={-1}>
                 <h3 className="font-display text-lg font-bold text-ycod-black dark:text-white mb-2">
-                  The Problem
+                  {t('bill.problem_title')}
                 </h3>
                 <p className="font-body text-ycod-black/80 dark:text-white/80">
-                  Currently at the NY DMV, you must actively choose to register as an organ
-                  donor. Many people support donation but never check the box — they skip the
-                  question, forget, or don&apos;t think about it.
+                  {t('bill.problem_text')}
                 </p>
               </NinetyCard>
               <NinetyCard color="bg-ycod-green/20" rotation={1}>
                 <h3 className="font-display text-lg font-bold text-ycod-black dark:text-white mb-2">
-                  The Solution
+                  {t('bill.solution_title')}
                 </h3>
                 <p className="font-body text-ycod-black/80 dark:text-white/80">
-                  Our bill changes the default: unless you specifically choose to skip the
-                  organ donation question, you&apos;re registered as a donor. You always have
-                  the right to opt out — the default just saves more lives.
+                  {t('bill.solution_text')}
                 </p>
               </NinetyCard>
             </div>
@@ -74,7 +82,7 @@ export default function BillPage() {
             {/* Key provision */}
             <div className="ninety-card bg-ycod-yellow/30 mb-12" style={{ transform: 'rotate(0deg)' }}>
               <h3 className="font-display text-lg font-bold text-ycod-black dark:text-white mb-3">
-                Key Provision
+                {t('bill.key_provision')}
               </h3>
               <blockquote className="font-body text-lg italic text-ycod-black/90 border-l-4 border-ycod-coral pl-4">
                 &ldquo;Unless an applicant responds that he or she wishes to skip this question,
@@ -84,17 +92,10 @@ export default function BillPage() {
 
             {/* Safeguards */}
             <h3 className="font-display text-2xl font-bold text-ycod-black dark:text-white mb-4">
-              Built-In Safeguards
+              {t('bill.safeguards_title')}
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
-              {[
-                { label: 'DMV Only', desc: 'Applies only to license and renewal applications' },
-                { label: 'Consent Question', desc: 'Applicants see the donation question first' },
-                { label: 'Easy Opt-Out', desc: 'Skip the question or write to the commissioner any time' },
-                { label: 'Written Notice', desc: 'Commissioner sends mail confirming registration' },
-                { label: 'Under-18 Exempt', desc: 'Does not apply to minors' },
-                { label: 'Your Choice', desc: 'You can always opt out at any time, no questions asked' },
-              ].map((item, i) => (
+              {safeguards.map((item, i) => (
                 <NinetyCard
                   key={item.label}
                   color={['bg-ycod-pink', 'bg-ycod-blue', 'bg-ycod-yellow', 'bg-ycod-coral', 'bg-ycod-green', 'bg-ycod-pink'][i]}
@@ -130,10 +131,10 @@ export default function BillPage() {
             variants={fadeInUp}
           >
             <h2 className="font-display text-3xl font-bold text-ycod-black dark:text-white mb-4 text-center">
-              2021 Draft Bill Text
+              {t('bill.draft_title')}
             </h2>
             <p className="font-body text-center text-ycod-black/70 dark:text-white/70 mb-8">
-              Based on Bill A07954 (2019), updated for the 2021 legislative session.
+              {t('bill.draft_note')}
             </p>
             <div className="ninety-card bg-white dark:bg-ycod-black transition-colors duration-300" style={{ transform: 'rotate(0deg)' }}>
               <pre className="font-body text-sm md:text-base text-ycod-black/90 whitespace-pre-wrap leading-relaxed">
@@ -148,7 +149,7 @@ export default function BillPage() {
                 className="text-white"
                 external
               >
-                View Original 2019 Bill on NY Assembly
+                {t('bill.view_original')}
               </RetroButton>
             </div>
           </motion.div>
@@ -164,17 +165,17 @@ export default function BillPage() {
       <section className="bg-ycod-coral py-16 text-center">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
-            Support This Legislation
+            {t('bill.cta_title')}
           </h2>
           <p className="font-body text-lg text-white/90 mb-6">
-            Contact your representatives and join our movement.
+            {t('bill.cta_subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <RetroButton href="/join" color="bg-ycod-yellow" className="text-ycod-black">
-              Join the Movement
+              {t('cta.join')}
             </RetroButton>
             <RetroButton href="/contact" color="bg-white dark:bg-ycod-black transition-colors duration-300" className="text-ycod-black">
-              Contact Us
+              {t('nav.contact')}
             </RetroButton>
           </div>
         </div>

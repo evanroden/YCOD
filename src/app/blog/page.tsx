@@ -7,10 +7,12 @@ import BlogCard from '@/components/blog/BlogCard';
 import { blogPosts } from '@/lib/blog-posts';
 import { BlogCategory, CATEGORY_LABELS, CATEGORY_COLORS } from '@/lib/blog-types';
 import { staggerContainer, fadeInUp } from '@/lib/animations';
+import { useI18n } from '@/lib/i18n';
 
 const ALL_CATEGORIES: (BlogCategory | 'all')[] = ['all', 'policy', 'medical', 'awareness', 'opinion'];
 
 export default function BlogPage() {
+  const { t } = useI18n();
   const [activeCategory, setActiveCategory] = useState<BlogCategory | 'all'>('all');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -40,7 +42,7 @@ export default function BlogPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            News &amp; Updates
+            {t('blog.title')}
           </motion.h1>
           <motion.p
             className="font-body text-xl text-white/90 max-w-2xl mx-auto"
@@ -48,7 +50,7 @@ export default function BlogPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            Stories, breakthroughs, and policy updates shaping the future of organ donation.
+            {t('blog.subtitle')}
           </motion.p>
         </div>
       </section>
@@ -75,7 +77,7 @@ export default function BlogPage() {
                       : 'bg-white dark:bg-ycod-black text-ycod-black dark:text-white hover:bg-gray-50 dark:hover:bg-white/5'
                   }`}
                 >
-                  {cat === 'all' ? 'All Posts' : CATEGORY_LABELS[cat as BlogCategory]}
+                  {cat === 'all' ? t('blog.all') : CATEGORY_LABELS[cat as BlogCategory]}
                 </button>
               ))}
             </div>
@@ -84,7 +86,7 @@ export default function BlogPage() {
             <div className="relative w-full md:w-64">
               <input
                 type="text"
-                placeholder="Search posts..."
+                placeholder={t('blog.search')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full font-body text-sm px-4 py-2 pl-10 border-2 border-ycod-black dark:border-white/30 rounded-md bg-white dark:bg-ycod-black dark:text-white"
@@ -115,16 +117,16 @@ export default function BlogPage() {
           {filteredPosts.length === 0 ? (
             <div className="text-center py-16">
               <p className="font-display text-2xl font-bold text-ycod-black/40 dark:text-white/40 mb-2">
-                No posts found
+                {t('blog.no_posts')}
               </p>
               <p className="font-body text-ycod-black/50 dark:text-white/50">
-                Try a different search or category.
+                {t('blog.empty_hint')}
               </p>
             </div>
           ) : (
             <>
               <p className="font-body text-sm text-ycod-black/50 dark:text-white/50 mb-8">
-                Showing {filteredPosts.length} post{filteredPosts.length !== 1 ? 's' : ''}
+                {t('blog.showing', { count: String(filteredPosts.length) })}
               </p>
               <motion.div
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
@@ -148,10 +150,10 @@ export default function BlogPage() {
       <section className="bg-ycod-blue py-16 text-center">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
-            Stay Informed, Save Lives
+            {t('blog.cta_title')}
           </h2>
           <p className="font-body text-lg text-white/80 mb-6">
-            Follow the latest developments in organ donation policy and advocacy.
+            {t('blog.cta_subtitle')}
           </p>
         </div>
       </section>
