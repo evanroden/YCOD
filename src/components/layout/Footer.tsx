@@ -42,6 +42,7 @@ export default function Footer() {
               <li><Link href="/facts" className="text-gray-300 hover:text-ycod-pink transition-colors">Fast Facts</Link></li>
               <li><Link href="/tedx" className="text-gray-300 hover:text-ycod-pink transition-colors">TEDx Talk</Link></li>
               <li><Link href="/bill" className="text-gray-300 hover:text-ycod-pink transition-colors">The Bill</Link></li>
+              <li><Link href="/blog" className="text-gray-300 hover:text-ycod-pink transition-colors">News &amp; Updates</Link></li>
             </ul>
           </div>
 
