@@ -20,7 +20,7 @@ export default function QuickRegister() {
   }, []);
 
   const handleDesktopClick = () => {
-    navigator.clipboard.writeText('Send "REGISTER" to 57838').then(() => {
+    navigator.clipboard.writeText(t('cta.clipboard_text')).then(() => {
       setShowCopied(true);
       setTimeout(() => setShowCopied(false), 3000);
     });
