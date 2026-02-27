@@ -88,7 +88,11 @@ export default function ImpactCalculator() {
                 style={{
                   background: `linear-gradient(to right, ${getSliderColor()} 0%, ${getSliderColor()} ${((registrationRate - 37) / 62) * 100}%, #e5e7eb ${((registrationRate - 37) / 62) * 100}%, #e5e7eb 100%)`,
                 }}
-                aria-label="New York registration rate slider"
+                aria-label="New York organ donor registration rate"
+                aria-valuemin={37}
+                aria-valuemax={99}
+                aria-valuenow={registrationRate}
+                aria-valuetext={`${registrationRate}% registration rate, ${additionalRegistered.toLocaleString()} new registrations, ${livesSaved.toLocaleString()} lives saved per year`}
               />
               {/* Marker for current 50% */}
               <div
@@ -122,7 +126,7 @@ export default function ImpactCalculator() {
           </AnimatePresence>
 
           {/* Results Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4" aria-live="polite" aria-atomic="true">
             <motion.div
               className="ninety-card bg-ycod-pink/20 text-center"
               style={{ transform: 'rotate(-1deg)' }}

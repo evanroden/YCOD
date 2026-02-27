@@ -27,6 +27,13 @@ export default function AnimatedCounter({
     if (!isInView || hasAnimated.current) return;
     hasAnimated.current = true;
 
+    // Respect prefers-reduced-motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      setCount(target);
+      return;
+    }
+
     const startTime = Date.now();
     const durationMs = duration * 1000;
 
@@ -57,6 +64,7 @@ export default function AnimatedCounter({
       initial={{ opacity: 0, scale: 0.5 }}
       animate={isInView ? { opacity: 1, scale: 1 } : {}}
       transition={{ duration: 0.5, ease: 'easeOut' }}
+      aria-label={`${prefix}${target >= 1000 ? target.toLocaleString() : target}${suffix}`}
     >
       {prefix}{formatted}{suffix}
     </motion.span>

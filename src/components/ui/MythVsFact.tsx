@@ -97,9 +97,15 @@ export default function MythVsFact() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08 }}
                 role="button"
-                aria-label={isFlipped ? 'Show myth' : 'Reveal fact'}
+                aria-expanded={isFlipped}
+                aria-label={isFlipped ? `Fact: ${item.fact}` : `Myth: ${item.myth}. Activate to reveal the truth.`}
                 tabIndex={0}
-                onKeyDown={(e) => e.key === 'Enter' && toggleCard(index)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleCard(index);
+                  }
+                }}
               >
                 <AnimatePresence mode="wait">
                   {!isFlipped ? (

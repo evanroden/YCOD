@@ -143,9 +143,17 @@ ${zip || '[Your ZIP Code]'}`;
           </motion.div>
         </div>
 
+        {/* Privacy notice */}
+        <div className="mt-6 text-center">
+          <p className="font-body text-xs text-ycod-black/40 dark:text-white/40">
+            Your name, ZIP code, and personal story are used only to generate this letter in your browser.
+            Nothing is sent to our servers or stored. We do not collect, save, or share any data you enter here.
+          </p>
+        </div>
+
         {/* Action links */}
         <motion.div
-          className="mt-8 text-center"
+          className="mt-6 text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -154,6 +162,12 @@ ${zip || '[Your ZIP Code]'}`;
             After copying your letter, find your representative and send it:
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href={`mailto:?subject=${encodeURIComponent('Support Opt-Out Organ Donation in New York')}&body=${encodeURIComponent(letterText)}`}
+              className="retro-btn bg-ycod-coral text-white text-sm"
+            >
+              Open in Email Client
+            </a>
             <a
               href="https://nyassembly.gov/mem/search/"
               target="_blank"

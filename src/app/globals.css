@@ -136,6 +136,10 @@ html {
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .memphis-bg-blue,
   .memphis-bg-green {
     animation: none;

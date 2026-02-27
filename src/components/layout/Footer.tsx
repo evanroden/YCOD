@@ -1,11 +1,17 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useI18n } from '@/lib/i18n';
 
 export default function Footer() {
   const { t } = useI18n();
+  const [visitorCount, setVisitorCount] = useState('031337');
+
+  useEffect(() => {
+    setVisitorCount(String(Math.floor(31337 + Math.random() * 100)).padStart(6, '0'));
+  }, []);
 
   return (
     <footer className="bg-ycod-black text-white relative overflow-hidden">
@@ -119,7 +125,7 @@ export default function Footer() {
             {t('footer.join_registry')}
           </p>
           <div className="visitor-counter inline-block" aria-hidden="true">
-            VISITORS: {String(Math.floor(31337 + Math.random() * 100)).padStart(6, '0')}
+            VISITORS: {visitorCount}
           </div>
         </div>
 

@@ -7,9 +7,10 @@ import Providers from './Providers';
 import './globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.ycod.org'),
   title: {
     default: 'The YCOD — Youth Coalition for Organ Donation',
-    template: '%s | The YCOD — Youth Coalition for Organ Donation',
+    template: '%s | YCOD',
   },
   description:
     'The Youth Coalition for Organ Donation advocates for opt-out organ donation legislation in New York State. Join 3,000+ supporters saving lives.',
@@ -20,15 +21,30 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'The YCOD',
+    images: [
+      {
+        url: '/images/logo.png',
+        width: 800,
+        height: 800,
+        alt: 'YCOD — Youth Coalition for Organ Donation logo',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'The YCOD — Youth Coalition for Organ Donation',
     description:
       'Advocating for opt-out organ donation legislation in New York State. Join 3,000+ supporters saving lives.',
+    images: ['/images/logo.png'],
   },
   icons: {
     icon: '/images/favicon.webp',
+  },
+  alternates: {
+    canonical: '/',
+    types: {
+      'application/rss+xml': '/feed.xml',
+    },
   },
 };
 
