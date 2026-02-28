@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import TeamMember from '@/components/team/TeamMember';
 import SectionDivider from '@/components/ui/SectionDivider';
+import Link from 'next/link';
 import RetroButton from '@/components/ui/RetroButton';
 import InteractiveTimeline from '@/components/ui/InteractiveTimeline';
 import ImpactMetrics from '@/components/ui/ImpactMetrics';
@@ -124,6 +125,27 @@ export default function AboutPage() {
       <ImpactMetrics />
 
       <SectionDivider color="#F07070" />
+
+      {/* Explore More */}
+      <section className="py-12 md:py-16 bg-white dark:bg-ycod-black transition-colors duration-300">
+        <div className="max-w-4xl mx-auto px-4">
+          <h3 className="font-display text-2xl font-bold text-ycod-black dark:text-white mb-6 text-center">
+            {t('crosslink.explore_more')}
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <Link href="/stories" className="ninety-card bg-ycod-pink/30 hover:bg-ycod-pink/50 transition-colors group">
+              <span className="font-display font-bold text-ycod-black dark:text-white group-hover:text-ycod-coral transition-colors">{t('nav.stories')}</span>
+              <p className="font-body text-sm text-ycod-black/70 dark:text-white/70 mt-1">{t('crosslink.stories_prompt')}</p>
+            </Link>
+            <Link href="/faq" className="ninety-card bg-ycod-yellow/30 hover:bg-ycod-yellow/50 transition-colors group">
+              <span className="font-display font-bold text-ycod-black dark:text-white group-hover:text-ycod-coral transition-colors">{t('nav.faq')}</span>
+              <p className="font-body text-sm text-ycod-black/70 dark:text-white/70 mt-1">{t('crosslink.faq_prompt')}</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <SectionDivider color="#4A90D9" />
 
       {/* CTA */}
       <section className="bg-ycod-blue py-16 text-center">

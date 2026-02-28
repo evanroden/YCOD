@@ -55,10 +55,6 @@ export default function Footer() {
               <li><Link href="/bill" className="text-gray-300 hover:text-ycod-pink transition-colors">{t('footer.the_bill')}</Link></li>
               <li><Link href="/blog" className="text-gray-300 hover:text-ycod-pink transition-colors">{t('nav.news')}</Link></li>
               <li><Link href="/coverage" className="text-gray-300 hover:text-ycod-pink transition-colors">{t('footer.press_coverage')}</Link></li>
-              <li><Link href="/faq" className="text-gray-300 hover:text-ycod-pink transition-colors">{t('nav.faq')}</Link></li>
-              <li><Link href="/resources" className="text-gray-300 hover:text-ycod-pink transition-colors">{t('nav.resources')}</Link></li>
-              <li><Link href="/stories" className="text-gray-300 hover:text-ycod-pink transition-colors">{t('nav.stories')}</Link></li>
-              <li><Link href="/glossary" className="text-gray-300 hover:text-ycod-pink transition-colors">{t('nav.glossary')}</Link></li>
             </ul>
           </div>
 

@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import SectionDivider from '@/components/ui/SectionDivider';
 import RetroButton from '@/components/ui/RetroButton';
 import NinetyCard from '@/components/ui/NinetyCard';
@@ -167,6 +168,26 @@ export default function BillPage() {
 
       {/* Letter Generator */}
       <LetterGenerator />
+
+      {/* Explore More */}
+      <section className="py-12 md:py-16 bg-white dark:bg-ycod-black transition-colors duration-300">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <Link href="/faq" className="ninety-card bg-ycod-yellow/30 hover:bg-ycod-yellow/50 transition-colors group">
+              <span className="font-display font-bold text-ycod-black dark:text-white group-hover:text-ycod-coral transition-colors">{t('nav.faq')}</span>
+              <p className="font-body text-sm text-ycod-black/70 dark:text-white/70 mt-1">{t('crosslink.faq_prompt')}</p>
+            </Link>
+            <Link href="/glossary" className="ninety-card bg-ycod-green/20 hover:bg-ycod-green/40 transition-colors group">
+              <span className="font-display font-bold text-ycod-black dark:text-white group-hover:text-ycod-coral transition-colors">{t('nav.glossary')}</span>
+              <p className="font-body text-sm text-ycod-black/70 dark:text-white/70 mt-1">{t('crosslink.glossary_prompt')}</p>
+            </Link>
+            <Link href="/resources" className="ninety-card bg-ycod-blue/20 hover:bg-ycod-blue/40 transition-colors group">
+              <span className="font-display font-bold text-ycod-black dark:text-white group-hover:text-ycod-coral transition-colors">{t('nav.resources')}</span>
+              <p className="font-body text-sm text-ycod-black/70 dark:text-white/70 mt-1">{t('crosslink.resources_prompt')}</p>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <SectionDivider color="#F07070" />
 

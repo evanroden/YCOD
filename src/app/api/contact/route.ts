@@ -6,11 +6,7 @@ const DATA_DIR = path.join(process.cwd(), 'data');
 const MESSAGES_FILE = path.join(DATA_DIR, 'messages.json');
 
 async function ensureDataDir() {
-  try {
-    await fs.mkdir(DATA_DIR, { recursive: true });
-  } catch {
-    // directory exists
-  }
+  await fs.mkdir(DATA_DIR, { recursive: true });
 }
 
 async function readMessages(): Promise<Record<string, unknown>[]> {
@@ -48,16 +44,24 @@ export async function POST(request: Request) {
       timestamp: new Date().toISOString(),
     };
 
-    await ensureDataDir();
-    const messages = await readMessages();
-    messages.push(entry);
-    await fs.writeFile(MESSAGES_FILE, JSON.stringify(messages, null, 2));
-
+    // Log the message regardless of file write success
     console.log('New contact message:', entry);
+
+    // Attempt to persist to file
+    try {
+      await ensureDataDir();
+      const messages = await readMessages();
+      messages.push(entry);
+      await fs.writeFile(MESSAGES_FILE, JSON.stringify(messages, null, 2));
+    } catch (writeErr) {
+      // File write failed (e.g. read-only filesystem in production)
+      // Message is still logged above, so don't fail the request
+      console.warn('Could not persist message to file:', writeErr);
+    }
 
     return NextResponse.json({
       success: true,
-      message: 'Message received! We\'ll get back to you soon.',
+      message: "Message received! We'll get back to you soon.",
     });
   } catch {
     return NextResponse.json(

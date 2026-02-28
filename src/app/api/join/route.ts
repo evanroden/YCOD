@@ -6,11 +6,7 @@ const DATA_DIR = path.join(process.cwd(), 'data');
 const MEMBERS_FILE = path.join(DATA_DIR, 'members.json');
 
 async function ensureDataDir() {
-  try {
-    await fs.mkdir(DATA_DIR, { recursive: true });
-  } catch {
-    // directory exists
-  }
+  await fs.mkdir(DATA_DIR, { recursive: true });
 }
 
 async function readMembers(): Promise<Record<string, unknown>[]> {
@@ -52,18 +48,26 @@ export async function POST(request: Request) {
       source: 'join-form',
     };
 
-    // Persist to file
-    await ensureDataDir();
-    const members = await readMembers();
-    members.push(entry);
-    await fs.writeFile(MEMBERS_FILE, JSON.stringify(members, null, 2));
-
+    // Log the signup regardless of file write success
     console.log('New YCOD member signup:', entry);
+
+    let memberCount = 1;
+
+    // Attempt to persist to file
+    try {
+      await ensureDataDir();
+      const members = await readMembers();
+      members.push(entry);
+      await fs.writeFile(MEMBERS_FILE, JSON.stringify(members, null, 2));
+      memberCount = members.length;
+    } catch (writeErr) {
+      console.warn('Could not persist member to file:', writeErr);
+    }
 
     return NextResponse.json({
       success: true,
       message: 'Welcome to YCOD!',
-      memberCount: members.length,
+      memberCount,
     });
   } catch {
     return NextResponse.json(

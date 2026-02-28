@@ -614,6 +614,13 @@ const translations: Record<Locale, Record<string, string>> = {
     'nav.stories': 'Stories',
     'nav.glossary': 'Glossary',
 
+    // Cross-page links
+    'crosslink.explore_more': 'Explore More',
+    'crosslink.stories_prompt': 'Read real stories from donor families and recipients.',
+    'crosslink.faq_prompt': 'Have questions? Find answers in our FAQ.',
+    'crosslink.glossary_prompt': 'New to organ donation? Browse our glossary of key terms.',
+    'crosslink.resources_prompt': 'Download toolkits, fact sheets, and advocacy guides.',
+
     // =============================================
     // FAQ Page
     // =============================================
@@ -1618,6 +1625,13 @@ const translations: Record<Locale, Record<string, string>> = {
     'nav.resources': '资源',
     'nav.stories': '故事',
     'nav.glossary': '术语表',
+
+    // Cross-page links
+    'crosslink.explore_more': '了解更多',
+    'crosslink.stories_prompt': '阅读来自捐献者家庭和受益者的真实故事。',
+    'crosslink.faq_prompt': '有疑问？在我们的常见问题中找到答案。',
+    'crosslink.glossary_prompt': '初次了解器官捐献？浏览我们的关键术语表。',
+    'crosslink.resources_prompt': '下载工具包、资料表和倡导指南。',
 
     // =============================================
     // FAQ Page
@@ -2625,6 +2639,13 @@ const translations: Record<Locale, Record<string, string>> = {
     'nav.stories': 'Historias',
     'nav.glossary': 'Glosario',
 
+    // Cross-page links
+    'crosslink.explore_more': 'Explorar Más',
+    'crosslink.stories_prompt': 'Lee historias reales de familias donantes y receptores.',
+    'crosslink.faq_prompt': '¿Tienes preguntas? Encuentra respuestas en nuestras preguntas frecuentes.',
+    'crosslink.glossary_prompt': '¿Nuevo en la donación de órganos? Consulta nuestro glosario de términos clave.',
+    'crosslink.resources_prompt': 'Descarga guías, hojas informativas y materiales de apoyo.',
+
     // =============================================
     // FAQ Page
     // =============================================
@@ -3630,6 +3651,13 @@ const translations: Record<Locale, Record<string, string>> = {
     'nav.resources': 'Ressources',
     'nav.stories': 'Histoires',
     'nav.glossary': 'Glossaire',
+
+    // Cross-page links
+    'crosslink.explore_more': 'En Savoir Plus',
+    'crosslink.stories_prompt': 'Lisez des histoires vraies de familles de donneurs et de receveurs.',
+    'crosslink.faq_prompt': 'Des questions ? Trouvez les réponses dans notre FAQ.',
+    'crosslink.glossary_prompt': 'Nouveau dans le don d\'organes ? Parcourez notre glossaire des termes clés.',
+    'crosslink.resources_prompt': 'Téléchargez des guides, des fiches et des outils de plaidoyer.',
 
     // =============================================
     // FAQ Page
