@@ -16,7 +16,7 @@ export const blogPosts: BlogPost[] = [
       <h3>What Changed</h3>
       <p>Under the previous system, individuals had to actively sign up to the NHS Organ Donor Register. The new law presumes that all adults in England agree to donate their organs when they die, unless they have explicitly recorded a decision not to donate, or are in an excluded group. Family members are still consulted before donation proceeds, and certain groups — including those under 18, people who lack mental capacity, and visitors to England — are exempt.</p>
 
-      <blockquote>"Max is alive today because of organ donation. We want to help make sure other families don\'t have to go through the agony of waiting for a transplant." — Max\'s family, speaking in support of the law</blockquote>
+      <blockquote>Max Johnson\'s family, who campaigned for the law, emphasized that Max is alive because of organ donation — and that they want to help ensure other families don\'t have to endure the agony of waiting for a transplant.</blockquote>
 
       <h3>The Story Behind the Name</h3>
       <p>Keira Ball\'s family made the decision to donate her organs after she was fatally injured in a car crash. Her heart saved the life of nine-year-old Max Johnson, who had been waiting for a transplant due to dilated cardiomyopathy. Max\'s family subsequently campaigned for the change in law, gathering over 36,000 signatures on a petition to Parliament. That kind of grassroots energy is exactly what we at YCOD believe in — ordinary people pushing for a system that makes the life-saving choice easier, not harder.</p>
@@ -24,7 +24,7 @@ export const blogPosts: BlogPost[] = [
       <h3>Early Results</h3>
       <p>NHS Blood and Transplant reported that the law helped normalize conversations about organ donation. In the first year, the NHS Organ Donor Register saw a notable increase in registrations, and refusal rates by families began to decrease — a critical factor, since family overrides had been a persistent barrier even in opt-out systems.</p>
 
-      <blockquote>"The change in law is not about taking away people\'s choice. It\'s about shifting the default so that more lives can be saved." — NHS Blood and Transplant</blockquote>
+      <blockquote>The opt-out law does not remove anyone\'s choice. It shifts the default so that more lives can be saved while still allowing individuals to register their objection.</blockquote>
 
       <h3>Why This Matters for YCOD</h3>
       <p>This is the part I keep coming back to: <strong>changing the default saves lives</strong>. This isn\'t just a policy tweak — it\'s a fundamental shift in how a society treats organ donation. When donation becomes the expected norm rather than an exceptional choice, more families say yes, and more patients on the waitlist get the organs they need. After a family member needed a kidney transplant, this became personal for me. I couldn\'t stay on the sidelines watching 17 people die every day in the U.S. while countries like England were proving that a better way exists.</p>
@@ -51,7 +51,7 @@ export const blogPosts: BlogPost[] = [
       <h3>How the System Works</h3>
       <p>Under the new law, all Dutch residents aged 18 and older are contacted by letter and asked to register their organ donation preference. If they do not respond after two reminders, they are registered as having "no objection" to organ donation. Importantly, this is <em>not</em> automatic consent — family members are still consulted and can object on behalf of the deceased. Citizens can choose from four options: yes to donation, no to donation, let family decide, or let a specific person decide.</p>
 
-      <blockquote>"This law does not force anyone to donate. It ensures that everyone makes a conscious choice, and if they don\'t, the default helps save lives." — Pia Dijkstra, sponsor of the bill</blockquote>
+      <blockquote>Bill sponsor Pia Dijkstra emphasized that the law does not force anyone to donate. Rather, it ensures that everyone makes a conscious choice, and if they don\'t respond, the default helps save lives.</blockquote>
 
       <h3>The Path to Passage</h3>
       <p>The legislation was championed by D66 party member Pia Dijkstra and took over six years to pass. Public opinion was deeply divided. Opponents argued the law infringed on bodily autonomy, while supporters pointed to the roughly 150 people who died each year in the Netherlands while waiting for an organ transplant. Six years of debate, 150 preventable deaths a year — that math should have made this an easy decision, but changing the default is never easy, even when it saves lives.</p>
@@ -59,7 +59,7 @@ export const blogPosts: BlogPost[] = [
       <h3>Impact So Far</h3>
       <p>After implementation, the Dutch Transplant Foundation reported increased public awareness. More people actively registered their preferences — whether yes or no — which itself was considered a positive outcome, as it reduced uncertainty for families facing donation decisions at the most difficult time imaginable. This is a point I make constantly: the goal isn\'t to force anyone into anything. It\'s to make sure people actually make a choice instead of leaving their families to guess.</p>
 
-      <blockquote>"Even people who choose not to donate benefit from this system, because their wishes are clearly recorded." — Dutch Transplant Foundation</blockquote>
+      <blockquote>Even people who choose not to donate benefit from an opt-out system, because their wishes are clearly recorded rather than left ambiguous.</blockquote>
 
       <h3>Lessons for the U.S.</h3>
       <p>The Dutch experience proves something I believe deeply: opt-out systems don\'t eliminate choice — they encourage it. The Netherlands saw a meaningful rise in active registrations of all types. We at YCOD point to this constantly. If New York passed <a href="/bill" target="_blank">Bill A07954</a>, it wouldn\'t override anyone\'s autonomy — it would prompt more people to make their wishes known, lift the burden off grieving families, and save lives. After a family member needed a kidney transplant, this became personal for me. I couldn\'t stay on the sidelines knowing 17 people die every day in the U.S. while countries like the Netherlands are proving there\'s a better way.</p>
@@ -84,7 +84,7 @@ export const blogPosts: BlogPost[] = [
       <h3>A Historic First</h3>
       <p>While opt-out systems have been adopted across much of Europe — including Spain, France, Wales, England, and the Netherlands — no jurisdiction in North America had taken this step before Nova Scotia. The province, home to roughly one million people, became a testing ground for whether presumed consent could work within the North American cultural and legal framework. And it did.</p>
 
-      <blockquote>"Nova Scotia is leading the way in North America. This legislation will save lives and give hope to the hundreds of Nova Scotians waiting for a transplant." — Dr. Stephen Beed, Medical Director of the Nova Scotia Organ and Tissue Donation Program</blockquote>
+      <blockquote>Dr. Stephen Beed, Medical Director of the Nova Scotia Organ and Tissue Donation Program, has described the legislation as a life-saving step that will give hope to the hundreds of Nova Scotians waiting for a transplant.</blockquote>
 
       <h3>Key Provisions</h3>
       <p>The law applies to Nova Scotia residents aged 19 and older who have lived in the province for at least 12 months. Several groups are excluded: those under 19, people who lack decision-making capacity, and recent arrivals to the province. Anyone can opt out at any time through an online registry, by contacting the program directly, or by informing family members. Families continue to be consulted as part of the donation process.</p>
@@ -92,7 +92,7 @@ export const blogPosts: BlogPost[] = [
       <h3>Early Results</h3>
       <p>In its first year, Nova Scotia saw an increase in organ donation referrals and a decrease in family refusal rates. The province also reported that more people had conversations with their families about their donation wishes — a key secondary benefit of opt-out legislation that I think gets overlooked far too often. <strong>Changing the default saves lives</strong>, but it also changes conversations, and those conversations matter just as much.</p>
 
-      <blockquote>"The most important outcome isn\'t just the law itself — it\'s that families are now talking about organ donation before tragedy strikes." — Nova Scotia Health</blockquote>
+      <blockquote>The most important outcome of the law has not been the legal change alone but the fact that families are now talking about organ donation before tragedy strikes.</blockquote>
 
       <h3>A Blueprint for New York</h3>
       <p>This is the example I bring up in every conversation with legislators in Albany. If a Canadian province of one million people can implement opt-out legislation within North America\'s legal and cultural context, there is no reason New York — one of the most progressive states in the country — cannot do the same. Nova Scotia proved that presumed consent isn\'t just a European concept. It works right here on our continent. We at YCOD point to this success story every time we advocate for <a href="/bill" target="_blank">Bill A07954</a>, and I won\'t stop until New York follows their lead.</p>
@@ -117,7 +117,7 @@ export const blogPosts: BlogPost[] = [
       <h3>Following Wales and England</h3>
       <p>Wales led the way in the UK with its opt-out system in 2015, followed by England in 2020. Scotland\'s approach built on lessons learned from both, with particular attention to public awareness campaigns and safeguards for vulnerable populations. The Scottish government invested significantly in public education before the law took effect, running campaigns under the banner "organ and tissue donation — it\'s worth talking about." That investment in education before implementation is something I think about a lot for New York.</p>
 
-      <blockquote>"This law gives us the opportunity to save and transform more lives through organ and tissue donation. It\'s a landmark moment for Scotland." — Scottish Government Health Secretary</blockquote>
+      <blockquote>The Scottish government described the law as a landmark opportunity to save and transform more lives through organ and tissue donation.</blockquote>
 
       <h3>How It Differs</h3>
       <p>Scotland\'s system includes several notable features. It uses the term "deemed authorisation" rather than "presumed consent," emphasizing that the system authorises donation to proceed rather than presuming an individual\'s consent. The law also places particular emphasis on the role of the "nearest relative," who is consulted and can provide information about the deceased\'s wishes. Adults who had lived in Scotland for at least 12 months and had not opted out are covered.</p>
@@ -125,7 +125,7 @@ export const blogPosts: BlogPost[] = [
       <h3>Impact on Donation Rates</h3>
       <p>NHS Scotland reported increased engagement with the Organ Donor Register following implementation. The percentage of people actively recording their donation decision — whether to donate or not — rose significantly. Family refusal rates, which had been around 40% in Scotland prior to the law, began to decline as more families understood their loved one\'s wishes. Think about that: 40% of families were saying no before this law. That\'s not because people are against donation — it\'s because the system wasn\'t helping families make an informed decision at the hardest moment of their lives.</p>
 
-      <blockquote>"When families know what their loved one wanted, they almost always honor that wish. This law helps make those wishes clear." — NHS Blood and Transplant Scotland</blockquote>
+      <blockquote>When families know what their loved one wanted, they almost always honor that wish. Opt-out legislation helps make those wishes clear by prompting people to record a decision.</blockquote>
 
       <h3>The Bigger Picture</h3>
       <p>With Wales, England, Scotland, and Northern Ireland (which is considering similar legislation), the entire United Kingdom is moving toward opt-out organ donation. I want to be direct about what this means: a major Western democracy — one that shares our legal traditions — is proving across all its nations that opt-out systems are practical, ethical, and effective. When 17 people die every day in the U.S. waiting for organs, we can\'t keep pretending this is some radical experiment. The evidence is in. We at YCOD are using the UK\'s example to push for <a href="/bill" target="_blank">Bill A07954</a> in New York, and the case gets stronger with every country that proves us right.</p>
@@ -150,7 +150,7 @@ export const blogPosts: BlogPost[] = [
       <h3>The Spanish Model</h3>
       <p>Spain adopted opt-out organ donation legislation in 1979, but donation rates didn\'t dramatically improve until the creation of the <strong>Organización Nacional de Trasplantes (ONT)</strong> in 1989. The ONT introduced a network of transplant coordinators in every hospital, standardized protocols for identifying potential donors, and built a culture of donation that permeates the entire healthcare system. I keep coming back to this point: the system, not individuals, is what determines outcomes.</p>
 
-      <blockquote>"It\'s not just the law. It\'s the system — the coordinators, the training, the culture. You need all of it." — Dr. Rafael Matesanz, founder of the ONT</blockquote>
+      <blockquote>As Dr. Rafael Matesanz, founder of the ONT, has emphasized: the success is not just about the law itself, but the entire system — the coordinators, the training, and the culture of donation that supports it.</blockquote>
 
       <h3>What Makes It Work</h3>
       <p>Key elements of Spain\'s success include:</p>
@@ -159,7 +159,7 @@ export const blogPosts: BlogPost[] = [
       <p><strong>Expanded criteria:</strong> Spain pioneered the use of expanded criteria donors, including older donors and those who died from cardiac arrest (not just brain death). This significantly expanded the donor pool.</p>
       <p><strong>Public trust:</strong> Decades of transparent, ethical practice have built extraordinary public trust. Family refusal rates in Spain are among the lowest in the world — under 15%.</p>
 
-      <blockquote>"In Spain, organ donation is not seen as an extraordinary act. It is the normal thing to do." — ONT annual report</blockquote>
+      <blockquote>In Spain, decades of institutional investment have made organ donation a cultural norm rather than an extraordinary act.</blockquote>
 
       <h3>Why YCOD Looks to Spain</h3>
       <p>Spain proves what I\'ve been saying since I started YCOD: opt-out legislation alone isn\'t enough — but it\'s the critical foundation you build everything else on. Combined with proper infrastructure, training, and cultural investment, opt-out laws can transform organ donation rates. When we at YCOD advocate for New York\'s <a href="/bill" target="_blank">Bill A07954</a>, we emphasize that the legislation should be paired with real investment in donation infrastructure, just as Spain did with the ONT. The goal isn\'t just to change the law — it\'s to build a system that saves the maximum number of lives. After a family member needed a kidney transplant, I couldn\'t stay on the sidelines. Spain shows us exactly what\'s possible when a society decides that saving lives through donation is the default, not the exception.</p>
@@ -221,7 +221,7 @@ export const blogPosts: BlogPost[] = [
       <h3>Key Findings</h3>
       <p>The Senate investigation, led by Senators Ron Wyden and Chuck Grassley, found that UNOS had failed to modernize its data systems, with some components running on technology from the 1990s. The investigation documented cases where organs were lost in transit, where viable organs were discarded due to logistical failures, and where patients died waiting for organs that were available but never reached them.</p>
 
-      <blockquote>"UNOS has operated as an unchecked monopoly for decades, and patients have paid the price with their lives." — Senator Ron Wyden, Chair of the Senate Finance Committee</blockquote>
+      <blockquote>The Senate Finance Committee investigation found that UNOS had operated with insufficient oversight, leading to preventable organ losses and patient deaths.</blockquote>
 
       <h3>The Scale of the Problem</h3>
       <p>According to data examined in the investigation, roughly 28,000 organs from deceased donors were not transplanted in 2021 alone. Let that sink in. While not all of these organs were necessarily viable, the report argued that thousands could have been used with better logistics, technology, and coordination. The investigation also highlighted that Black patients waited significantly longer for kidneys than white patients, and that geographic disparities meant a patient\'s zip code could determine their survival. Your zip code. In America. Determining whether you live or die.</p>
@@ -229,7 +229,7 @@ export const blogPosts: BlogPost[] = [
       <h3>Calls for Reform</h3>
       <p>The investigation catalyzed bipartisan momentum for reform. Senators introduced legislation to break up UNOS\'s monopoly and allow multiple organizations to manage different aspects of the transplant system — organ procurement, matching, logistics, and data management. The goal was to introduce competition and accountability into a system that had operated without either for nearly four decades.</p>
 
-      <blockquote>"Every organ that goes to waste is a life that could have been saved. We owe it to the 100,000+ Americans on the waitlist to fix this broken system." — Senate Finance Committee report</blockquote>
+      <blockquote>The Senate Finance Committee report concluded that systemic failures in organ procurement and transportation resulted in thousands of viable organs going unused each year.</blockquote>
 
       <h3>YCOD\'s Perspective</h3>
       <p>Here\'s what I tell everyone at YCOD: fighting for opt-out legislation isn\'t enough if the system delivering those organs is broken. Increasing the number of registered donors through presumed consent will only save lives if the matching and delivery system actually works. That\'s why we advocate for both: more donors through opt-out laws like <a href="/bill" target="_blank">Bill A07954</a>, and better outcomes through a completely reformed transplant network. You can\'t fix the organ shortage by blaming individuals — you have to fix the system.</p>
@@ -243,18 +243,18 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'securing-us-organ-transplant-network-act',
     title: 'The Securing the U.S. Organ Procurement and Transplantation Network Act',
-    date: '2023-03-23',
+    date: '2023-09-22',
     category: 'policy',
     heroColor: 'bg-ycod-blue',
     svgIcon: blogSvgs['securing-us-organ-transplant-network-act'],
-    excerpt: 'Signed into law in March 2023, the Securing the U.S. OPTN Act represents the most significant reform to America\'s organ transplant system in decades. The law breaks up UNOS\'s monopoly and introduces competition into the network.',
+    excerpt: 'Signed into law in September 2023, the Securing the U.S. OPTN Act represents the most significant reform to America\'s organ transplant system in decades. The law breaks up UNOS\'s monopoly and introduces competition into the network.',
     content: `
-      <p>I remember where I was when this bill passed. On March 23, 2023, President Biden signed the <strong>Securing the U.S. Organ Procurement and Transplantation Network Act</strong> into law. This legislation passed both chambers of Congress with overwhelming bipartisan support — 375 to 3 in the House, unanimous consent in the Senate — ending UNOS\'s 37-year monopoly. When 17 people die every day waiting for organs, there shouldn\'t be partisan disagreement about fixing the system that\'s failing them. And for once, there wasn\'t.</p>
+      <p>I remember where I was when this bill passed. On September 22, 2023, President Biden signed the <strong>Securing the U.S. Organ Procurement and Transplantation Network Act</strong> into law. This legislation passed both chambers of Congress with overwhelming bipartisan support — by voice vote in the House, unanimous consent in the Senate — ending UNOS\'s 37-year monopoly. When 17 people die every day waiting for organs, there shouldn\'t be partisan disagreement about fixing the system that\'s failing them. And for once, there wasn\'t.</p>
 
       <h3>What the Law Does</h3>
       <p>The act directs the Department of Health and Human Services (HHS) to modernize the Organ Procurement and Transplantation Network (OPTN) by allowing multiple contractors to manage different functions of the system. Instead of one organization handling everything from organ matching to data management to logistics, these functions can now be split among specialized organizations that compete for contracts.</p>
 
-      <blockquote>"This is the most significant reform to our organ transplant system since it was created. It will save lives." — President Biden, upon signing the act</blockquote>
+      <blockquote>The Securing the U.S. Organ Procurement and Transplantation Network Act was signed into law in 2023, marking the most significant reform to the U.S. organ transplant system since its creation.</blockquote>
 
       <h3>Key Provisions</h3>
       <p><strong>Breaking the monopoly:</strong> HHS can now award the OPTN contract to multiple entities, ending the single-contractor model.</p>
@@ -263,16 +263,16 @@ export const blogPosts: BlogPost[] = [
       <p><strong>Board governance reform:</strong> The act restructures governance to include more patient advocates and reduce conflicts of interest.</p>
 
       <h3>Bipartisan Achievement</h3>
-      <p>In an era of deep political polarization, the OPTN Act passed the House 375–3 and the Senate by unanimous consent. Both parties agreed that the current system was failing patients and that reform was overdue. The legislation was supported by patient advocacy groups, transplant physicians, and major healthcare organizations. This is proof of something I say all the time: saving lives through better organ donation policy is not a partisan issue. It\'s a human one.</p>
+      <p>In an era of deep political polarization, the OPTN Act passed the House by voice vote and the Senate by unanimous consent. Both parties agreed that the current system was failing patients and that reform was overdue. The legislation was supported by patient advocacy groups, transplant physicians, and major healthcare organizations. This is proof of something I say all the time: saving lives through better organ donation policy is not a partisan issue. It\'s a human one.</p>
 
-      <blockquote>"When 17 people die every day waiting for an organ, this isn\'t a partisan issue. It\'s a moral imperative." — Senator Chuck Grassley</blockquote>
+      <blockquote>The act received bipartisan support, reflecting broad agreement that organ transplant reform transcends party lines when 17 people die daily on the waiting list.</blockquote>
 
       <h3>What Comes Next</h3>
       <p>HHS has begun the process of implementing the law, including issuing new requests for proposals from organizations that want to manage parts of the transplant network. The transition will take several years, but early indications suggest that multiple qualified organizations are interested in competing for contracts. We at YCOD are watching this closely because it connects directly to our mission. Federal reform of the transplant network plus state-level opt-out legislation like <a href="/bill" target="_blank">Bill A07954</a> — that\'s how you build a system that actually works. More donors coming in, and a better system to get those organs where they need to go. I couldn\'t stay on the sidelines knowing both pieces of this puzzle need to come together.</p>
     `,
     sources: [
-      { label: 'Congress.gov — Securing the U.S. OPTN Act', url: 'https://www.congress.gov/bill/117th-congress/house-bill/2544' },
-      { label: 'White House — Signing statement', url: 'https://www.whitehouse.gov/briefing-room/statements-releases/2023/03/23/' },
+      { label: 'Congress.gov — Securing the U.S. OPTN Act', url: 'https://www.congress.gov/bill/118th-congress/senate-bill/1668' },
+      { label: 'White House — Signing statement', url: 'https://www.whitehouse.gov/briefing-room/statements-releases/2023/09/22/bill-signed-s-1668/' },
       { label: 'STAT News — UNOS monopoly broken', url: 'https://www.statnews.com/2023/03/23/organ-transplant-network-reform-signed-law/' },
     ],
   },
@@ -290,7 +290,7 @@ export const blogPosts: BlogPost[] = [
       <h3>How It Works</h3>
       <p>The system integrates organ donor registration into the existing voter registration process, both online and at physical registration sites. Residents are presented with a clear yes/no question about organ donation alongside their voter registration form. The process is entirely voluntary — no one is automatically registered as a donor — but the prompt ensures that every eligible adult encounters the question at a natural decision-making moment.</p>
 
-      <blockquote>"By meeting people where they already are — at the point of civic engagement — we can dramatically increase the number of registered organ donors." — Donate Life Colorado</blockquote>
+      <blockquote>By meeting people where they already are — at the point of civic engagement — programs like Colorado\'s have dramatically increased the number of registered organ donors.</blockquote>
 
       <h3>Results</h3>
       <p>Colorado\'s approach has yielded impressive results. The state consistently ranks among the highest in the nation for organ donor registration rates, with over 65% of eligible adults registered. The voter registration linkage is credited as a significant driver of these numbers, particularly among younger adults who are registering to vote for the first time. That last point matters a lot to me — young people aren\'t apolitical, and when you give them the chance to act on their values at the moment of civic engagement, they do.</p>
@@ -298,7 +298,7 @@ export const blogPosts: BlogPost[] = [
       <h3>The Power of Nudges</h3>
       <p>Colorado\'s success illustrates a key principle from behavioral economics: <em>the way choices are presented matters enormously</em>. By embedding the organ donation question into an existing process that millions of people complete every year, Colorado removed the friction of separate registration. People didn\'t need to seek out the donor registry — it came to them.</p>
 
-      <blockquote>"Most people support organ donation, but many never get around to registering. Removing that friction is the key." — Behavioral economics research on organ donation</blockquote>
+      <blockquote>Behavioral economics research consistently shows that most people support organ donation but never get around to registering. Removing that friction is the key to closing the gap between intention and action.</blockquote>
 
       <h3>Relevance for YCOD</h3>
       <p>Here\'s what excites me most: Colorado\'s model works within an opt-in framework — and it still achieves excellent results. Now imagine what an opt-out system could accomplish with similar nudges built on top of it. We at YCOD advocate for opt-out legislation like <a href="/bill" target="_blank">Bill A07954</a> as the ultimate structural change — <strong>changing the default saves lives</strong> — but we also push for practical measures like Colorado\'s voter registration linkage that can save lives right now. I\'ve personally urged New York legislators to adopt similar measures even before opt-out legislation passes. We can\'t afford to wait when 17 people die every day.</p>
@@ -323,7 +323,7 @@ export const blogPosts: BlogPost[] = [
       <h3>The Challenge</h3>
       <p>Israel historically had one of the lowest organ donation rates in the developed world. Religious objections — particularly debates about brain death in Jewish law — contributed to high family refusal rates. Many Israelis were willing to receive organs but reluctant to register as donors, creating a significant free-rider problem. The country was heavily dependent on organ imports and transplant tourism, both of which raised ethical concerns. This is a pattern I see everywhere: the system creates a gap between what people say they believe and what they actually do. And it\'s always the system, not individuals, that needs to change.</p>
 
-      <blockquote>"We had a situation where people wanted to receive organs but not give them. The priority system addresses that fundamental inequity." — Professor Jacob Lavee, architect of the Israeli priority system</blockquote>
+      <blockquote>Professor Jacob Lavee, who helped design the Israeli priority system, has described the core problem it addresses: people were willing to receive organs but reluctant to register as donors, creating a fundamental inequity that the priority system was designed to correct.</blockquote>
 
       <h3>How the Priority System Works</h3>
       <p>Under the system, when two patients have similar medical need for an organ, priority goes to the one who is a registered organ donor (or whose first-degree relative is a donor). The priority is modest — it doesn\'t override medical urgency — but in tiebreaker situations, it gives donors an advantage. The system also gives priority to those who have previously donated a kidney or liver lobe as living donors.</p>
@@ -331,7 +331,7 @@ export const blogPosts: BlogPost[] = [
       <h3>Dramatic Results</h3>
       <p>The impact was striking. Israel\'s organ donor card registration rate increased from roughly 10% to over 35% within a few years of implementation. Deceased organ donation rates also rose significantly. Perhaps most importantly, the policy sparked a national conversation about organ donation and shifted cultural attitudes in ways that pure opt-out legislation might not have achieved on its own. That\'s the part I keep thinking about — sometimes changing the default isn\'t enough. Sometimes you need to change the conversation too.</p>
 
-      <blockquote>"The priority system didn\'t just increase registration — it changed the national conversation. Organ donation went from a taboo topic to a dinner table discussion." — Israeli National Transplant Center</blockquote>
+      <blockquote>Israel\'s priority system did more than increase registration numbers. It shifted the national conversation, turning organ donation from a taboo topic into a subject of everyday discussion.</blockquote>
 
       <h3>YCOD\'s Take</h3>
       <p>Israel\'s system taught me that there are creative policy approaches beyond the binary choice of opt-in versus opt-out. While we at YCOD advocate primarily for opt-out legislation in New York through <a href="/bill" target="_blank">Bill A07954</a>, I\'m always looking at what other countries have tried. Israel\'s priority model offers powerful lessons about incentive design and cultural change. The best organ donation policy is one that fits the specific cultural context — and I believe New York\'s context is ready for opt-out. But I also believe we should never stop learning from innovative approaches like Israel\'s. When 17 people die every day waiting, we need every good idea on the table.</p>
@@ -364,7 +364,7 @@ export const blogPosts: BlogPost[] = [
       <h3>Why This Matters</h3>
       <p>The Bennett case opened a new era in <em>xenotransplantation</em> — the transplantation of organs between species. If pig organs can be reliably modified for use in humans, the organ shortage could theoretically be eliminated. There are roughly 100,000 people on the U.S. transplant waiting list at any given time; pig organs could eventually provide an unlimited supply. This isn\'t just a scientific milestone — it\'s a window into what desperation drives people to do when the system fails them. The system, not individuals, is what needs fixing.</p>
 
-      <blockquote>"This was a breakthrough surgery that brings us one step closer to solving the organ shortage crisis." — Dr. Bartley Griffith, lead surgeon, University of Maryland</blockquote>
+      <blockquote>Dr. Bartley Griffith, the lead surgeon at the University of Maryland, described the procedure as a breakthrough that brings the field one step closer to solving the organ shortage crisis.</blockquote>
 
       <h3>YCOD\'s Perspective</h3>
       <p>I want to be direct: xenotransplantation is a promising long-term solution, but it is not a substitute for policy change today. Pig organ transplants are years — likely decades — from routine clinical use. Meanwhile, 17 people die every day in the U.S. waiting for organs. We at YCOD believe that <strong>changing the default saves lives</strong> — right now, today — through opt-out organ donation legislation like <a href="/bill" target="_blank">Bill A07954</a>. I\'m all for investing in the science that may one day make the waitlist obsolete. But I couldn\'t stay on the sidelines while people die waiting for a future that hasn\'t arrived yet. This is a policy problem, not just a medical one.</p>
@@ -378,7 +378,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'second-pig-heart-transplant-lawrence-faucette',
     title: 'Second Pig Heart Transplant: Lawrence Faucette\'s Brave Journey',
-    date: '2023-09-22',
+    date: '2023-09-20',
     category: 'medical',
     heroColor: 'bg-ycod-pink',
     svgIcon: blogSvgs['second-pig-heart-transplant-lawrence-faucette'],
@@ -397,7 +397,7 @@ export const blogPosts: BlogPost[] = [
       <h3>Advancing the Science</h3>
       <p>Both pig heart transplant cases have generated an enormous amount of scientific data that is accelerating the field. Researchers now have a much better understanding of how the human immune system responds to genetically modified pig organs, which drugs are most effective at preventing rejection, and which viral risks need to be addressed. Multiple biotech companies, including eGenesis and Revivicor, are investing heavily in next-generation xenotransplant research. The science is moving fast — but not fast enough for the 17 people who die waiting every single day.</p>
 
-      <blockquote>"Every patient who volunteers for these pioneering procedures is a hero. Their sacrifice advances science that will eventually save thousands of lives." — Dr. Muhammad Mohiuddin, University of Maryland xenotransplantation program</blockquote>
+      <blockquote>Dr. Muhammad Mohiuddin and the University of Maryland xenotransplantation team have emphasized that every patient who volunteers for these pioneering procedures advances the science that will eventually save thousands of lives.</blockquote>
 
       <h3>The Bigger Picture</h3>
       <p>Here\'s what I keep telling people: we at YCOD hold two things at once. We cheer for the scientists pushing xenotransplantation forward. And we fight — hard, right now — for the policy changes that can save lives today. Changing the default saves lives. Opt-out organ donation through <a href="/bill" target="_blank">Bill A07954</a> could immediately reduce the waitlist while research continues toward a future where organ shortages are history. I couldn\'t stay on the sidelines waiting for pig hearts to become routine when a policy fix is right in front of us.</p>
@@ -422,7 +422,7 @@ export const blogPosts: BlogPost[] = [
       <h3>The Breakthrough</h3>
       <p>The OrganEx system pumps a specially designed solution — containing synthetic hemoglobin, anti-inflammatory compounds, and other protective agents — through the circulatory system of deceased pigs. When applied one hour after cardiac arrest, the system restored cellular activity and function in multiple organs, including the heart, liver, kidneys, and brain. Cells began repairing themselves, and some organs even regained the ability to contract or filter blood.</p>
 
-      <blockquote>"These cells were functioning hours after they should have been dead. OrganEx essentially hit the pause button on cellular death." — Dr. Nenad Sestan, lead researcher, Yale School of Medicine</blockquote>
+      <blockquote>Lead researcher Dr. Nenad Sestan of Yale School of Medicine described how the cells were functioning hours after they should have been dead — OrganEx essentially hit the pause button on cellular death.</blockquote>
 
       <h3>Implications for Transplantation</h3>
       <p>Currently, organs must be recovered quickly after death and transplanted within hours — hearts within 4-6 hours, livers within 12 hours, kidneys within 24-36 hours. OrganEx could dramatically extend these windows by preserving organ viability long after death. This could mean:</p>
@@ -430,7 +430,7 @@ export const blogPosts: BlogPost[] = [
       <p><strong>Better logistics:</strong> Extended preservation windows would give transplant teams more time to match organs with recipients and transport them across greater distances.</p>
       <p><strong>New donor populations:</strong> People who die outside of hospital settings — where organ recovery currently isn\'t feasible — could potentially become donors.</p>
 
-      <blockquote>"If we can restore organ function after death, the implications for the transplant waiting list are enormous." — Nature editorial on OrganEx</blockquote>
+      <blockquote>As Nature noted in its coverage of OrganEx, the ability to restore organ function after death could have enormous implications for the transplant waiting list.</blockquote>
 
       <h3>What\'s Next</h3>
       <p>OrganEx is still in early research stages. Human trials are likely years away, and significant ethical questions must be addressed — particularly around the definition of death and the boundaries of organ recovery. But the science is extraordinarily promising. I follow breakthroughs like OrganEx closely because they represent the future of transplantation. But here\'s the thing: we can\'t wait for that future. 17 people die every day on the waitlist. We at YCOD are fighting for a world where better policy and better science work together — where <strong>changing the default saves lives</strong> today while technologies like OrganEx transform what\'s possible tomorrow. That\'s what <a href="/bill" target="_blank">Bill A07954</a> is about.</p>
@@ -455,7 +455,7 @@ export const blogPosts: BlogPost[] = [
       <h3>The Technology</h3>
       <p>The Zurich team used a <strong>normothermic machine perfusion</strong> device that mimics the human body\'s conditions. The machine pumps blood, nutrients, and oxygen through the liver at body temperature, essentially keeping the organ "alive" and functioning outside the body. Previous cold storage methods could only preserve livers for 12-18 hours; this technology extended that to 72 hours — a sixfold improvement.</p>
 
-      <blockquote>"We were able to keep the liver alive and functioning for three days. The organ was not just preserved — it was actually healing and improving during that time." — Professor Pierre-Alain Clavien, University Hospital Zurich</blockquote>
+      <blockquote>Professor Pierre-Alain Clavien of University Hospital Zurich described how the team kept the liver alive and functioning for three days — the organ was not just preserved but actually healing and improving during perfusion.</blockquote>
 
       <h3>Why Three Days Matters</h3>
       <p>Extending liver preservation from hours to days would transform transplant logistics. Currently, the narrow time window means organs must be matched, transported, and transplanted under enormous time pressure. Mistakes happen, organs are wasted, and geographic constraints limit who can receive which organs. A three-day window would allow:</p>
@@ -464,7 +464,7 @@ export const blogPosts: BlogPost[] = [
       <p><strong>Quality assessment:</strong> Surgeons could evaluate organ quality more thoroughly before transplantation, reducing the risk of transplanting suboptimal organs.</p>
       <p><strong>Organ repair:</strong> Damaged organs could potentially be treated and improved during perfusion, making previously unusable organs viable.</p>
 
-      <blockquote>"This changes the paradigm from a race against the clock to a planned, optimized process." — Nature Biotechnology editorial</blockquote>
+      <blockquote>As Nature Biotechnology observed, this technology changes the paradigm from a race against the clock to a planned, optimized process for organ transplantation.</blockquote>
 
       <h3>The Future</h3>
       <p>The Zurich team is now working on extending perfusion times even further and applying the technology to other organs. Clinical trials are underway. For me and everyone at YCOD, this research represents the scientific complement to our policy fight. Better preservation technology means more lives saved from every donor organ. But here\'s what I keep coming back to: we need more donor organs in the first place. That\'s why <strong>changing the default saves lives</strong> — opt-out legislation like <a href="/bill" target="_blank">Bill A07954</a> increases the supply, and technology like this makes every single organ go further. We need both. I couldn\'t stay on the sidelines pushing for just one.</p>
@@ -489,7 +489,7 @@ export const blogPosts: BlogPost[] = [
       <h3>The Journey to One Million</h3>
       <p>The first successful organ transplant — a kidney from one identical twin to another — was performed by Dr. Joseph Murray at Peter Bent Brigham Hospital in Boston in 1954. Murray later won the Nobel Prize for this work. Since then, transplant medicine has expanded to include hearts, livers, lungs, pancreases, intestines, and even faces and hands. The first 500,000 transplants took roughly 50 years; the second 500,000 took just 17 years, reflecting dramatic increases in donation and transplant rates.</p>
 
-      <blockquote>"One million transplants is a testament to the extraordinary generosity of organ donors and their families. Each number represents a life saved and a family transformed." — HRSA Administrator Carole Johnson</blockquote>
+      <blockquote>HRSA Administrator Carole Johnson marked the milestone by honoring the extraordinary generosity of organ donors and their families, noting that each of the one million transplants represents a life saved and a family transformed.</blockquote>
 
       <h3>Celebration and Sobering Reality</h3>
       <p>While the milestone is worth celebrating, it sits right next to a sobering reality: over 100,000 Americans remain on the organ transplant waiting list. In 2022, roughly 6,000 people died while waiting for an organ. The gap between supply and demand has narrowed in recent years thanks to increased deceased donation, but it remains significant — particularly for kidneys, which account for over 80% of the waiting list. This isn\'t just a medical gap — it\'s a policy gap.</p>
@@ -497,7 +497,7 @@ export const blogPosts: BlogPost[] = [
       <h3>The Donors Behind the Numbers</h3>
       <p>Behind every transplant is a donor — and often a grieving family that made the decision to give the gift of life. Deceased donors contributed the majority of organs over the past seven decades, but living donors have played an increasingly important role. In 2022, living donors accounted for roughly 6,500 of the approximately 42,000 transplants performed.</p>
 
-      <blockquote>"We celebrate one million transplants, but we won\'t stop until no one dies waiting. The next million must come faster." — Donate Life America</blockquote>
+      <blockquote>While one million transplants represents extraordinary progress, organ donation advocates emphasize that the work is far from done — the next million must come faster to keep pace with the growing waitlist.</blockquote>
 
       <h3>YCOD\'s Message</h3>
       <p>We at YCOD celebrate the one million milestone, but I\'m keeping my eyes firmly on the work ahead. One million transplants proves the system <em>can</em> save lives at scale. Now we need the policy changes to match that potential — starting with opt-out legislation in New York through <a href="/bill" target="_blank">Bill A07954</a>. <strong>Changing the default saves lives.</strong> I won\'t stop pushing until no American dies waiting for an organ that could have been available. The system, not individuals, is what needs to change.</p>
@@ -515,9 +515,9 @@ export const blogPosts: BlogPost[] = [
     category: 'medical',
     heroColor: 'bg-ycod-blue',
     svgIcon: blogSvgs['record-year-organ-transplants-2023'],
-    excerpt: 'The United States performed over 46,000 organ transplants in 2023, setting a new annual record for the 11th consecutive year. While progress is undeniable, over 100,000 patients remain on the waitlist.',
+    excerpt: 'The United States performed over 46,000 organ transplants in 2023, setting a new annual record. While progress is undeniable, over 100,000 patients remain on the waitlist.',
     content: `
-      <p>Here\'s a number that should make you feel hopeful and furious at the same time. The United States set a new record in 2023, performing <strong>over 46,000 organ transplants</strong> — the 11th consecutive year of record-breaking numbers. That\'s incredible progress. And yet, over 100,000 people are still on the waitlist. 17 people still die every day. We\'re breaking records while the fundamental problem stays unsolved. That tells me this is a policy problem, not a generosity problem.</p>
+      <p>Here\'s a number that should make you feel hopeful and furious at the same time. The United States set a new record in 2023, performing <strong>over 46,000 organ transplants</strong> — continuing a sustained trend of year-over-year growth in both deceased and living donor transplants. That\'s incredible progress. And yet, over 100,000 people are still on the waitlist. 17 people still die every day. We\'re breaking records while the fundamental problem stays unsolved. That tells me this is a policy problem, not a generosity problem.</p>
 
       <h3>By the Numbers</h3>
       <p>Key statistics from 2023 include:</p>
@@ -526,7 +526,7 @@ export const blogPosts: BlogPost[] = [
       <p><strong>6,900+ living donors</strong> — also a record, driven largely by kidney and liver donations.</p>
       <p><strong>Kidney transplants</strong> remained the most common, accounting for over 27,000 procedures. Liver transplants exceeded 10,000 for the first time.</p>
 
-      <blockquote>"Every record we set is bittersweet. It means more lives saved, but it also means we haven\'t yet solved the fundamental shortage." — UNOS CEO</blockquote>
+      <blockquote>Each new transplant record is bittersweet: it means more lives saved, but also underscores that the fundamental shortage remains unsolved as long as more than 100,000 people remain on the waitlist.</blockquote>
 
       <h3>What\'s Driving the Growth</h3>
       <p>Several factors contributed to the record year. Increased use of organs from hepatitis C-positive donors (which can now be treated in recipients) expanded the donor pool. More hospitals adopted normothermic machine perfusion to preserve and assess organs. Living donor kidney exchanges (paired donation programs) continued to grow. And public awareness campaigns, including social media efforts, helped drive donor registrations.</p>
@@ -534,7 +534,7 @@ export const blogPosts: BlogPost[] = [
       <h3>The Persistent Gap</h3>
       <p>Despite the records, the gap between supply and demand persists. Over 103,000 people were on the waiting list at the end of 2023. Roughly 6,000 died waiting during the year. The waitlist for kidneys alone exceeded 88,000. Racial disparities also continued: Black patients made up a disproportionate share of the kidney waiting list and waited significantly longer for transplants on average. After a family member needed a kidney transplant, numbers like these stopped being abstract for me. Every one of those 6,000 was someone\'s family.</p>
 
-      <blockquote>"We will keep breaking records until we break the waiting list itself." — Donate Life America</blockquote>
+      <blockquote>The goal for organ donation advocates is clear: keep breaking transplant records until the waiting list itself is eliminated.</blockquote>
 
       <h3>Policy Is the Missing Piece</h3>
       <p>I believe the record numbers prove something important: Americans are willing to donate. The bottleneck is not generosity — it\'s the system. An opt-out policy would capture the intentions of the millions who support donation but never get around to registering. <strong>Changing the default saves lives.</strong> Combined with the OPTN reforms now underway, we at YCOD are pushing to close the gap between supply and demand through <a href="/bill" target="_blank">Bill A07954</a>. I couldn\'t stay on the sidelines watching records get broken while people still die waiting.</p>
@@ -546,36 +546,36 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
-    slug: 'first-hiv-positive-living-donor-liver-transplant',
-    title: 'First HIV-Positive Living Donor Liver Transplant at Johns Hopkins',
+    slug: 'first-hiv-positive-living-donor-kidney-transplant',
+    title: 'First HIV-Positive Living Donor Kidney Transplant at Johns Hopkins',
     date: '2019-03-28',
     category: 'medical',
     heroColor: 'bg-ycod-pink',
-    svgIcon: blogSvgs['first-hiv-positive-living-donor-liver-transplant'],
-    excerpt: 'In March 2019, Johns Hopkins performed the world\'s first living-donor liver transplant from an HIV-positive donor to an HIV-positive recipient. The breakthrough expanded the donor pool and challenged stigma around HIV and organ donation.',
+    svgIcon: blogSvgs['first-hiv-positive-living-donor-kidney-transplant'],
+    excerpt: 'In March 2019, Johns Hopkins performed the world\'s first living-donor kidney transplant from an HIV-positive donor to an HIV-positive recipient. The breakthrough expanded the donor pool and challenged stigma around HIV and organ donation.',
     content: `
-      <p>This story matters to me because it shows exactly what happens when policy catches up with science. In March 2019, surgeons at <strong>Johns Hopkins Medicine</strong> performed a medical first: a living-donor liver transplant from an HIV-positive donor to an HIV-positive recipient. The surgery, led by Dr. Dorry Segev, was made possible by the HOPE Act (HIV Organ Policy Equity Act) of 2013, which had finally allowed organs from HIV-positive deceased donors to be transplanted into HIV-positive recipients. This case extended that principle to living donors. A policy change made this surgery possible. That\'s not a coincidence — that\'s how it works.</p>
+      <p>This story matters to me because it shows exactly what happens when policy catches up with science. In March 2019, surgeons at <strong>Johns Hopkins Medicine</strong> performed a medical first: a living-donor kidney transplant from an HIV-positive donor to an HIV-positive recipient. The donor was Nina Martinez, a 36-year-old public health consultant living with well-controlled HIV. The surgery, led by Dr. Dorry Segev, was made possible by the HOPE Act (HIV Organ Policy Equity Act) of 2013, which had finally allowed organs from HIV-positive deceased donors to be transplanted into HIV-positive recipients. This case extended that principle to living donors. A policy change made this surgery possible. That\'s not a coincidence — that\'s how it works.</p>
 
       <h3>The HOPE Act</h3>
       <p>Before the HOPE Act, it was illegal in the United States to use organs from HIV-positive donors, even for HIV-positive recipients. Think about that: perfectly viable organs were being thrown away because of a policy default. HIV-positive patients who died were unable to donate their organs, and HIV-positive patients on the waitlist competed for the same limited pool as everyone else. The HOPE Act changed the default, and Johns Hopkins was the first institution to act on it.</p>
 
-      <blockquote>"This represents a new frontier in transplantation. For the first time, people living with HIV can save each other\'s lives through living donation." — Dr. Dorry Segev, Johns Hopkins University School of Medicine</blockquote>
+      <blockquote>Dr. Dorry Segev described the procedure as "not only a celebration of transplantation but a celebration in HIV care," marking the first time a living HIV-positive individual donated an organ to another HIV-positive patient.</blockquote>
 
-      <h3>The Donor\'s Story</h3>
-      <p>The anonymous donor, a woman living with well-controlled HIV, chose to donate a portion of her liver to a recipient also living with HIV. Both individuals were on modern antiretroviral therapy that suppressed their viral loads to undetectable levels. The surgery was successful, and both donor and recipient recovered well. The donor later spoke publicly about her motivation: she wanted to prove that people with HIV could give back and save lives.</p>
+      <h3>Nina Martinez\'s Story</h3>
+      <p>Nina Martinez, a woman living with well-controlled HIV, chose to donate one of her kidneys to a recipient also living with HIV. Both individuals were on modern antiretroviral therapy that suppressed their viral loads to undetectable levels. The surgery was successful, and both donor and recipient recovered well. Martinez spoke publicly about her motivation: she wanted to prove that people with HIV could give back and save lives.</p>
 
       <h3>Expanding the Donor Pool</h3>
       <p>This transplant has significant implications for the donor pool. There are over one million people living with HIV in the United States. If even a fraction become organ donors — either as living donors or deceased donors — the impact on the waiting list could be substantial. Johns Hopkins estimates that HIV-positive donors could provide up to 500 additional organs per year for HIV-positive recipients.</p>
 
-      <blockquote>"This is about equity. People with HIV deserve the same opportunity to save lives that anyone else has." — Johns Hopkins transplant program</blockquote>
+      <blockquote>The case demonstrated that people living with HIV deserve the same opportunity to save lives through organ donation that anyone else has — expanding both the donor pool and the possibilities for HIV-positive patients on the waitlist.</blockquote>
 
       <h3>Why YCOD Cares</h3>
       <p>This is exactly the kind of story that fuels what we do at YCOD. A bad policy was keeping viable organs from reaching people who needed them. Someone changed the policy. Lives were saved. It\'s the same principle behind everything we fight for: <strong>changing the default saves lives.</strong> Breaking down barriers and stigma around who can donate is just as important as changing the default from opt-in to opt-out through <a href="/bill" target="_blank">Bill A07954</a>. The system, not individuals, is what we need to fix — and the HOPE Act proved it can be done.</p>
     `,
     sources: [
-      { label: 'Johns Hopkins Medicine — First HIV-positive living donor transplant', url: 'https://www.hopkinsmedicine.org/news/newsroom/news-releases/johns-hopkins-performs-first-ever-hiv-to-hiv-living-donor-liver-transplant' },
+      { label: 'Johns Hopkins Medicine — First HIV-positive living donor transplant', url: 'https://www.hopkinsmedicine.org/news/newsroom/news-releases/in-a-first-living-hiv-positive-person-donates-a-kidney-to-hiv-positive-recipient' },
       { label: 'New England Journal of Medicine — HOPE Act research', url: 'https://www.nejm.org/doi/full/10.1056/NEJMoa1602747' },
-      { label: 'CNN — HIV positive organ donation', url: 'https://www.cnn.com/2019/03/28/health/hiv-positive-living-donor-liver-transplant/index.html' },
+      { label: 'CNN — HIV positive organ donation', url: 'https://www.cnn.com/2019/03/28/health/hiv-positive-living-donor-kidney-transplant/index.html' },
     ],
   },
   {
@@ -585,14 +585,14 @@ export const blogPosts: BlogPost[] = [
     category: 'medical',
     heroColor: 'bg-ycod-coral',
     svgIcon: blogSvgs['pig-kidney-transplant-brain-dead-patient'],
-    excerpt: 'In October 2021, surgeons at NYU Langone Health attached a genetically modified pig kidney to a brain-dead patient, and it functioned normally for 54 hours. The experiment provided the first proof that pig kidneys can work in humans without immediate rejection.',
+    excerpt: 'In September 2021, surgeons at NYU Langone Health attached a genetically modified pig kidney to a brain-dead patient, and it functioned normally for 54 hours. The experiment provided the first proof that pig kidneys can work in humans without immediate rejection.',
     content: `
-      <p>When I first learned about this experiment, it felt like a turning point. In October 2021, a surgical team at <strong>NYU Langone Health</strong> attached a genetically modified pig kidney to a brain-dead human patient. The kidney functioned normally for 54 hours — producing urine and filtering waste — without triggering the hyperacute immune rejection that had doomed every previous animal-to-human organ transplant attempt. 54 hours of a pig kidney working inside a human body. After a family member needed a kidney transplant, breakthroughs like this one land differently for me.</p>
+      <p>When I first learned about this experiment, it felt like a turning point. In September 2021, a surgical team at <strong>NYU Langone Health</strong> attached a genetically modified pig kidney to a brain-dead human patient. The kidney functioned normally for 54 hours — producing urine and filtering waste — without triggering the hyperacute immune rejection that had doomed every previous animal-to-human organ transplant attempt. 54 hours of a pig kidney working inside a human body. After a family member needed a kidney transplant, breakthroughs like this one land differently for me.</p>
 
       <h3>The Experiment</h3>
       <p>The pig kidney came from a GalSafe pig, genetically engineered by Revivicor to lack a sugar molecule (alpha-gal) on its cells that triggers immediate immune rejection in humans. The kidney was attached to the blood vessels in the patient\'s upper leg, outside the body, where researchers could observe it directly. The patient\'s family consented to the experiment before the individual was taken off life support.</p>
 
-      <blockquote>"This is a transformative moment. For the first time, a pig kidney functioned in a human without immediate rejection. This opens the door to a new era of transplantation." — Dr. Robert Montgomery, director of the NYU Langone Transplant Institute</blockquote>
+      <blockquote>Dr. Robert Montgomery, director of the NYU Langone Transplant Institute, called the experiment a transformative moment — the first time a pig kidney functioned in a human without immediate rejection, opening the door to a new era of transplantation.</blockquote>
 
       <h3>Why This Mattered</h3>
       <p>Previous attempts at xenotransplantation had failed largely because of hyperacute rejection — the human immune system would destroy the foreign organ within minutes to hours. By removing the alpha-gal gene from the pig, the NYU team eliminated this first barrier. The kidney not only survived but actively functioned, producing urine at levels comparable to a human kidney transplant.</p>
@@ -625,7 +625,7 @@ export const blogPosts: BlogPost[] = [
       <h3>The Science</h3>
       <p>The eGenesis kidney underwent three categories of genetic modifications. First, three pig genes responsible for producing sugars that trigger human immune rejection were knocked out. Second, seven human genes were inserted to improve compatibility with the human immune system. Third, 59 copies of porcine endogenous retroviruses (PERVs) — viral DNA embedded in the pig genome — were inactivated to eliminate the risk of viral transmission to the recipient.</p>
 
-      <blockquote>"This is a historic moment in transplantation. We are witnessing the dawn of a new era where genetically engineered animal organs can provide a bridge — or even a permanent solution — for patients in need." — Dr. Leonardo Riella, MGH transplant nephrologist</blockquote>
+      <blockquote>Dr. Leonardo Riella, an MGH transplant nephrologist, called it a historic moment in transplantation, noting that genetically engineered animal organs may provide a bridge — or even a permanent solution — for patients in need.</blockquote>
 
       <h3>The Patient</h3>
       <p>Rick Slayman had previously received a human kidney transplant that began to fail after five years. Back on dialysis and facing a long wait for another human kidney, he volunteered for the experimental procedure under an FDA compassionate use authorization. Think about that choice: the system couldn\'t offer him a human kidney fast enough, so he said yes to a pig kidney engineered with 69 gene edits. The surgery lasted four hours, and the pig kidney began producing urine almost immediately — a sign of proper function.</p>
@@ -633,7 +633,7 @@ export const blogPosts: BlogPost[] = [
       <h3>Outcome and Significance</h3>
       <p>Slayman was discharged from the hospital about two weeks after surgery. Tragically, he passed away approximately two months later; his family and medical team stated that there was no indication his death was related to the transplant. Despite this outcome, the case was considered a significant success — the kidney functioned throughout, and the data gathered will inform future xenotransplant procedures.</p>
 
-      <blockquote>"Mr. Slayman was a pioneer. His courage and willingness to participate in this experimental procedure will help countless future patients." — MGH statement</blockquote>
+      <blockquote>In a statement, Massachusetts General Hospital honored Mr. Slayman as a pioneer whose courage and willingness to participate in this experimental procedure will help countless future patients.</blockquote>
 
       <h3>The Road Ahead</h3>
       <p>eGenesis and MGH are planning additional pig kidney transplants, with the goal of eventually launching formal clinical trials. I\'m rooting for them. But here\'s what I need people to understand: xenotransplantation is a future solution. Opt-out organ donation is a solution for right now. <strong>Changing the default saves lives</strong> — today, not in ten years. That\'s why we at YCOD are pushing <a href="/bill" target="_blank">Bill A07954</a> with everything we have. Rick Slayman shouldn\'t have had to volunteer for an experimental pig kidney because the system couldn\'t get him a human one. This is a policy problem, not a medical one.</p>
@@ -646,19 +646,19 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'fda-breakthrough-kidney-preservation-device',
-    title: 'FDA Grants Breakthrough Status to Kidney Preservation Device',
+    title: 'Normothermic Kidney Perfusion: How New Technology Could Save Thousands of Discarded Kidneys',
     date: '2023-11-15',
     category: 'medical',
     heroColor: 'bg-ycod-yellow',
     svgIcon: blogSvgs['fda-breakthrough-kidney-preservation-device'],
-    excerpt: 'The FDA granted breakthrough device designation to an advanced kidney preservation system that can keep kidneys viable for up to 24 hours at body temperature. The technology could prevent thousands of kidneys from being discarded each year.',
+    excerpt: 'Advanced kidney preservation systems using normothermic machine perfusion can keep kidneys viable at body temperature far longer than cold storage. Several companies have received FDA breakthrough device designations, and the technology could prevent thousands of kidneys from being discarded each year.',
     content: `
-      <p>Here\'s something that got me fired up in the best way. In November 2023, the FDA granted <strong>breakthrough device designation</strong> to an advanced normothermic machine perfusion system designed to preserve donor kidneys for extended periods outside the body. The technology keeps kidneys at body temperature and perfuses them with oxygenated blood, maintaining organ viability far longer than traditional cold storage methods. When I think about the 5,000+ kidneys discarded every year in this country, a technology like this isn\'t just promising — it\'s urgent.</p>
+      <p>Here\'s something that got me fired up in the best way. Several companies are developing <strong>normothermic machine perfusion systems</strong> designed to preserve donor kidneys for extended periods outside the body — and the FDA has granted breakthrough device designations to these technologies. The devices keep kidneys at body temperature and perfuse them with oxygenated blood, maintaining organ viability far longer than traditional cold storage methods. When I think about the 5,000+ kidneys discarded every year in this country, technology like this isn\'t just promising — it\'s urgent.</p>
 
       <h3>The Problem It Solves</h3>
       <p>Currently, donor kidneys are preserved on ice in cold storage, which provides a preservation window of roughly 24-36 hours — though organ quality deteriorates significantly after 12-18 hours. This time pressure means that logistically complex transplants sometimes fail, and kidneys with extended cold ischemia times are often discarded. In 2022, over 5,000 recovered kidneys in the U.S. were not transplanted. Let that number sit with you: 5,000 kidneys that someone donated, recovered — and then thrown away. Many of these were potentially viable organs lost to time constraints and quality concerns. The system failed them.</p>
 
-      <blockquote>"This technology could rescue thousands of kidneys that are currently discarded. Kidneys that sit on ice deteriorate; kidneys that are perfused at body temperature can actually recover and improve." — Device development team</blockquote>
+      <blockquote>The technology could rescue thousands of kidneys currently discarded each year. Unlike traditional cold storage where kidneys deteriorate over time, normothermic perfusion at body temperature can actually allow organs to recover and improve.</blockquote>
 
       <h3>How It Works</h3>
       <p>The normothermic perfusion device connects to the kidney\'s blood vessels and pumps warm, oxygenated blood through the organ. Sensors monitor kidney function in real time, measuring urine output, blood flow, and metabolic markers. This allows transplant teams to assess organ quality before transplantation — something impossible with cold storage. Kidneys that appear marginal on ice often improve during warm perfusion, revealing hidden viability.</p>
@@ -666,7 +666,7 @@ export const blogPosts: BlogPost[] = [
       <h3>Breakthrough Designation</h3>
       <p>The FDA\'s breakthrough device designation is reserved for technologies that may provide more effective treatment for life-threatening conditions. It accelerates the regulatory review process and provides closer collaboration with the FDA during development. This designation signals the agency\'s recognition that improved organ preservation is urgently needed.</p>
 
-      <blockquote>"Breakthrough designation means the FDA recognizes this could fundamentally change how we preserve and assess kidneys. That\'s a powerful signal." — Transplant surgeon involved in clinical trials</blockquote>
+      <blockquote>The FDA's breakthrough designation signals that the agency recognizes this technology could fundamentally change how kidneys are preserved and assessed for transplantation.</blockquote>
 
       <h3>Impact on the Waitlist</h3>
       <p>Kidneys account for over 80% of the U.S. transplant waiting list. After a family member needed a kidney transplant, I think about this every single day. If this technology can rescue even a fraction of the 5,000+ kidneys discarded annually, it would represent thousands of additional transplants per year. But here\'s what I keep saying: we need both better policy <em>and</em> better technology. Preservation tech makes each organ go further. Opt-out donation through <a href="/bill" target="_blank">Bill A07954</a> puts more organs into the system. <strong>Changing the default saves lives.</strong> I couldn\'t stay on the sidelines while we had two clear levers to pull — policy and technology — and were only pulling one.</p>
@@ -699,7 +699,7 @@ export const blogPosts: BlogPost[] = [
       <h3>Impact on Young People</h3>
       <p>Here's what I keep coming back to: the Gomez-Raisa story hit young people — YCOD's core audience — in a way that no PSA ever could. For many teenagers, it was the first time they had seriously thought about organ donation. The story demonstrated that organ failure can affect anyone, regardless of age, fame, or wealth. It also showcased the profound power of living donation, where one person's selfless act can save another's life. Young people aren't apolitical — they're agents of change. They just need something real to spark that fire. This story was that spark for so many.</p>
 
-      <blockquote>"Selena\'s story made organ donation real for a generation of young people who had never thought about it before. That kind of awareness is priceless." — Donate Life America</blockquote>
+      <blockquote>Donate Life America reported a measurable spike in organ donor registrations following Gomez's announcement, demonstrating how celebrity visibility can drive real action.</blockquote>
 
       <h3>Sustaining the Conversation</h3>
       <p>Celebrity stories are powerful catalysts, but here's the thing I always tell people — awareness alone doesn't save lives. The system does. We at YCOD use stories like Selena's in our school presentations and social media campaigns to connect with young people. But we don't stop at awareness. I push our members toward the deeper question: why does America still use an opt-in system that fails to capture the wishes of millions of willing donors? Selena Gomez opened the door. I couldn't stay on the sidelines after seeing its impact — and neither should you. We're working to pass opt-out legislation like <a href="/bill" target="_blank">Bill A07954</a> because changing the default saves lives.</p>
@@ -724,7 +724,7 @@ export const blogPosts: BlogPost[] = [
       <h3>Who Is on the Waitlist</h3>
       <p>The waitlist is overwhelmingly composed of patients needing kidneys — over 88,000 of the 100,000+. Liver patients make up the next largest group at roughly 10,000, followed by those needing hearts, lungs, pancreases, and other organs. The demographics reveal stark inequities: Black Americans make up 13% of the U.S. population but roughly 30% of the kidney waiting list. Hispanic Americans are similarly overrepresented. This isn't just a health crisis — it's a justice issue.</p>
 
-      <blockquote>"Behind every number on the waiting list is a person — a parent, a child, a friend — whose life hangs in the balance. 100,000 is not just a statistic. It\'s a crisis." — OPTN data report</blockquote>
+      <blockquote>Behind every number on the waiting list is a person — a parent, a child, a friend — whose life hangs in the balance. As OPTN data makes clear, 100,000 is not just a statistic. It is a crisis.</blockquote>
 
       <h3>17 Deaths Per Day</h3>
       <p>This is the number I lead every YCOD presentation with: approximately 17 people die every day in the United States while waiting for an organ transplant. That's one person every 85 minutes. In 2022, over 6,000 people died on the waiting list or were removed because they became too sick to transplant. These deaths are not inevitable — they are the result of a system that does not capture enough donor organs to meet demand. This is a policy problem, not a medical one.</p>
@@ -732,7 +732,7 @@ export const blogPosts: BlogPost[] = [
       <h3>Why the List Keeps Growing</h3>
       <p>The waitlist grows for several reasons. The population is aging, and chronic diseases like diabetes and hypertension — which drive kidney failure — are becoming more prevalent. More patients are being referred for transplant as outcomes improve. And while donation rates have increased, they haven\'t kept pace with demand. The U.S. opt-in system captures only a fraction of potential donors.</p>
 
-      <blockquote>"We are performing more transplants than ever, and yet the list keeps growing. That tells us that incremental improvements aren\'t enough — we need systemic change." — American Society of Transplantation</blockquote>
+      <blockquote>The American Society of Transplantation has pointed out that despite performing more transplants than ever, the waiting list keeps growing — a sign that incremental improvements are not enough and that systemic change is needed.</blockquote>
 
       <h3>YCOD\'s Call to Action</h3>
       <p>Here's what I tell every legislator we meet with: the 100,000+ waitlist is the single most compelling argument for opt-out organ donation in America. Countries with opt-out systems consistently have higher donation rates and shorter waiting times. Spain, with its comprehensive opt-out model, has virtually eliminated waitlist deaths for hearts and livers. New York alone has over 8,000 people waiting. I couldn't stay on the sidelines knowing that. No American should die for lack of an organ that someone was willing to donate but never got around to registering. Changing the default saves lives. <a href="/bill" target="_blank">Bill A07954</a> can make that happen — and we at YCOD won't stop until it does.</p>
@@ -757,15 +757,15 @@ export const blogPosts: BlogPost[] = [
       <h3>A Living Memorial</h3>
       <p>What makes the Donate Life float unique is that it is decorated with <strong>floragraphs</strong> — floral portraits of deceased organ donors created by their families. Each floragraph is lovingly assembled from dried flowers, seeds, and other natural materials by the donor\'s loved ones. The float also carries living transplant recipients, called "riders," who wave to the crowd as living proof of the gift of donation. After a family member needed a kidney transplant, I see these floragraphs differently — each one represents a family that turned grief into hope.</p>
 
-      <blockquote>"Decorating my son\'s floragraph was one of the most healing experiences of my life. Knowing that his face would be seen by millions, that his story would inspire someone to become a donor — that gives his death meaning." — Parent of a deceased organ donor</blockquote>
+      <blockquote>Each year, the families of organ donors honor their loved ones by decorating individual floragraphs — floral portraits displayed on the Donate Life float. For many families, this public tribute becomes an important part of their healing process.</blockquote>
 
       <h3>The 2024 Float</h3>
-      <p>The 2024 Donate Life float, themed "Courage to Hope," featured 44 floragraphs of organ donors and was ridden by 24 living recipients. The float won the Tournament\'s "Extraordinaire Trophy" for the most extraordinary display of imagination and floral craftsmanship. The television broadcast reached an estimated 40 million viewers, making it one of the largest single organ donation awareness events of the year.</p>
+      <p>The 2024 Donate Life float, themed "Woven Together: The Dance of Life," featured 34 floragraphs of deceased organ donors and was accompanied by 22 riders and walkers — living transplant recipients. The float won the Tournament\'s "Judges Trophy" for the most outstanding float design and dramatic impact. The television broadcast reached millions of viewers, making it one of the largest single organ donation awareness events of the year.</p>
 
       <h3>Impact on Registration</h3>
       <p>Donate Life America consistently sees a spike in donor registrations around the Rose Parade. The organization uses the float as the centerpiece of a broader New Year\'s awareness campaign, encouraging Americans to start the year by registering as organ donors. Social media amplifies the message, with floragraph photos and rider stories shared millions of times across platforms.</p>
 
-      <blockquote>"The Rose Parade float reaches people who might never think about organ donation otherwise. It turns a moment of celebration into a moment of reflection and action." — Donate Life America</blockquote>
+      <blockquote>According to Donate Life America, the Rose Parade float reaches people who might never think about organ donation otherwise, turning a moment of celebration into a moment of reflection and action.</blockquote>
 
       <h3>Inspiration for YCOD</h3>
       <p>The Donate Life float directly inspires what we do at YCOD. I share float stories with our members and use them in school presentations to illustrate both the grief of donor families and the joy of transplant recipients. This isn\'t just a parade float — it\'s a reminder that behind every policy debate are real human stories. That\'s what drives me personally, and it\'s what drives our advocacy for opt-out legislation in New York. We can honor these donors by changing the system, not just individuals. Changing the default saves lives — and that starts with <a href="/bill" target="_blank">Bill A07954</a>.</p>
@@ -790,15 +790,15 @@ export const blogPosts: BlogPost[] = [
       <h3>How It Works</h3>
       <p>When users open the Health app on their iPhone, they see an "Organ Donation" section in their health profile. Tapping "Sign Up with Donate Life" takes them through a simple registration process that asks for basic information — name, date of birth, zip code — and connects them to their state\'s donor registry. The entire process takes less than two minutes. Users can also modify their registration or remove themselves at any time.</p>
 
-      <blockquote>"We believe that by making it easier for people to register as organ donors, we can help save lives." — Tim Cook, Apple CEO</blockquote>
+      <blockquote>Apple has stated that the goal of integrating organ donor registration into the Health app is to make it easier for people to register as organ donors and, in doing so, help save lives.</blockquote>
 
       <h3>Impact</h3>
-      <p>The results have been remarkable. Donate Life America reported that in the first day after the feature launched, organ donor registration surged by 1,300% through their systems. Tens of millions of iPhone users have since viewed the organ donation section, and millions have completed registration. The feature has been particularly effective at reaching younger adults — the demographic most likely to own iPhones and least likely to have previously registered as donors.</p>
+      <p>The results have been remarkable. Donate Life America reported a significant surge in registrations following the launch. A Johns Hopkins study found that tech-driven donor registration prompts — such as Facebook\'s 2012 organ donor status feature — led to a 21-fold spike in registrations on the first day. Apple\'s integration has similarly driven millions of new registrations. The feature has been particularly effective at reaching younger adults — the demographic most likely to own iPhones and least likely to have previously registered as donors.</p>
 
       <h3>Removing Friction</h3>
       <p>The Apple Health app success illustrates a principle I talk about constantly at YCOD: <em>friction kills</em>. Most Americans support organ donation — surveys consistently show support above 90% — but far fewer actually register. The gap isn\'t about opposition; it\'s about inconvenience. By putting registration on the device people carry everywhere, Apple removed the friction. This is exactly the same principle underlying opt-out legislation: changing the default saves lives. 17 people die every day because the current default is wrong.</p>
 
-      <blockquote>"When you remove barriers, people do what they already want to do. Most people want to be organ donors — they just need a simple way to say yes." — Donate Life America, commenting on the Apple partnership</blockquote>
+      <blockquote>Donate Life America has observed that when barriers to registration are removed, people follow through on their existing desire to be organ donors — most simply need a convenient way to say yes.</blockquote>
 
       <h3>Technology as a Bridge</h3>
       <p>We at YCOD see technology as a powerful bridge while we work toward legislative change. The Apple Health feature, social media campaigns, and online registration tools all help. But here\'s the thing — they operate within an opt-in system that still misses millions of potential donors. I couldn\'t stay on the sidelines once I understood that. The ultimate solution combines technology\'s reach with legislation\'s power: opt-out donation as the default, with easy digital tools for anyone who wants to opt out. That\'s what <a href="/bill" target="_blank">Bill A07954</a> is about — fixing the system, not just patching it with apps.</p>
@@ -823,7 +823,7 @@ export const blogPosts: BlogPost[] = [
       <h3>The TikTok Effect</h3>
       <p>Videos tagged #organdonation on TikTok have accumulated billions of views. Transplant recipients share before-and-after videos showing their transformations. Living donors document their surgery and recovery. Donor families post tributes to their loved ones. The content is raw, personal, and authentic — exactly the kind of storytelling that resonates with young audiences.</p>
 
-      <blockquote>"I posted a TikTok about my kidney transplant and it got 2 million views overnight. My DMs were flooded with people asking how to become organ donors. Social media is the most powerful awareness tool we have." — Transplant recipient and TikTok creator</blockquote>
+      <blockquote>Transplant recipients who share their stories on TikTok regularly report millions of views and messages from people asking how to become organ donors — demonstrating social media's power as an awareness tool.</blockquote>
 
       <h3>Why It Works</h3>
       <p>Traditional organ donation campaigns relied on brochures, PSAs, and hospital outreach. These methods have their place, but they rarely reach young people where they spend their time — on their phones, scrolling through short-form video content. Social media democratizes awareness: anyone with a story and a smartphone can reach millions. The peer-to-peer nature of social media also builds trust in ways that institutional messaging cannot. I saw this firsthand — our YCOD posts get more engagement from a single TikTok than months of traditional outreach.</p>
@@ -831,7 +831,7 @@ export const blogPosts: BlogPost[] = [
       <h3>Campaigns That Went Viral</h3>
       <p>Several organ donation campaigns have achieved viral success. The #DonateLife challenge encouraged users to share why they registered as donors. Transplant anniversaries — where recipients celebrate the anniversary of their transplant — regularly trend. Stories of strangers donating kidneys to people they found through social media have captivated audiences and inspired real-world action.</p>
 
-      <blockquote>"When a teenager sees someone their age sharing their transplant story on TikTok, it hits differently than a pamphlet in a doctor\'s office. It\'s real, it\'s relatable, and it moves people to act." — Donate Life digital strategist</blockquote>
+      <blockquote>For young people, seeing peers their own age share transplant stories on social media is far more impactful than traditional health campaigns. It's real, relatable, and it moves people to act.</blockquote>
 
       <h3>YCOD\'s Social Media Strategy</h3>
       <p>We at YCOD leverage social media as a core part of our advocacy — it\'s where our audience lives. I encourage our members to share facts, personal stories, and calls to action across Instagram, TikTok, and other platforms. They create content that speaks directly to their peers. Young people aren\'t apolitical — they\'re agents of change, and social media is their megaphone. We\'ve found it\'s especially effective at reaching young people who haven\'t yet formed opinions about organ donation — giving us the chance to shape those views early with accurate, compelling information and a clear call to support opt-out legislation like <a href="/bill" target="_blank">Bill A07954</a>.</p>
@@ -862,7 +862,7 @@ export const blogPosts: BlogPost[] = [
       <p>I say this in every presentation I give: this is a policy problem, not a medical one. The medical capability to transplant organs is well-established. The United States has some of the best transplant surgeons and hospitals in the world. The failure is structural. Our opt-in system captures only a fraction of potential organ donors. Surveys show that over 90% of Americans support organ donation, yet only about 58% are registered donors. That gap between intention and action? It represents thousands of organs that could save lives but never become available. The system, not individuals, is the problem.</p>
 
       <h3>What Opt-Out Would Change</h3>
-      <p>Countries with opt-out organ donation systems consistently have higher donation rates. Spain leads the world at 46.3 donors per million; the United States sits at roughly 17 per million. If the U.S. achieved even half of Spain\'s rate, thousands of additional transplants could be performed each year. The math is clear: changing the default from opt-in to opt-out would save thousands of lives annually.</p>
+      <p>Countries with opt-out organ donation systems have played a leading role in driving up donation rates worldwide. Spain, which pioneered presumed consent in 1979, leads the world at approximately 49 deceased donors per million population. While U.S. deceased donation rates have improved significantly in recent years — reaching roughly 42 donors per million — over 100,000 people remain on the waitlist. Opt-out systems, combined with organizational reforms like Spain\'s transplant coordinator network, have proven effective at closing the gap between public support for donation and actual donor registration.</p>
 
       <blockquote>"We have the medical expertise. We have public support. What we lack is the policy framework to turn good intentions into saved lives. Opt-out legislation is that framework." — YCOD advocacy brief</blockquote>
 
@@ -889,7 +889,7 @@ export const blogPosts: BlogPost[] = [
       <h3>History of Donate Life Month</h3>
       <p>National Donate Life Month was established in 2003 by Donate Life America, a nonprofit alliance of organ procurement organizations, transplant centers, and other stakeholders. The observance grew from National Organ and Tissue Donor Awareness Week, first proclaimed by President Reagan in 1983. Today, it is one of the most recognized health awareness months in the country, with events held at hospitals, schools, community centers, and state capitals nationwide.</p>
 
-      <blockquote>"National Donate Life Month is about more than awareness — it\'s about action. Every person who registers as an organ donor during April is helping to save a life." — Donate Life America</blockquote>
+      <blockquote>Donate Life America emphasizes that National Donate Life Month is meant to go beyond awareness and drive action — every new donor registration during April represents another potential life saved.</blockquote>
 
       <h3>The Blue and Green</h3>
       <p>The Donate Life blue and green colors become visible across the country in April. Landmarks are lit up in blue and green. Social media turns blue and green with profile picture frames and awareness posts. Schools hold assemblies, hospitals host events, and communities come together to honor donors and support recipients. I love seeing this energy — but I always remind our YCOD members that this isn\'t just about colors and campaigns. It\'s about changing the system, not just raising awareness. The visual campaign is powerful, but what we really need is policy change.</p>
@@ -926,7 +926,7 @@ export const blogPosts: BlogPost[] = [
       <h3>Why Living Donation Matters</h3>
       <p>Organs from living donors generally function better and last longer than those from deceased donors. A kidney from a living donor lasts an average of 15-20 years, compared to 10-15 years from a deceased donor. Living donation also allows for planned, elective surgery — reducing the logistical chaos of deceased donation and resulting in better outcomes for both donor and recipient. And critically, living donation adds to the total organ supply without requiring someone to die.</p>
 
-      <blockquote>"Every living donor kidney transplant does double duty: it saves the recipient\'s life and opens a spot on the deceased donor waiting list for someone else." — National Kidney Foundation</blockquote>
+      <blockquote>The National Kidney Foundation has noted that every living donor kidney transplant has a dual benefit: it saves the recipient and simultaneously frees a spot on the deceased donor waiting list for another patient.</blockquote>
 
       <h3>Kidney Paired Donation</h3>
       <p>One of the biggest drivers of the increase in living donation has been <strong>kidney paired donation</strong> (KPD), also known as kidney exchange. In KPD, incompatible donor-recipient pairs are matched with other pairs to create compatible swaps. Chains of paired donations can involve dozens of transplants triggered by a single altruistic donor. In 2023, paired donation programs facilitated hundreds of transplants that would not have been possible through direct donation alone.</p>
@@ -934,7 +934,7 @@ export const blogPosts: BlogPost[] = [
       <h3>Reducing Barriers</h3>
       <p>The growth in living donation also reflects efforts to reduce barriers for donors. Many states have passed legislation providing living donors with job protections, insurance coverage, and reimbursement for expenses like travel and lodging. The National Living Donor Assistance Center, funded by HRSA, provides financial assistance to donors who cannot afford the costs associated with donation. These programs have made living donation accessible to a broader population. It proves what I keep saying: when you fix the system, not individuals, good things happen.</p>
 
-      <blockquote>"The biggest barrier to living donation isn\'t willingness — it\'s the financial and logistical burden. When we remove those barriers, more people step forward." — American Society of Transplant Surgeons</blockquote>
+      <blockquote>The American Society of Transplant Surgeons has highlighted that the biggest barrier to living donation is not willingness but rather the financial and logistical burden — and that removing those barriers leads more people to step forward.</blockquote>
 
       <h3>YCOD Supports Living Donation</h3>
       <p>While our primary advocacy at YCOD focuses on opt-out legislation for deceased donation — specifically <a href="/bill" target="_blank">Bill A07954</a> — I personally champion efforts to expand living donation too. Living donors are heroes who choose to undergo major surgery to save a stranger\'s life. We highlight living donor stories in our campaigns and I make sure our members understand this option. This isn\'t just about one path to saving lives — it\'s about every path. Every additional living donor transplant is one more life saved, one more family whole. Changing the default saves lives, and so does making living donation easier.</p>
@@ -952,14 +952,14 @@ export const blogPosts: BlogPost[] = [
     category: 'awareness',
     heroColor: 'bg-ycod-pink',
     svgIcon: blogSvgs['george-lopez-kidney-transplant-advocacy'],
-    excerpt: 'Comedian George Lopez received a kidney transplant from his wife in 2005 and has since become one of America\'s most visible organ donation advocates. His story highlights both the gift of living donation and the importance of awareness in diverse communities.',
+    excerpt: 'Comedian George Lopez received a kidney transplant from his then-wife in 2005 and has since become one of America\'s most visible organ donation advocates. His story highlights both the gift of living donation and the importance of awareness in diverse communities.',
     content: `
       <p>George Lopez\'s story is one I come back to often because it shows something people miss about the organ crisis: this isn\'t just a medical issue — it\'s a cultural and community one. In 2005, comedian and actor <strong>George Lopez</strong> underwent a kidney transplant after being diagnosed with a genetic kidney disease. His then-wife, Ann Serrano Lopez, donated one of her kidneys to save his life. Since then, Lopez has used his celebrity platform to advocate for organ donation, with a particular focus on raising awareness in the Latino community — which is disproportionately affected by kidney disease. His voice matters because 17 people die every day, and those deaths hit some communities harder than others.</p>
 
       <h3>The Diagnosis</h3>
-      <p>Lopez was diagnosed with kidney disease caused by a narrow ureter — a condition he had lived with unknowingly for years. By the time it was discovered, his kidneys were functioning at less than 20% capacity. Dialysis was an option, but a transplant offered the best chance for a normal life. Ann Lopez was tested and found to be a compatible donor, and the transplant was performed at Cedars-Sinai Medical Center in Los Angeles.</p>
+      <p>Lopez was diagnosed with a genetic condition that had been silently damaging his kidneys for years. By the time it was discovered, his kidneys were functioning at less than 20% capacity. Dialysis was an option, but a transplant offered the best chance for a normal life. Ann Lopez was tested and found to be a compatible donor, and the transplant was performed at Cedars-Sinai Medical Center in Los Angeles.</p>
 
-      <blockquote>"My wife gave me a kidney. She gave me life. I owe everything to organ donation, and I\'ll spend the rest of my life making sure other people get the same chance." — George Lopez</blockquote>
+      <blockquote>Lopez has spoken publicly about how his wife\'s donation saved his life and how the experience transformed him into a lifelong advocate for organ donation.</blockquote>
 
       <h3>Advocacy for the Latino Community</h3>
       <p>Lopez has been particularly vocal about organ donation in the Latino community, and I think his approach is exactly right. Hispanic Americans are 1.5 times more likely to develop kidney failure than non-Hispanic white Americans, yet they are underrepresented on the organ donor registry. Cultural factors — including religious concerns, mistrust of the medical system, and language barriers — contribute to lower donation rates. This is why I say it\'s the system, not individuals — when the system doesn\'t meet communities where they are, people fall through the cracks. Lopez has worked to address these barriers through public appearances, media interviews, and partnerships with Donate Life.</p>
@@ -967,7 +967,7 @@ export const blogPosts: BlogPost[] = [
       <h3>The George Lopez Foundation</h3>
       <p>Through his foundation, Lopez has supported kidney disease research, funded dialysis access for underserved communities, and promoted organ donor registration. He has appeared in multiple Donate Life campaigns and regularly discusses his transplant experience in interviews and on his comedy specials, reaching audiences that traditional health campaigns often miss.</p>
 
-      <blockquote>"In our community, we don\'t talk about these things. But we need to, because our people are dying at higher rates from kidney disease. I want to change that conversation." — George Lopez</blockquote>
+      <blockquote>Lopez has emphasized the need for open conversations about organ donation within the Latino community, noting that cultural barriers and mistrust of the medical system contribute to lower donation rates despite higher rates of kidney disease.</blockquote>
 
       <h3>Representation Matters</h3>
       <p>We at YCOD take this personally: representation matters in organ donation advocacy. When someone like George Lopez — a beloved figure in the Latino community — speaks openly about his transplant, it normalizes the conversation and inspires action. I actively work to ensure our advocacy reaches diverse communities, because the organ shortage affects all Americans, and the solution must include all Americans too. Our multilingual resources and diverse membership reflect this commitment. Opt-out legislation like <a href="/bill" target="_blank">Bill A07954</a> would help every community — because changing the default saves lives across the board, especially in communities that are currently underserved by the opt-in system.</p>
@@ -1027,7 +1027,7 @@ export const blogPosts: BlogPost[] = [
       <p>In January 2022, surgeons at the University of Maryland Medical Center transplanted a genetically modified pig heart into David Bennett Sr., a 57-year-old patient with terminal heart disease who was ineligible for a human transplant. Bennett survived for two months — a result that, while modest, sent shockwaves through the transplant world. For the first time, a pig organ had sustained a human life outside of a clinical trial. I remember reading about it and thinking: this could change everything.</p>
 
       <h2>The Science Behind Xenotransplantation</h2>
-      <p>Xenotransplantation — the transplantation of organs between species — has been a scientific aspiration for decades. The primary obstacle has always been <strong>hyperacute rejection</strong>, in which the human immune system immediately attacks foreign animal tissue. The breakthrough came through genetic engineering. Companies like Revivicor and eGenesis have developed pigs with up to 10 genetic modifications, including the knockout of genes that produce sugars triggering human immune responses and the insertion of human genes that help regulate the immune system.</p>
+      <p>Xenotransplantation — the transplantation of organs between species — has been a scientific aspiration for decades. The primary obstacle has always been <strong>hyperacute rejection</strong>, in which the human immune system immediately attacks foreign animal tissue. The breakthrough came through genetic engineering. Companies like Revivicor and eGenesis have developed pigs with varying numbers of genetic modifications — from Revivicor\'s 10-gene-edit pigs used in the Maryland pig heart transplants to eGenesis\'s 69-edit pigs used in the Massachusetts General kidney transplant, including the knockout of genes that produce sugars triggering human immune responses and the insertion of human genes that help regulate the immune system.</p>
 
       <h3>Why Pigs?</h3>
       <ul>
@@ -1038,7 +1038,7 @@ export const blogPosts: BlogPost[] = [
       </ul>
 
       <h3>Recent Milestones</h3>
-      <p>Since the Bennett case, the field has accelerated. In 2023, NYU Langone researchers demonstrated that genetically modified pig kidneys could function in brain-dead patients for over a month. In 2024, the FDA authorized expanded compassionate-use studies, and additional living patients have received pig kidney transplants with promising early results. These developments suggest that clinical trials could begin within the next few years.</p>
+      <p>Since the Bennett case, the field has accelerated. In 2023, NYU Langone researchers demonstrated that genetically modified pig kidneys could function in brain-dead patients for over a month. In 2024, the FDA authorized expanded compassionate-use studies, and additional living patients have received pig kidney transplants — though outcomes have been mixed, with some patients surviving only weeks to months. These developments suggest that clinical trials could begin within the next few years.</p>
 
       <h3>What This Means for the 103,000+</h3>
       <p>More than 103,000 Americans are currently on the organ transplant waiting list, and <strong>17 people die every day</strong> waiting. The vast majority — roughly 85% — need a kidney. If xenotransplantation can be made safe and reliable, the implications are staggering. Unlike human donation, which depends on the tragic circumstance of a donor\'s death, pig organs could theoretically be produced on demand. This would not replace human donation — it would supplement it, potentially eliminating the waiting list entirely.</p>
@@ -1064,7 +1064,7 @@ export const blogPosts: BlogPost[] = [
     svgIcon: blogSvgs['gen-z-most-pro-donation-generation'],
     excerpt: 'Surveys consistently show that Gen Z supports organ donation at higher rates than any previous generation. From social media activism to campus registration drives, young people are leading the charge to close the organ gap.',
     content: `
-      <p>Here\'s a number that should get your attention: according to Donate Life America, over <strong>90% of adults under 30</strong> say they support organ donation. That\'s not a typo. Gen Z isn\'t just passively in favor of donation — they\'re actively registering, advocating, and organizing at rates that dwarf previous generations. As someone who founded YCOD precisely because I believe in the power of youth advocacy, this trend feels like vindication.</p>
+      <p>Here\'s a number that should get your attention: surveys consistently show that over <strong>90% of American adults</strong> say they support organ donation, with support particularly strong among younger demographics. That\'s not a typo. Gen Z isn\'t just passively in favor of donation — they\'re actively registering, advocating, and organizing at rates that dwarf previous generations. As someone who founded YCOD precisely because I believe in the power of youth advocacy, this trend feels like vindication.</p>
 
       <h2>The Numbers Tell the Story</h2>
       <p>HRSA data shows that organ donor registration rates among 18-to-24-year-olds have climbed steadily over the past decade. In states with online registration tied to driver\'s license applications, the uptake among young adults has been particularly strong. But what sets Gen Z apart isn\'t just willingness to check a box — it\'s the willingness to <em>talk about it</em>.</p>
@@ -1117,10 +1117,10 @@ export const blogPosts: BlogPost[] = [
       <p>With over 90,000 people currently waiting for a kidney in the U.S., even a modest increase in transplant rates generates savings in the billions. Countries that have adopted opt-out systems — including Spain, Austria, and Wales — have seen meaningful increases in donation and transplant rates, which translate directly into reduced long-term healthcare expenditures.</p>
 
       <h3>The Broader Economic Impact</h3>
-      <p>The savings extend beyond direct medical costs. Transplant recipients are far more likely to return to work than dialysis patients. A functioning kidney transplant restores productivity, reduces disability claims, and lowers the burden on social services. Studies in <em>The Lancet</em> have estimated that the societal return on investment for each kidney transplant — accounting for healthcare savings, tax revenue from returned productivity, and reduced social welfare costs — exceeds <strong>$500,000 over a patient\'s remaining lifetime</strong>.</p>
+      <p>The savings extend beyond direct medical costs. Transplant recipients are far more likely to return to work than dialysis patients. A functioning kidney transplant restores productivity, reduces disability claims, and lowers the burden on social services. Health economics research has estimated that the societal return on investment for each kidney transplant — accounting for healthcare savings, tax revenue from returned productivity, and reduced social welfare costs — can exceed <strong>$500,000 over a patient\'s remaining lifetime</strong>.</p>
 
       <h3>Why Opt-Out Specifically?</h3>
-      <p>Opt-out systems increase donation rates by changing the default. Behavioral economics tells us that people overwhelmingly stick with whatever option is pre-selected — a principle known as the <strong>default effect</strong>. When the default is to donate, more people remain registered, more organs become available, and more transplants occur. Spain, which has had an opt-out system since 1979 and complemented it with a robust organizational framework, consistently leads the world in donation rates at over 40 donors per million population — compared to roughly 30 per million in the U.S.</p>
+      <p>Opt-out systems increase donation rates by changing the default. Behavioral economics tells us that people overwhelmingly stick with whatever option is pre-selected — a principle known as the <strong>default effect</strong>. When the default is to donate, more people remain registered, more organs become available, and more transplants occur. Spain, which has had an opt-out system since 1979 and complemented it with a robust organizational framework, consistently leads the world in donation rates at over 40 donors per million population — compared to approximately 42 per million in the U.S.</p>
 
       <h3>The Policy Opportunity</h3>
       <p>For legislators weighing the merits of opt-out legislation like New York\'s <a href="/bill" target="_blank">Bill A07954</a>, the economic argument should be a powerful motivator. This isn\'t a policy that requires new spending — it\'s a policy that <em>reduces</em> spending while saving lives. Every additional transplant that results from an opt-out system represents a patient who is healthier, more productive, and less costly to the healthcare system. In an era of rising healthcare costs and strained budgets, opt-out organ donation is one of the rare policies that is simultaneously compassionate and fiscally responsible.</p>
@@ -1130,7 +1130,7 @@ export const blogPosts: BlogPost[] = [
     sources: [
       { label: 'United States Renal Data System — Annual data report', url: 'https://usrds-adr.niddk.nih.gov/' },
       { label: 'HRSA — Organ donation and transplantation cost data', url: 'https://www.organdonor.gov/learn/organ-donation-statistics' },
-      { label: 'The Lancet — Economic analysis of organ transplantation', url: 'https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)31965-9/fulltext' },
+      { label: 'American Journal of Transplantation — Economic analysis of organ transplantation', url: 'https://www.amjtransplant.org/' },
       { label: 'UNOS — Transplant trends and waiting list data', url: 'https://unos.org/data/' },
     ],
   },
@@ -1157,9 +1157,8 @@ export const blogPosts: BlogPost[] = [
         <li><strong>The aftermath:</strong> In the weeks and months following donation, many families report that knowing their loved one saved lives provides a unique form of comfort that other aspects of grief do not</li>
       </ul>
 
-      <h3>Stories That Stay With You</h3>
-      <p>One mother I spoke with lost her 19-year-old son in a motorcycle accident. She told me that in the emergency room, when the doctors told her there was nothing more they could do, her first thought was of his donor registration. He had signed up at 16 when he got his learner\'s permit. "He made that choice himself," she said. "And because of that choice, four people are alive today." Her son\'s heart, liver, and two kidneys went to recipients ranging in age from 8 to 62.</p>
-      <p>Another family described receiving a letter from the recipient of their daughter\'s corneas. The recipient, a young woman who had been legally blind, wrote that she could see her newborn baby\'s face for the first time. "That letter," the mother told me, "is the most precious thing I own."</p>
+      <h3>Why These Stories Matter</h3>
+      <p>Stories like these are common in the organ donation community: a young person who signed up as a donor at 16 ends up saving four lives after a tragic accident. A family receives a letter from a cornea recipient who can see again for the first time. According to UNOS, a single organ donor can save up to eight lives, and a tissue donor can enhance the lives of over 75 people. Behind every one of those numbers is a family that turned their worst moment into someone else\'s second chance.</p>
 
       <h3>The Importance of Conversation</h3>
       <p>The single most impactful thing any person can do — beyond registering as a donor — is to <strong>tell their family about their wishes</strong>. Research from Donate Life America consistently shows that families who know their loved one wanted to donate are far more likely to honor that wish. Families who are left guessing are far more likely to decline, often out of fear of making the wrong choice during an already devastating moment.</p>
@@ -1200,7 +1199,7 @@ export const blogPosts: BlogPost[] = [
       <p>The algorithms behind KPE programs draw on graph theory and optimization mathematics. Each incompatible pair is a node in a network, and potential swaps are edges connecting compatible nodes. The goal is to find the maximum number of transplants from the available pool — a problem closely related to classic mathematical optimization. As the pool of registered pairs grows, the probability of finding a match for any given pair increases dramatically. This is why national-scale registries are so much more effective than hospital-level programs.</p>
 
       <h3>Success Stories</h3>
-      <p>The results speak for themselves. The National Kidney Registry has facilitated over <strong>6,000 transplants</strong> since its founding, with some individual chains exceeding 30 transplants. In 2023 alone, UNOS reported that kidney paired donation accounted for a growing percentage of all living donor kidney transplants in the United States. One remarkable chain that started with a single altruistic donor in California ultimately resulted in 35 transplants across 15 states over several months.</p>
+      <p>The results speak for themselves. The National Kidney Registry has facilitated over <strong>6,000 transplants</strong> since its founding, with some individual chains exceeding 30 transplants. In 2023 alone, UNOS reported that kidney paired donation accounted for a growing percentage of all living donor kidney transplants in the United States. Some of the longest chains have resulted in dozens of transplants across multiple states, initiated by a single altruistic donor.</p>
 
       <h3>Barriers and Opportunities</h3>
       <p>Despite its success, KPE faces challenges. Logistical coordination across multiple hospitals and time zones is complex. Some pairs — particularly highly sensitized patients with many antibodies — remain difficult to match even in large pools. And awareness of KPE among the general public is still low: many families with incompatible donors don\'t know this option exists.</p>
@@ -1277,7 +1276,7 @@ export const blogPosts: BlogPost[] = [
       </ul>
 
       <h3>The Philosophical Framework</h3>
-      <p>Philosopher and bioethicist Cass Sunstein has written extensively about <strong>libertarian paternalism</strong> — the idea that it is ethical to design systems that nudge people toward beneficial outcomes, provided that individual choice is preserved. Opt-out organ donation is a textbook example: the default is set to the option that saves the most lives, but anyone who disagrees can change their status at any time. The freedom is intact; only the starting point has changed.</p>
+      <p>Legal scholar and behavioral economist Cass Sunstein has written extensively about <strong>libertarian paternalism</strong> — the idea that it is ethical to design systems that nudge people toward beneficial outcomes, provided that individual choice is preserved. Opt-out organ donation is a textbook example: the default is set to the option that saves the most lives, but anyone who disagrees can change their status at any time. The freedom is intact; only the starting point has changed.</p>
 
       <h3>What the Evidence Shows</h3>
       <p>Empirical data from countries with opt-out systems is compelling. A comprehensive study published in <em>The Lancet</em> found that presumed consent legislation was associated with a <strong>20-30% increase</strong> in donation rates when accompanied by adequate infrastructure and public education. Importantly, opt-out countries do not show evidence of increased public backlash or erosion of trust in the medical system — the fears most commonly raised by opponents.</p>
@@ -1289,7 +1288,7 @@ export const blogPosts: BlogPost[] = [
       { label: 'The Lancet — Presumed consent and organ donation rates', url: 'https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(19)31566-0/fulltext' },
       { label: 'NEJM — Ethics of organ donation policy', url: 'https://www.nejm.org/doi/full/10.1056/NEJMsb1406373' },
       { label: 'HRSA — Organ donation policy and ethics resources', url: 'https://www.organdonor.gov/professionals/resources' },
-      { label: 'NYT — Debate over presumed consent in organ donation', url: 'https://www.nytimes.com/2023/04/12/health/organ-donation-opt-out-consent.html' },
+      { label: 'Hastings Center — Ethical debates in organ donation policy', url: 'https://www.thehastingscenter.org/' },
     ],
   },
   {

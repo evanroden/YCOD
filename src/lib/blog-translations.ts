@@ -104,10 +104,10 @@ const zhTranslations: Record<string, { title: string; excerpt: string }> = {
       excerpt:
         "2023年是美国器官移植的创纪录之年，共完成超过46,000例移植手术……",
     },
-    "first-hiv-positive-living-donor-liver-transplant": {
-      title: "约翰斯·霍普金斯完成首例HIV阳性活体肝脏移植",
+    "first-hiv-positive-living-donor-kidney-transplant": {
+      title: "约翰斯·霍普金斯完成首例HIV阳性活体肾脏移植",
       excerpt:
-        "约翰斯·霍普金斯医院完成了全球首例由HIV阳性捐献者进行的活体肝脏移植……",
+        "约翰斯·霍普金斯医院完成了全球首例由HIV阳性捐献者进行的活体肾脏移植……",
     },
     "pig-kidney-transplant-brain-dead-patient": {
       title: "纽约大学朗格尼将猪肾移植到脑死亡患者体内：概念验证",
@@ -273,11 +273,11 @@ const esTranslations: Record<string, { title: string; excerpt: string }> = {
       excerpt:
         "2023 fue un año récord para los trasplantes de órganos en EE. UU., con más de 46,000 trasplantes realizados...",
     },
-    "first-hiv-positive-living-donor-liver-transplant": {
+    "first-hiv-positive-living-donor-kidney-transplant": {
       title:
-        "Primer trasplante hepático de donante vivo VIH positivo en Johns Hopkins",
+        "Primer trasplante renal de donante vivo VIH positivo en Johns Hopkins",
       excerpt:
-        "Johns Hopkins realizó el primer trasplante hepático de donante vivo VIH positivo del mundo...",
+        "Johns Hopkins realizó el primer trasplante renal de donante vivo VIH positivo del mundo...",
     },
     "pig-kidney-transplant-brain-dead-patient": {
       title:
@@ -456,11 +456,11 @@ const frTranslations: Record<string, { title: string; excerpt: string }> = {
       excerpt:
         "L'année 2023 a été une année record pour les transplantations d'organes aux États-Unis, avec plus de 46 000 transplantations réalisées...",
     },
-    "first-hiv-positive-living-donor-liver-transplant": {
+    "first-hiv-positive-living-donor-kidney-transplant": {
       title:
-        "Première transplantation hépatique d'un donneur vivant séropositif à Johns Hopkins",
+        "Première transplantation rénale d'un donneur vivant séropositif à Johns Hopkins",
       excerpt:
-        "Johns Hopkins a réalisé la première transplantation hépatique au monde à partir d'un donneur vivant séropositif...",
+        "Johns Hopkins a réalisé la première transplantation rénale au monde à partir d'un donneur vivant séropositif...",
     },
     "pig-kidney-transplant-brain-dead-patient": {
       title:
