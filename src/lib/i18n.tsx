@@ -23,6 +23,9 @@ const translations: Record<Locale, Record<string, string>> = {
     'nav.partners': 'Partners',
     'nav.contact': 'Contact',
     'nav.join': 'Join',
+    'nav.learn': 'Learn',
+    'nav.media': 'Media',
+    'nav.getInvolved': 'Get Involved',
 
     // Hero
     'hero.title1': 'Youth Coalition for',
@@ -1024,6 +1027,9 @@ const translations: Record<Locale, Record<string, string>> = {
     'nav.partners': '合作伙伴',
     'nav.contact': '联系',
     'nav.join': '加入',
+    'nav.learn': '学习',
+    'nav.media': '媒体',
+    'nav.getInvolved': '参与',
 
     // Hero
     'hero.title1': '器官捐献',
@@ -2027,6 +2033,9 @@ const translations: Record<Locale, Record<string, string>> = {
     'nav.partners': 'Socios',
     'nav.contact': 'Contacto',
     'nav.join': 'Únete',
+    'nav.learn': 'Aprender',
+    'nav.media': 'Medios',
+    'nav.getInvolved': 'Participa',
 
     // Hero
     'hero.title1': 'Coalición Juvenil para la',
@@ -3030,6 +3039,9 @@ const translations: Record<Locale, Record<string, string>> = {
     'nav.partners': 'Partenaires',
     'nav.contact': 'Contact',
     'nav.join': 'Rejoindre',
+    'nav.learn': 'Apprendre',
+    'nav.media': 'Médias',
+    'nav.getInvolved': 'S\'impliquer',
 
     // Hero
     'hero.title1': 'Coalition des Jeunes pour le',

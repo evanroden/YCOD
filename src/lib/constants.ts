@@ -328,6 +328,45 @@ export const TIMELINE_EVENTS = [
   { year: '2024', title: 'NY Crosses 50%', description: 'A milestone moment: New York State crosses 50% organ donor registration for the first time in October 2024.' },
 ] as const;
 
+export type NavItem = {
+  href: string;
+  label: string;
+  i18nKey: string;
+  children?: readonly { href: string; label: string; i18nKey: string }[];
+};
+
+export const NAV_ITEMS: readonly NavItem[] = [
+  { href: '/about', label: 'About', i18nKey: 'nav.about' },
+  { href: '/bill', label: 'The Bill', i18nKey: 'nav.bill' },
+  {
+    href: '#', label: 'Learn', i18nKey: 'nav.learn',
+    children: [
+      { href: '/facts', label: 'Facts', i18nKey: 'nav.facts' },
+      { href: '/faq', label: 'FAQ', i18nKey: 'nav.faq' },
+      { href: '/resources', label: 'Resources', i18nKey: 'nav.resources' },
+      { href: '/glossary', label: 'Glossary', i18nKey: 'nav.glossary' },
+    ],
+  },
+  {
+    href: '#', label: 'Media', i18nKey: 'nav.media',
+    children: [
+      { href: '/blog', label: 'News', i18nKey: 'nav.news' },
+      { href: '/coverage', label: 'Press', i18nKey: 'nav.coverage' },
+      { href: '/tedx', label: 'TEDx', i18nKey: 'nav.tedx' },
+    ],
+  },
+  {
+    href: '#', label: 'Get Involved', i18nKey: 'nav.getInvolved',
+    children: [
+      { href: '/initiatives', label: 'Initiatives', i18nKey: 'nav.initiatives' },
+      { href: '/partners', label: 'Partners', i18nKey: 'nav.partners' },
+      { href: '/stories', label: 'Stories', i18nKey: 'nav.stories' },
+      { href: '/contact', label: 'Contact', i18nKey: 'nav.contact' },
+    ],
+  },
+] as const;
+
+// Flat list for backwards compat (footer, etc.)
 export const NAV_LINKS = [
   { href: '/about', label: 'About' },
   { href: '/initiatives', label: 'Initiatives' },
